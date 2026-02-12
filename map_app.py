@@ -517,6 +517,9 @@ def create_app() -> dash.Dash:
     """Create and configure the Dash application."""
     app = dash.Dash(__name__, suppress_callback_exceptions=True)
     
+    # For Render deployment, expose the server
+    app.server = app.server
+    
     # Load all Florida data
     all_florida_data = load_all_florida_data()
     

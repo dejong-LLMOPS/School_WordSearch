@@ -1,0 +1,32 @@
+# Ignore files for Render deployment
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+.env
+*.log
+.cursor/
+output/cache/
+output/backups/
+*.xlsx
+test_*.py
+U.S.*.xlsx
+
+# Exclude scraper files (dashboard only deployment)
+main.py
+web_scraper.py
+term_searcher.py
+data_extractor.py
+csv_generator.py
+update_ai_summaries.py
+test_*.py
+
