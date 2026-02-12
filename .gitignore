@@ -15,10 +15,12 @@ dist/
 *.egg-info/
 
 # Output files
-output/
-*.csv
+output/cache/
+output/backups/
 *.json
 *.log
+# Allow CSV files for dashboard deployment
+# *.csv
 
 # IDE
 .vscode/
