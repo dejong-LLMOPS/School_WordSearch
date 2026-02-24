@@ -65,18 +65,50 @@ python map_app.py
 
 Then open your browser to `http://127.0.0.1:8050`
 
+### Running Tests
+
+Run all tests from the project root (so imports resolve correctly):
+```bash
+pytest tests/
+```
+Or run a single test file:
+```bash
+python tests/test_single_site.py
+python tests/test_scraper.py
+```
+
+### Scripts
+
+One-off and operational scripts live in `scripts/`. Run from the project root:
+
+- **Update AI summaries** (rescrape URLs and regenerate summaries with improved prompt):
+```bash
+python scripts/update_ai_summaries.py
+```
+Optional: pass the number of parallel workers as the first argument, e.g. `python scripts/update_ai_summaries.py 3`.
+
 ## Project Structure
 
 ```
 School_WordSearch/
+├── app.py                 # Dash server entry (e.g. for Render/gunicorn)
 ├── config.py              # Configuration settings
 ├── main.py                # Main orchestrator
+├── map_app.py             # Dashboard app (State Overview, District Detail)
+├── dashboard_data.py       # Dashboard data layer (CSV, aggregates)
 ├── data_extractor.py      # Excel file reading and filtering
 ├── web_scraper.py         # Website scraping
 ├── term_searcher.py       # Term search and context extraction
 ├── ai_context.py          # Perplexity AI integration
 ├── csv_generator.py       # CSV report generation
-├── map_app.py             # Interactive map visualization
+├── assets/                # Dashboard CSS and static assets
+├── scripts/               # One-off and operational scripts
+│   └── update_ai_summaries.py
+├── tests/                 # Test modules (run with pytest tests/)
+│   ├── conftest.py        # Pytest config (adds project root to path)
+│   ├── test_single_site.py
+│   ├── test_scraper.py
+│   └── ...
 ├── utils/
 │   ├── __init__.py
 │   └── logging_config.py  # Logging setup

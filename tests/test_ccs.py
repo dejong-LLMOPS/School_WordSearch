@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
 """Test scraper on Cumberland County Schools website."""
-import sys
-import os
-sys.path.insert(0, os.path.dirname(__file__))
-
 from utils.logging_config import setup_logging
 from web_scraper import WebScraper
 from term_searcher import TermSearcher
@@ -61,7 +57,7 @@ for term in search_terms:
     results = searcher.find_term_occurrences(term, pages)
     count = results.get('count', 0)
     pages_with_term = results.get('pages', [])
-    
+
     print(f"\n'{term}':")
     print(f"  Found: {count} occurrences")
     print(f"  Pages: {len(pages_with_term)}")
@@ -77,4 +73,3 @@ for term in search_terms:
 print(f"\n{'='*80}")
 print("TEST COMPLETE")
 print(f"{'='*80}")
-

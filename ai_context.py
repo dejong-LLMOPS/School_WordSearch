@@ -85,21 +85,21 @@ class PerplexityClient:
         with self._cache_lock:
             self._summary_cache[context_hash] = summary_data
     
-    def _make_request(self, messages: List[Dict], retry_count: int = 0, max_tokens: int = 500) -> Optional[str]:
+    def _make_request(self, messages: List[Dict], retry_count: int = 0, max_tokens: int = 500) -> Optional[Dict]:
         """
         Make a chat completions request to Perplexity API using the SDK.
-        
+
         Args:
             messages: List of message dictionaries with 'role' and 'content' keys
             retry_count: Current retry attempt
             max_tokens: Maximum tokens for response (default 500)
-        
+
         Returns:
-            Response text or None if error
+            Dict with 'content' (str) and 'citations' (list of URL strings), or None if error.
         """
         if not self.client:
             return None
-        
+
         try:
             completion = self.client.chat.completions.create(
                 model=self.model,
@@ -107,14 +107,20 @@ class PerplexityClient:
                 temperature=0.2,
                 max_tokens=max_tokens
             )
-            
-            # Extract content from response
+
+            content = None
             if completion.choices and len(completion.choices) > 0:
-                return completion.choices[0].message.content
-            else:
+                content = completion.choices[0].message.content
+            if content is None:
                 logger.warning("No content in API response")
                 return None
-                
+
+            citations: List[str] = []
+            if getattr(completion, "citations", None) and isinstance(completion.citations, list):
+                citations = [str(u).strip() for u in completion.citations if u and str(u).strip()]
+
+            return {"content": content, "citations": citations}
+
         except Exception as e:
             error_str = str(e).lower()
             
@@ -202,18 +208,18 @@ Please provide a concise summary (2-3 sentences) explaining:
         
         logger.debug(f"Requesting AI contextualization for term '{term}' from {page_url}")
         result = self._make_request(messages)
-        
-        if result:
-            logger.debug(f"Received AI contextualization: {result[:100]}...")
-            # Cache the result
+        if not result:
+            return None
+        content = result.get("content") or ""
+        if content:
+            logger.debug(f"Received AI contextualization: {content[:100]}...")
             self._set_cached_summary(context_hash, {
                 'term': term,
                 'url': page_url,
                 'context': context_snippet,
-                'ai_summary': result
+                'ai_summary': content
             })
-        
-        return result
+        return content if content else None
     
     def contextualize_multiple_terms(self, search_results: Dict, 
                                      page_content_map: Optional[Dict[str, str]] = None) -> Dict:
@@ -298,15 +304,15 @@ Please provide a concise summary (2-3 sentences) explaining:
                                      page_content_map: Optional[Dict[str, str]] = None,
                                      is_district_level: bool = False) -> Optional[str]:
         """
-        Get a unified AI summary of a school/district's restorative justice approach.
+        Get a unified AI summary of a district's restorative justice approach.
         Aggregates all pages and term occurrences into one cohesive summary.
         
         Args:
-            school_name: Name of the school (or district if district-level)
+            school_name: Not used (kept for compatibility, always None for district-level)
             district_name: Name of the district
             search_results: Dictionary with search results from term_searcher
             page_content_map: Optional dictionary mapping URLs to full page content
-            is_district_level: True if this is a district/county-level summary (no school name)
+            is_district_level: Always True for district-level processing
         
         Returns:
             Single cohesive summary string or None if error
@@ -317,11 +323,11 @@ Please provide a concise summary (2-3 sentences) explaining:
         # Get all page URLs
         page_urls = list(set(search_results.get('page_urls', [])))
         
-        # Check cache first
-        cache_hash = self._get_school_cache_hash(school_name, district_name, page_urls)
+        # Check cache first (use district_name only)
+        cache_hash = self._get_school_cache_hash(district_name, district_name, page_urls)
         cached = self._get_cached_summary(cache_hash)
         if cached:
-            logger.debug(f"Using cached school summary for {school_name} (hash: {cache_hash[:8]}...)")
+            logger.debug(f"Using cached district summary for {district_name} (hash: {cache_hash[:8]}...)")
             return cached.get('ai_summary')
         
         # Aggregate all page content
@@ -352,30 +358,9 @@ Please provide a concise summary (2-3 sentences) explaining:
         if len(aggregated_content) > 15000:
             aggregated_content = aggregated_content[:15000] + "\n\n[Content truncated...]"
         
-        # Analyze source of hits (school vs district)
-        school_hits = search_results.get('school_pages_with_terms', 0)
+        # Get district-level metrics
         district_hits = search_results.get('district_pages_with_terms', 0)
-        has_school_hits = school_hits > 0
-        has_district_hits = district_hits > 0
-        
-        # Build source context note
-        source_context = []
-        if has_school_hits and has_district_hits:
-            source_context.append(f"Terms were found on both the school website ({school_hits} pages) and district website ({district_hits} pages).")
-        elif has_school_hits:
-            source_context.append(f"Terms were found ONLY on the school website ({school_hits} pages), not on the district website.")
-        elif has_district_hits:
-            source_context.append(f"Terms were found ONLY on the district website ({district_hits} pages), not on the school website.")
-        
-        source_context_str = ' '.join(source_context) if source_context else "No terms found on either website."
-        
-        # Build the prompt with district-level context note
-        if is_district_level:
-            context_note = f"Note: This is a district/county-level summary for {district_name}. The content reflects district-wide policies and programs, not individual school implementations."
-            entity_name = district_name
-        else:
-            context_note = f"School/District: {school_name} / {district_name}"
-            entity_name = f"{school_name} / {district_name}"
+        total_occurrences = search_results.get('district_total_occurrences', 0)
         
         # Get terms found for the prompt
         terms_found = search_results.get('terms_found', [])
@@ -385,30 +370,28 @@ Please provide a concise summary (2-3 sentences) explaining:
         page_urls_list = search_results.get('page_urls', [])
         urls_str = '; '.join(page_urls_list) if page_urls_list else 'None'
         
-        # Build the prompt
-        user_content = f"""Analyze all content from {entity_name} and provide a comprehensive, evidence-based summary of their approach to the key terms found.
+        # Build the prompt - DISTRICT-LEVEL ONLY
+        user_content = f"""Analyze all content from {district_name} school district's website and provide a comprehensive, evidence-based summary of their district-wide approach to the key terms found.
 
-{context_note}
+District: {district_name}
 
-Source of findings: {source_context_str}
+Source of findings: Terms were found on {district_hits} district website pages with {total_occurrences} total occurrences.
 
 Key terms found: {terms_str}
 URLs where terms were found: {urls_str}
 
-All scraped pages and term occurrences:
+All scraped pages and term occurrences from the district website:
 {aggregated_content}
 
-Based on all the content from this {'district/county' if is_district_level else 'school/district'}'s website, provide exactly 2 detailed paragraphs in a formal, analytical style:
+Based on all the content from this district's website, provide exactly 2 detailed paragraphs in a formal, analytical style:
 
-**Paragraph 1 - Philosophy and Conceptualization:** Analyze the overall philosophy and approach to the key terms found (restorative justice, race equity, discipline practices, etc.). Explain how the {'district/county' if is_district_level else 'school/district'} conceptualizes these terms, what they mean in their context, and how these concepts relate to each other in their policies and practices. Include references to specific documents, policies, or frameworks mentioned (e.g., Student Code of Conduct, district philosophies, mission statements). Discuss their commitment level, integration approach, and any timelines or goals mentioned. Focus on their conceptual understanding and how they frame these ideas as part of their educational approach.
+**Paragraph 1 - Philosophy and Conceptualization:** Analyze the overall philosophy and approach to the key terms found (restorative justice, race equity, discipline practices, etc.). Explain how the district conceptualizes these terms, what they mean in their context, and how these concepts relate to each other in their policies and practices. Include references to specific documents, policies, or frameworks mentioned (e.g., Student Code of Conduct, district philosophies, mission statements). Discuss their commitment level, integration approach, and any timelines or goals mentioned. Focus on their conceptual understanding and how they frame these ideas as part of their educational approach.
 
 **Paragraph 2 - Infrastructure and Implementation:** Analyze the concrete infrastructure, programs, staffing, and operational systems related to these terms. Provide specific details: What dedicated centers, programs, departments, or academies exist? What are they called? What dedicated positions, coordinators, facilitators, or staff roles are mentioned? Include specific program names, school names (if applicable), timelines for implementation, training schedules, and any other concrete organizational elements. Demonstrate that this is not merely a policy concept but an operationalized system with dedicated personnel and specialized structures. Focus on tangible, implementational elements that show how philosophy translates into practice.
 
 **Writing Style:** Write in a formal, analytical tone similar to academic or policy analysis. Use specific examples, program names, and evidence from the content. Connect philosophy to implementation. Be comprehensive and detailed, showing depth of understanding of their approach.
 
-**Important:** At the end of your response, include:
-1. Explicitly state whether the information comes from the school website only, the district website only, or both. Use this format: "Source: [School website only / District website only / Both school and district websites]"
-2. If specific sources or documents are referenced, you may note them (e.g., "sources: schools site, sources, etc").
+**Important:** At the end of your response, explicitly state: "Source: District website only" since all content comes from the district website.
 """
         
         # Format as chat messages
@@ -417,17 +400,15 @@ Based on all the content from this {'district/county' if is_district_level else 
                 'role': 'user',
                 'content': user_content
             }
-            
         ]
         
-        logger.debug(f"Requesting unified AI summary for {school_name} / {district_name}")
+        logger.debug(f"Requesting unified AI summary for district: {district_name}")
         result = self._make_request(messages, max_tokens=800)  # More tokens for longer summary
         
         if result:
             logger.debug(f"Received unified AI summary: {result[:100]}...")
             # Cache the result
             self._set_cached_summary(cache_hash, {
-                'school_name': school_name,
                 'district_name': district_name,
                 'page_urls': page_urls,
                 'ai_summary': result
@@ -442,13 +423,13 @@ def get_ai_contextualization(search_results: Dict, page_content_map: Optional[Di
     """
     Get AI contextualization for search results.
     Supports two modes:
-    - "unified": One cohesive summary per school (default)
+    - "unified": One cohesive summary per district (default)
     - "per_term": Individual summaries for each term/context (legacy)
     
     Args:
         search_results: Dictionary with search results from term_searcher
         page_content_map: Optional dictionary mapping URLs to full page content
-        school_name: Name of the school (required for unified mode)
+        school_name: Not used (kept for compatibility, should be None for district-level)
         district_name: Name of the district (required for unified mode)
         mode: "unified" or "per_term" (defaults to config or "unified")
     
@@ -469,17 +450,16 @@ def get_ai_contextualization(search_results: Dict, page_content_map: Optional[Di
         mode = PERPLEXITY_CONFIG.get('ai_summary_mode', 'unified')
     
     if mode == 'unified':
-        # Unified mode: one summary per school/district
-        if not school_name and not district_name:
-            logger.warning("School or district name required for unified mode. Falling back to per_term mode.")
+        # Unified mode: one summary per district
+        if not district_name:
+            logger.warning("District name required for unified mode. Falling back to per_term mode.")
             mode = 'per_term'
         else:
-            # Use district as school if school missing
-            effective_school = school_name or district_name or 'Unknown'
-            is_district_level = not school_name and district_name
+            # Always district-level (school_name is always None now)
+            is_district_level = True
             summary = client.contextualize_school_approach(
-                effective_school,
-                district_name or school_name or 'Unknown',
+                None,  # school_name not used for district-level
+                district_name,
                 search_results,
                 page_content_map,
                 is_district_level=is_district_level

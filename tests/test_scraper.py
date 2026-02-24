@@ -35,4 +35,3 @@ if pages:
         print(f"  Pages with term: {len(results.get('pages', []))}")
         for page_url in results.get('pages', [])[:5]:
             print(f"    - {page_url}")
-

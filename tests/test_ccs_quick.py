@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
 """Quick test to find restorative justice page on CCS website."""
-import sys
-import os
-sys.path.insert(0, os.path.dirname(__file__))
-
 from utils.logging_config import setup_logging
 from web_scraper import WebScraper
 from term_searcher import TermSearcher
@@ -57,4 +53,3 @@ print(f"  Pages with term: {len(pages_with_term)}")
 if pages_with_term:
     for page_url in pages_with_term:
         print(f"    - {page_url}")
-

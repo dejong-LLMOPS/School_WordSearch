@@ -1,7 +1,15 @@
 """Script to update AI summaries by rescraping URLs and regenerating summaries with improved prompt."""
+import sys
+from pathlib import Path
+
+# Ensure project root is on path when run as scripts/update_ai_summaries.py
+_script_dir = Path(__file__).resolve().parent
+_project_root = _script_dir.parent
+if str(_project_root) not in sys.path:
+    sys.path.insert(0, str(_project_root))
+
 import pandas as pd
 import logging
-from pathlib import Path
 from typing import Dict, List, Optional
 from datetime import datetime
 import time
@@ -549,4 +557,3 @@ def main(num_workers: Optional[int] = None):
 
 if __name__ == "__main__":
     main()
-

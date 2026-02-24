@@ -47,13 +47,16 @@ def read_districts_file(file_path: Path, state_filter: Optional[str] = None) -> 
     """
     try:
         logger.info(f"Reading districts file: {file_path}")
-        # Districts file has header in row 1 (0-indexed)
-        df = pd.read_excel(file_path, header=1)
+        # Districts file has header in row 0 (first row)
+        df = pd.read_excel(file_path, header=0)
         logger.info(f"Loaded {len(df)} total districts")
         
         if state_filter:
-            df = df[df['ST'] == state_filter.upper()]
-            logger.info(f"Filtered to {len(df)} districts in {state_filter}")
+            if 'ST' in df.columns:
+                df = df[df['ST'] == state_filter.upper()]
+                logger.info(f"Filtered to {len(df)} districts in {state_filter}")
+            else:
+                logger.warning(f"'ST' column not found in districts file. Available columns: {df.columns.tolist()[:10]}")
         
         return df
     except Exception as e:
@@ -126,6 +129,87 @@ def extract_school_urls(df: pd.DataFrame) -> pd.DataFrame:
     logger.info(f"Districts with URLs: {districts_with_urls}/{len(df)}")
     
     return df
+
+
+def get_districts_for_state(state: str = DEFAULT_STATE) -> pd.DataFrame:
+    """
+    Get all districts for a given state with URLs.
+    
+    Args:
+        state: State code (default: NC)
+    
+    Returns:
+        DataFrame with district data including URLs
+    """
+    logger.info(f"Extracting districts for state: {state}")
+    
+    # Read districts file
+    districts_df = read_districts_file(DISTRICTS_FILE, state_filter=state)
+    
+    if districts_df.empty:
+        logger.warning(f"No districts found for state: {state}")
+        return districts_df
+    
+    # Rename WEBSITE to DISTRICT_URL for consistency
+    if 'WEBSITE' in districts_df.columns:
+        districts_df = districts_df.rename(columns={'WEBSITE': 'DISTRICT_URL'})
+    
+    # Clean district URLs
+    if 'DISTRICT_URL' in districts_df.columns:
+        districts_df['DISTRICT_URL'] = districts_df['DISTRICT_URL'].astype(str).replace('nan', '')
+        districts_df['DISTRICT_URL'] = districts_df['DISTRICT_URL'].str.strip()
+        districts_df['DISTRICT_URL'] = districts_df['DISTRICT_URL'].replace('', None)
+    
+    # Select relevant columns for output
+    output_columns = [
+        'LEAID', 'LEA_NAME', 'ST', 'STATENAME', 'DISTRICT_URL'
+    ]
+    
+    # Only include columns that exist
+    available_columns = [col for col in output_columns if col in districts_df.columns]
+    districts_df = districts_df[available_columns]
+    
+    # Rename LEA_NAME to DISTRICT_NAME for consistency
+    if 'LEA_NAME' in districts_df.columns:
+        districts_df = districts_df.rename(columns={'LEA_NAME': 'DISTRICT_NAME'})
+    
+    districts_with_urls = districts_df['DISTRICT_URL'].notna().sum() if 'DISTRICT_URL' in districts_df.columns else 0
+    logger.info(f"Final dataset: {len(districts_df)} districts ({districts_with_urls} with URLs)")
+    
+    return districts_df
+
+
+def count_schools_per_district(state: str = DEFAULT_STATE) -> Dict[str, int]:
+    """
+    Count the number of schools per district for a given state.
+    
+    Args:
+        state: State code (default: NC)
+    
+    Returns:
+        Dictionary mapping LEAID (district ID) to count of schools
+    """
+    logger.info(f"Counting schools per district for state: {state}")
+    
+    try:
+        # Read schools file
+        schools_df = read_schools_file(SCHOOLS_FILE, state_filter=state)
+        
+        if schools_df.empty:
+            logger.warning(f"No schools found for state: {state}")
+            return {}
+        
+        # Group by LEAID and count
+        if 'LEAID' in schools_df.columns:
+            district_counts = schools_df.groupby('LEAID').size().to_dict()
+            logger.info(f"Found {len(district_counts)} districts with schools")
+            return district_counts
+        else:
+            logger.warning("LEAID column not found in schools data")
+            return {}
+    except Exception as e:
+        logger.error(f"Error counting schools per district: {e}")
+        return {}
 
 
 def get_schools_for_state(state: str = DEFAULT_STATE) -> pd.DataFrame:

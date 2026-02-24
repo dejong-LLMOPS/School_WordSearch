@@ -10,5 +10,6 @@ urllib3>=2.0.0
 perplexityai
 cloudscraper>=1.2.71
 gunicorn>=21.2.0
-
+markdown>=3.5.0
+bleach>=6.0.0
 

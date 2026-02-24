@@ -10,11 +10,11 @@ from typing import Dict, List, Optional
 from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-from data_extractor import get_schools_for_state
+from data_extractor import get_districts_for_state, count_schools_per_district
 from web_scraper import scrape_school_urls, _global_url_cache
 from term_searcher import search_school_content
 from ai_context import get_ai_contextualization
-from csv_generator import update_csv_with_school, get_processed_schools, load_existing_results
+from csv_generator import update_csv_with_district, get_processed_districts, get_failed_districts, load_existing_results, deduplicate_results_csv
 from config import (
     DEFAULT_STATE, SEARCH_TERMS, RESULTS_CSV, PROGRESS_FILE,
     SCRAPING_CONFIG
@@ -28,15 +28,10 @@ class ScraperOrchestrator:
     """Orchestrates the entire scraping and analysis pipeline."""
     
     def __init__(self, state: str = DEFAULT_STATE, search_terms: Optional[List[str]] = None,
-                 resume: bool = True, max_schools: Optional[int] = None, 
+                 resume: bool = True, max_districts: Optional[int] = None, 
                  workers: int = None, delay: Optional[float] = None,
-                 min_delay: Optional[float] = None, max_delay: Optional[float] = None):
-        # Cache for search results by URL (shared across schools)
-        self._search_results_cache: Dict[str, Dict] = {}
-        # Set of already processed schools (loaded from CSV)
-        self._processed_schools: set = set()
-        # Set of already processed schools (loaded from CSV)
-        self._processed_schools: set = set()
+                 min_delay: Optional[float] = None, max_delay: Optional[float] = None,
+                 rerun_failed: bool = False):
         """
         Initialize the orchestrator.
         
@@ -44,16 +39,21 @@ class ScraperOrchestrator:
             state: State code to process
             search_terms: List of terms to search for
             resume: Whether to resume from previous progress
-            max_schools: Maximum number of schools to process (None for all)
+            max_districts: Maximum number of districts to process (None for all)
             workers: Number of worker threads for parallel processing
             delay: Override delay between requests (in seconds)
             min_delay: Minimum delay for adaptive rate limiting (in seconds)
             max_delay: Maximum delay for adaptive rate limiting (in seconds)
+            rerun_failed: If True, rerun districts with scrape_failed status
         """
+        # Cache for search results by URL (shared across districts)
+        self._search_results_cache: Dict[str, Dict] = {}
+        # Set of already processed districts (loaded from CSV)
+        self._processed_districts: set = set()
         self.state = state
         self.search_terms = search_terms or SEARCH_TERMS
         self.resume = resume
-        self.max_schools = max_schools
+        self.max_districts = max_districts
         self.workers = workers or SCRAPING_CONFIG.get('workers', 5)
         self.delay = delay
         self.min_delay = min_delay
@@ -64,6 +64,7 @@ class ScraperOrchestrator:
         self.csv_lock = threading.Lock()
         self.progress_lock = threading.Lock()
         self.start_time = None
+        self.rerun_failed = rerun_failed
         
     def load_progress(self) -> Dict:
         """Load progress from checkpoint file."""
@@ -73,7 +74,7 @@ class ScraperOrchestrator:
         try:
             with open(self.progress_file, 'r') as f:
                 progress = json.load(f)
-            logger.info(f"Loaded progress: {progress.get('processed', 0)} schools processed")
+            logger.info(f"Loaded progress: {progress.get('processed', 0)} districts processed")
             return progress
         except Exception as e:
             logger.warning(f"Error loading progress: {e}")
@@ -87,78 +88,88 @@ class ScraperOrchestrator:
             logger.debug(f"Attempting to save progress to {self.progress_file}")
             with open(self.progress_file, 'w') as f:
                 json.dump(progress, f, indent=2)
-            logger.info(f"✓ Saved progress to {self.progress_file}: {progress.get('processed', 0)} schools")
+            logger.info(f"✓ Saved progress to {self.progress_file}: {progress.get('processed', 0)} districts")
         except Exception as e:
             logger.error(f"✗ Error saving progress to {self.progress_file}: {e}", exc_info=True)
             raise  # Re-raise so caller knows it failed
     
-    def _get_school_id(self, school_data: Dict) -> str:
-        """Generate a unique identifier for a school."""
-        # Use NCESSCH (National Center for Education Statistics School ID) if available
-        ncessch = school_data.get('NCESSCH')
-        if ncessch and str(ncessch) != 'nan':
-            return str(ncessch)
-        # Fallback to name + state
-        return f"{school_data.get('SCH_NAME', 'Unknown')}_{school_data.get('ST', '')}"
+    def _get_district_id(self, district_data: Dict) -> str:
+        """Generate a unique identifier for a district."""
+        # Use LEAID (Local Education Agency ID) if available
+        leaid = district_data.get('LEAID')
+        if leaid and str(leaid) != 'nan':
+            return str(leaid)
+        # Fallback to district URL or name + state
+        district_url = district_data.get('DISTRICT_URL', '')
+        if district_url:
+            return district_url
+        district_name = district_data.get('DISTRICT_NAME') or district_data.get('LEA_NAME', 'Unknown')
+        return f"{district_name}_{district_data.get('ST', '')}"
     
-    def process_school(self, school_data: Dict) -> Dict:
+    def process_district(self, district_data: Dict) -> Dict:
         """
-        Process a single school through the entire pipeline.
-        Uses URL-level caching to share results across schools.
+        Process a single district through the entire pipeline.
+        Uses URL-level caching to share results across districts.
         
         Args:
-            school_data: Dictionary with school information
+            district_data: Dictionary with district information
         
         Returns:
             Dictionary with processing results
         """
-        school_name = school_data.get('SCH_NAME', 'Unknown')
-        school_url = school_data.get('SCHOOL_URL')
-        district_url = school_data.get('DISTRICT_URL')
-        school_id = self._get_school_id(school_data)
+        district_name = district_data.get('DISTRICT_NAME') or district_data.get('LEA_NAME', 'Unknown')
+        district_url = district_data.get('DISTRICT_URL')
+        district_id = self._get_district_id(district_data)
         
-        # Check if school is already in results CSV
-        school_identifier = (school_name, self.state)
-        if school_identifier in self._processed_schools:
-            logger.info(f"⏭ Skipping {school_name} - already in results CSV")
-            return None  # Signal to skip this school
+        # Check if district is already in results CSV
+        if district_url and district_url in self._processed_districts:
+            logger.info(f"⏭ Skipping {district_name} - already in results CSV")
+            return None  # Signal to skip this district
         
-        thread_id = threading.current_thread().ident
         thread_name = threading.current_thread().name
-        logger.info(f"Processing: {school_name} (ID: {school_id}) [Thread: {thread_name}]")
+        logger.info(f"Processing: {district_name} (ID: {district_id}) [Thread: {thread_name}]")
         
         result = {
-            'school_data': school_data,
+            'district_data': district_data,
             'search_results': {},
             'ai_summaries': {},
             'scrape_status': 'pending'
         }
         
-        # Check if we have URLs to scrape
-        if not school_url and not district_url:
-            logger.warning(f"No URLs available for {school_name}")
+        # Check if we have district URL to scrape
+        if not district_url:
+            logger.warning(f"No district URL available for {district_name}")
             result['scrape_status'] = 'no_url'
+            # Create empty search_results so district gets saved to CSV
+            result['search_results'] = {
+                'terms_found': [],
+                'page_urls': [],
+                'context_snippets': [],
+                'total_occurrences': 0,
+                'pages_with_terms': 0,
+                'district_terms_found': [],
+                'district_page_urls': [],
+                'district_total_occurrences': 0,
+                'district_pages_with_terms': 0
+            }
+            result['ai_summaries'] = {}
             return result
         
         try:
-            # Step 1: Scrape websites (with URL-level caching)
-            logger.debug(f"Scraping URLs for {school_name}")
-            pages = scrape_school_urls(school_url, district_url, use_cache=True, school_id=school_id)
+            # Step 1: Scrape district website (with URL-level caching)
+            logger.debug(f"Scraping district URL for {district_name}")
+            pages = scrape_school_urls(None, district_url, use_cache=True, school_id=district_id)
             
             if not pages:
-                logger.warning(f"✗ No pages scraped for {school_name}")
+                logger.warning(f"✗ No pages scraped for {district_name}")
                 result['scrape_status'] = 'scrape_failed'
-                # Still create empty search_results so school gets saved to CSV
+                # Still create empty search_results so district gets saved to CSV
                 result['search_results'] = {
                     'terms_found': [],
                     'page_urls': [],
                     'context_snippets': [],
                     'total_occurrences': 0,
                     'pages_with_terms': 0,
-                    'school_terms_found': [],
-                    'school_page_urls': [],
-                    'school_total_occurrences': 0,
-                    'school_pages_with_terms': 0,
                     'district_terms_found': [],
                     'district_page_urls': [],
                     'district_total_occurrences': 0,
@@ -170,111 +181,80 @@ class ScraperOrchestrator:
             result['scrape_status'] = 'success'
             # Count pages with actual content
             pages_with_content = [p for p in pages if p.get('content_length', 0) > 0]
-            logger.info(f"✓ Successfully scraped {len(pages)} pages for {school_name} ({len(pages_with_content)} with content)")
+            logger.info(f"✓ Successfully scraped {len(pages)} pages for {district_name} ({len(pages_with_content)} with content)")
             
-            # Step 2: Search for terms (with result sharing across schools using same URLs)
-            logger.debug(f"Searching for terms in {school_name}")
+            # Step 2: Search for terms (with result sharing across districts using same URLs)
+            logger.debug(f"Searching for terms in {district_name}")
             
-            # Check if we can reuse search results from another school using the same URLs
+            # Check if we can reuse search results from another district using the same URL
             search_results = None
             
-            # Try full URL combination first (school + district)
-            urls_key = f"{school_url or ''}|{district_url or ''}"
+            # Use district URL as key
+            district_key = district_url if district_url else None
             
-            # Also try district-only key (for schools sharing same district but different school URLs)
-            district_key = f"|{district_url or ''}" if district_url else None
-            
-            if urls_key in self._search_results_cache:
-                logger.debug(f"Reusing search results from cache for URLs: {urls_key}")
-                search_results = self._search_results_cache[urls_key]
-            elif district_key and district_key in self._search_results_cache:
-                # Reuse district-only results if available (for schools sharing same district)
+            if district_key and district_key in self._search_results_cache:
+                # Reuse district results if available
                 logger.debug(f"Reusing district search results from cache: {district_key}")
                 district_results = self._search_results_cache[district_key]
-                # Filter to only district pages (since school pages might be different)
                 search_results = {
-                    'terms_found': district_results.get('district_terms_found', []),
-                    'page_urls': district_results.get('district_page_urls', []),
-                    'context_snippets': [s for s in district_results.get('context_snippets', []) 
-                                        if s.get('source') == 'district'],
-                    'total_occurrences': district_results.get('district_total_occurrences', 0),
-                    'pages_with_terms': district_results.get('district_pages_with_terms', 0),
-                    'school_terms_found': [],
-                    'school_page_urls': [],
-                    'school_total_occurrences': 0,
-                    'school_pages_with_terms': 0,
-                    'district_terms_found': district_results.get('district_terms_found', []),
-                    'district_page_urls': district_results.get('district_page_urls', []),
-                    'district_total_occurrences': district_results.get('district_total_occurrences', 0),
-                    'district_pages_with_terms': district_results.get('district_pages_with_terms', 0)
+                    'terms_found': district_results.get('terms_found', []),
+                    'page_urls': district_results.get('page_urls', []),
+                    'context_snippets': district_results.get('context_snippets', []),
+                    'total_occurrences': district_results.get('total_occurrences', 0),
+                    'pages_with_terms': district_results.get('pages_with_terms', 0),
+                    'district_terms_found': district_results.get('terms_found', []),
+                    'district_page_urls': district_results.get('page_urls', []),
+                    'district_total_occurrences': district_results.get('total_occurrences', 0),
+                    'district_pages_with_terms': district_results.get('pages_with_terms', 0)
                 }
-                # Still need to search school pages if they exist
-                school_pages = [p for p in pages if p.get('source') == 'school']
-                if school_pages:
-                    school_results = search_school_content(school_pages, search_terms=self.search_terms)
-                    # Merge school results with district results
-                    search_results['school_terms_found'] = school_results.get('terms_found', [])
-                    search_results['school_page_urls'] = school_results.get('page_urls', [])
-                    search_results['school_total_occurrences'] = school_results.get('total_occurrences', 0)
-                    search_results['school_pages_with_terms'] = school_results.get('pages_with_terms', 0)
-                    # Update combined totals
-                    search_results['terms_found'] = list(set(search_results['terms_found'] + school_results.get('terms_found', [])))
-                    search_results['page_urls'] = search_results['page_urls'] + school_results.get('page_urls', [])
-                    search_results['total_occurrences'] = search_results['total_occurrences'] + school_results.get('total_occurrences', 0)
-                    search_results['pages_with_terms'] = search_results['pages_with_terms'] + school_results.get('pages_with_terms', 0)
-                    search_results['context_snippets'].extend(school_results.get('context_snippets', []))
             else:
                 # Perform search on all pages
                 search_results = search_school_content(pages, search_terms=self.search_terms)
-                # Cache the results with full key
-                self._search_results_cache[urls_key] = search_results
-                # Also cache district-only results if district URL exists
-                if district_key and district_url:
-                    district_pages = [p for p in pages if p.get('source') == 'district']
-                    if district_pages:
-                        district_only_results = search_school_content(district_pages, search_terms=self.search_terms)
-                        # Store district results separately for reuse
-                        self._search_results_cache[district_key] = {
-                            'district_terms_found': district_only_results.get('terms_found', []),
-                            'district_page_urls': district_only_results.get('page_urls', []),
-                            'district_total_occurrences': district_only_results.get('total_occurrences', 0),
-                            'district_pages_with_terms': district_only_results.get('pages_with_terms', 0),
-                            'context_snippets': district_only_results.get('context_snippets', [])
-                        }
+                # Cache the results by district URL
+                if district_key:
+                    self._search_results_cache[district_key] = {
+                        'terms_found': search_results.get('terms_found', []),
+                        'page_urls': search_results.get('page_urls', []),
+                        'total_occurrences': search_results.get('total_occurrences', 0),
+                        'pages_with_terms': search_results.get('pages_with_terms', 0),
+                        'context_snippets': search_results.get('context_snippets', [])
+                    }
+                    # Set district-specific fields
+                    search_results['district_terms_found'] = search_results.get('terms_found', [])
+                    search_results['district_page_urls'] = search_results.get('page_urls', [])
+                    search_results['district_total_occurrences'] = search_results.get('total_occurrences', 0)
+                    search_results['district_pages_with_terms'] = search_results.get('pages_with_terms', 0)
             
             result['search_results'] = search_results
             
             if not search_results.get('terms_found'):
-                logger.info(f"No terms found for {school_name}")
+                logger.info(f"No terms found for {district_name}")
                 # Still continue to save to CSV even with no hits
                 result['ai_summaries'] = {}
             else:
-                logger.info(f"Found terms for {school_name}: {search_results.get('terms_found')}")
+                logger.info(f"Found terms for {district_name}: {search_results.get('terms_found')}")
                 
                 # Step 3: Get AI contextualization
-                logger.debug(f"Getting AI contextualization for {school_name}")
+                logger.debug(f"Getting AI contextualization for {district_name}")
                 
                 # Create page content map for AI
                 page_content_map = {page['url']: page.get('text', '') for page in pages}
                 
-                # Get district name for context
-                district_name = school_data.get('DISTRICT_NAME') or school_data.get('LEA_NAME', '')
-                
                 ai_summaries = get_ai_contextualization(
                     search_results, 
                     page_content_map,
-                    school_name=school_name,
+                    school_name=None,
                     district_name=district_name
                 )
                 result['ai_summaries'] = ai_summaries
                 
                 if ai_summaries:
-                    logger.info(f"Got AI summary for {school_name}")
+                    logger.info(f"Got AI summary for {district_name}")
                 else:
-                    logger.warning(f"No AI summary for {school_name} (API may be unavailable)")
+                    logger.warning(f"No AI summary for {district_name} (API may be unavailable)")
             
         except Exception as e:
-            logger.error(f"Error processing {school_name}: {e}", exc_info=True)
+            logger.error(f"Error processing {district_name}: {e}", exc_info=True)
             result['scrape_status'] = 'error'
             result['error_message'] = str(e)
         
@@ -287,54 +267,74 @@ class ScraperOrchestrator:
         
         # Load progress
         progress = self.load_progress()
-        # Convert lists back to tuples (JSON stores tuples as lists)
-        processed_schools_list = progress.get('processed_schools', [])
-        processed_schools = set(tuple(item) if isinstance(item, list) else item 
-                                for item in processed_schools_list)
+        # Convert lists back to sets (JSON stores sets as lists)
+        processed_districts_list = progress.get('processed_districts', [])
+        processed_districts = set(processed_districts_list)
         
-        # Load already processed schools from CSV to avoid duplicates
-        logger.info("Loading already processed schools from CSV...")
-        csv_processed = get_processed_schools()
-        if csv_processed:
-            logger.info(f"Found {len(csv_processed)} schools already in CSV")
-            # Merge with progress.json schools
-            processed_schools.update(csv_processed)
+        # Load already processed districts from CSV to avoid duplicates
+        logger.info("Loading already processed districts from CSV...")
+        csv_processed_districts = get_processed_districts()
+        if csv_processed_districts:
+            logger.info(f"Found {len(csv_processed_districts)} districts already in CSV")
+            processed_districts.update(csv_processed_districts)
         
-        # Store in instance variable for process_school to use
-        self._processed_schools = processed_schools
+        # If rerun_failed is True, exclude failed districts from processed list
+        if self.rerun_failed:
+            failed_districts = get_failed_districts()
+            if failed_districts:
+                logger.info(f"Rerunning {len(failed_districts)} districts with scrape_failed status")
+                # Remove failed districts from processed list so they get rerun
+                processed_districts = processed_districts - failed_districts
+                logger.info(f"Excluding {len(failed_districts)} failed districts from skip list (now {len(processed_districts)} districts will be skipped)")
         
-        # Get schools data
-        logger.info("Loading schools data...")
-        schools_df = get_schools_for_state(self.state)
+        self._processed_districts = processed_districts
         
-        if schools_df.empty:
-            logger.error(f"No schools found for state: {self.state}")
+        # Get districts data
+        logger.info("Loading districts data...")
+        districts_df = get_districts_for_state(self.state)
+        
+        if districts_df.empty:
+            logger.error(f"No districts found for state: {self.state}")
             return
         
-        logger.info(f"Found {len(schools_df)} schools in {self.state}")
+        logger.info(f"Found {len(districts_df)} districts in {self.state}")
         
-        # Filter to unprocessed schools (always check CSV, not just when resuming)
-        if processed_schools:
-            # Create identifier for schools
-            schools_df['identifier'] = schools_df.apply(
-                lambda row: (row.get('SCH_NAME', ''), row.get('ST', '')),
-                axis=1
-            )
-            unprocessed = schools_df[~schools_df['identifier'].isin(processed_schools)]
-            skipped_count = len(schools_df) - len(unprocessed)
-            if skipped_count > 0:
-                logger.info(f"⏭ Skipping {skipped_count} schools already in CSV (found {len(processed_schools)} total processed)")
-            schools_df = unprocessed.drop(columns=['identifier'])
+        # Count schools per district
+        logger.info("Counting schools per district...")
+        school_counts = count_schools_per_district(self.state)
         
-        # Limit to max_schools if specified
-        if self.max_schools:
-            schools_df = schools_df.head(self.max_schools)
-            logger.info(f"Limiting to {self.max_schools} schools")
+        # Add school count to each district's data
+        if 'LEAID' in districts_df.columns:
+            districts_df['SCHOOLS_IN_DISTRICT'] = districts_df['LEAID'].map(school_counts).fillna(0).astype(int)
+        else:
+            districts_df['SCHOOLS_IN_DISTRICT'] = 0
+            logger.warning("LEAID column not found, cannot count schools per district")
         
-        total_schools = len(schools_df)
-        logger.info(f"Processing {total_schools} schools with {self.workers} worker threads...")
+        # Filter to unprocessed districts (always check CSV, not just when resuming)
+        if processed_districts:
+            # Filter by district URL (districts without URLs will still be processed)
+            if 'DISTRICT_URL' in districts_df.columns:
+                # Only filter districts that have URLs and are in processed_districts
+                # Districts without URLs (NaN/None) will not be filtered out
+                unprocessed = districts_df[
+                    ~(districts_df['DISTRICT_URL'].notna() & districts_df['DISTRICT_URL'].isin(processed_districts))
+                ]
+                skipped_count = len(districts_df) - len(unprocessed)
+                if skipped_count > 0:
+                    logger.info(f"⏭ Skipping {skipped_count} districts already in CSV (found {len(processed_districts)} total processed)")
+                districts_df = unprocessed
+            else:
+                logger.warning("DISTRICT_URL column not found, cannot filter processed districts")
+        
+        # Limit to max_districts if specified
+        if self.max_districts:
+            districts_df = districts_df.head(self.max_districts)
+            logger.info(f"Limiting to {self.max_districts} districts")
+        
+        total_districts = len(districts_df)
+        logger.info(f"Processing {total_districts} districts with {self.workers} worker threads...")
         if self.workers > 1:
-            logger.info(f"✓ Parallel processing ENABLED - {self.workers} schools will be processed simultaneously")
+            logger.info(f"✓ Parallel processing ENABLED - {self.workers} districts will be processed simultaneously")
         else:
             logger.warning(f"⚠ Parallel processing DISABLED - running sequentially (workers=1)")
         
@@ -352,109 +352,121 @@ class ScraperOrchestrator:
         self.start_time = time.time()
         
         # Convert DataFrame to list of dicts for parallel processing
-        schools_list = [row.to_dict() for _, row in schools_df.iterrows()]
+        districts_list = [row.to_dict() for _, row in districts_df.iterrows()]
         
-        # Process schools in parallel using ThreadPoolExecutor
+        # Process districts in parallel using ThreadPoolExecutor
         with ThreadPoolExecutor(max_workers=self.workers) as executor:
             # Submit all tasks
-            future_to_school = {
-                executor.submit(self.process_school, school_data): school_data
-                for school_data in schools_list
+            future_to_district = {
+                executor.submit(self.process_district, district_data): district_data
+                for district_data in districts_list
             }
             
             # Process completed tasks as they finish
             completed_count = 0
-            for future in as_completed(future_to_school):
-                school_data = future_to_school[future]
-                school_name = school_data.get('SCH_NAME', 'Unknown')
+            for future in as_completed(future_to_district):
+                district_data = future_to_district[future]
+                district_name = district_data.get('DISTRICT_NAME') or district_data.get('LEA_NAME', 'Unknown')
                 completed_count += 1
                 
                 try:
                     result = future.result()
                     
-                    # Skip if school was already processed (result is None)
+                    # Skip if district was already processed (result is None)
                     if result is None:
-                        logger.debug(f"Skipped {school_name} - already in CSV")
+                        logger.debug(f"Skipped {district_name} - already in CSV")
                         continue
                     
                     # Validate result structure
                     if not isinstance(result, dict):
-                        logger.error(f"Invalid result type for {school_name}: {type(result)}")
+                        logger.error(f"Invalid result type for {district_name}: {type(result)}")
                         continue
                     
-                    if 'school_data' not in result:
-                        logger.error(f"Missing 'school_data' in result for {school_name}")
+                    if 'district_data' not in result:
+                        logger.error(f"Missing 'district_data' in result for {district_name}")
                         continue
                     
                     if 'search_results' not in result:
-                        logger.error(f"Missing 'search_results' in result for {school_name}")
+                        logger.error(f"Missing 'search_results' in result for {district_name}")
                         continue
                     
                     if 'ai_summaries' not in result:
-                        logger.warning(f"Missing 'ai_summaries' in result for {school_name}, using empty dict")
+                        logger.warning(f"Missing 'ai_summaries' in result for {district_name}, using empty dict")
                         result['ai_summaries'] = {}
                     
                     if 'scrape_status' not in result:
-                        logger.warning(f"Missing 'scrape_status' in result for {school_name}, defaulting to 'unknown'")
+                        logger.warning(f"Missing 'scrape_status' in result for {district_name}, defaulting to 'unknown'")
                         result['scrape_status'] = 'unknown'
                     
-                    # Save to CSV (thread-safe)
+                    # Save district to CSV (thread-safe) - save all districts including those with no_url or scrape_failed
+                    district_url = district_data.get('DISTRICT_URL')
                     csv_saved = False
+                    
+                    # Use district URL as identifier if available, otherwise use district name + state
+                    district_identifier = district_url if district_url else f"{district_name}_{self.state}"
+                    
                     with self.csv_lock:
-                        try:
-                            logger.debug(f"Attempting to save {school_name} to CSV...")
-                            update_csv_with_school(
-                                result['school_data'],
-                                result['search_results'],
-                                result['ai_summaries'],
-                                result.get('scrape_status', 'unknown')
-                            )
+                        # Check if district already saved
+                        if district_identifier in self._processed_districts:
+                            logger.debug(f"District {district_identifier} already in CSV, skipping")
                             csv_saved = True
-                            logger.info(f"✓ Saved {school_name} to CSV (status: {result.get('scrape_status', 'unknown')})")
-                        except Exception as e:
-                            logger.error(f"✗ CRITICAL: Failed to save {school_name} to CSV: {e}", exc_info=True)
-                            # Continue anyway - we'll try to save progress
+                        else:
+                            try:
+                                # Save district with results (including scrape_failed and no_url districts)
+                                logger.debug(f"Attempting to save district {district_name} to CSV...")
+                                update_csv_with_district(
+                                    result['district_data'],
+                                    result['search_results'],
+                                    result['ai_summaries'],
+                                    result.get('scrape_status', 'unknown'),
+                                    school_names=None  # No longer tracking school names
+                                )
+                                self._processed_districts.add(district_identifier)
+                                csv_saved = True
+                                status = result.get('scrape_status', 'unknown')
+                                logger.info(f"✓ Saved district {district_name} to CSV (status: {status})")
+                            except Exception as e:
+                                logger.error(f"✗ CRITICAL: Failed to save district {district_name} to CSV: {e}", exc_info=True)
+                                # Continue anyway - we'll try to save progress
                     
                     if not csv_saved:
-                        logger.warning(f"⚠ {school_name} was NOT saved to CSV - check errors above")
+                        logger.warning(f"⚠ District {district_name} was NOT saved to CSV - check errors above")
                     
                     # Update progress (thread-safe)
                     with self.progress_lock:
-                        processed_schools.add((school_name, self.state))
+                        # Track by identifier (URL or name+state)
+                        processed_districts.add(district_identifier)
                         progress = {
                             'state': self.state,
-                            'processed': len(processed_schools),
-                            'processed_schools': list(processed_schools),
+                            'processed': len(processed_districts),
+                            'processed_districts': list(processed_districts),
                             'last_updated': datetime.now().isoformat()
                         }
                         try:
                             self.save_progress(progress)
-                            logger.info(f"Progress saved: {len(processed_schools)} schools processed")
+                            logger.info(f"Progress saved: {len(processed_districts)} districts processed")
                         except Exception as e:
                             logger.error(f"Error saving progress: {e}", exc_info=True)
                         
                         # Update counters
                         if result['scrape_status'] == 'success':
                             self.processed_count += 1
-                        else:
+                        elif result['scrape_status'] == 'error':
+                            # Only count actual errors, not scrape_failed or no_url
                             self.error_count += 1
                     
                 except Exception as e:
-                    logger.error(f"Error processing school {school_name}: {e}", exc_info=True)
+                    logger.error(f"Error processing district {district_name}: {e}", exc_info=True)
                     # Still try to save error result to CSV
                     try:
                         error_result = {
-                            'school_data': school_data,
+                            'district_data': district_data,
                             'search_results': {
                                 'terms_found': [],
                                 'page_urls': [],
                                 'context_snippets': [],
                                 'total_occurrences': 0,
                                 'pages_with_terms': 0,
-                                'school_terms_found': [],
-                                'school_page_urls': [],
-                                'school_total_occurrences': 0,
-                                'school_pages_with_terms': 0,
                                 'district_terms_found': [],
                                 'district_page_urls': [],
                                 'district_total_occurrences': 0,
@@ -464,35 +476,46 @@ class ScraperOrchestrator:
                             'scrape_status': 'error',
                             'error_message': str(e)
                         }
+                        district_url = district_data.get('DISTRICT_URL')
+                        # Use district URL as identifier if available, otherwise use district name + state
+                        district_identifier = district_url if district_url else f"{district_name}_{self.state}"
+                        
                         with self.csv_lock:
-                            update_csv_with_school(
-                                error_result['school_data'],
-                                error_result['search_results'],
-                                error_result['ai_summaries'],
-                                error_result['scrape_status']
-                            )
-                            logger.info(f"✓ Saved {school_name} (error) to CSV")
+                            # Only save district if not already saved
+                            if district_identifier not in self._processed_districts:
+                                update_csv_with_district(
+                                    error_result['district_data'],
+                                    error_result['search_results'],
+                                    error_result['ai_summaries'],
+                                    error_result['scrape_status'],
+                                    school_names=None
+                                )
+                                self._processed_districts.add(district_identifier)
+                                logger.info(f"✓ Saved district {district_name} (error) to CSV")
+                            else:
+                                logger.debug(f"District {district_identifier} already saved, skipping error save")
                     except Exception as save_error:
-                        logger.error(f"Error saving error result for {school_name}: {save_error}")
+                        logger.error(f"Error saving error result for {district_name}: {save_error}")
                     with self.progress_lock:
                         self.error_count += 1
-                        processed_schools.add((school_name, self.state))
+                        # Track by identifier (URL or name+state)
+                        processed_districts.add(district_identifier)
                         progress = {
                             'state': self.state,
-                            'processed': len(processed_schools),
-                            'processed_schools': list(processed_schools),
+                            'processed': len(processed_districts),
+                            'processed_districts': list(processed_districts),
                             'last_updated': datetime.now().isoformat()
                         }
                         self.save_progress(progress)
                 
                 # Log progress periodically
-                if completed_count % 10 == 0 or completed_count == total_schools:
+                if completed_count % 10 == 0 or completed_count == total_districts:
                     elapsed = time.time() - self.start_time
                     rate = completed_count / elapsed if elapsed > 0 else 0
                     with self.progress_lock:
-                        logger.info(f"Progress: {completed_count}/{total_schools} schools processed "
+                        logger.info(f"Progress: {completed_count}/{total_districts} districts processed "
                                   f"({self.processed_count} success, {self.error_count} errors) "
-                                  f"[{rate:.2f} schools/sec]")
+                                  f"[{rate:.2f} districts/sec]")
         
         # Final summary with performance metrics
         elapsed_time = time.time() - self.start_time if self.start_time else 0
@@ -501,17 +524,25 @@ class ScraperOrchestrator:
         with self.progress_lock:
             final_progress = {
                 'state': self.state,
-                'processed': len(processed_schools),
-                'processed_schools': list(processed_schools),
+                'processed': len(processed_districts),
+                'processed_districts': list(processed_districts),
                 'last_updated': datetime.now().isoformat(),
                 'completed': True
             }
             try:
                 self.save_progress(final_progress)
-                logger.info(f"✓ Final progress saved: {len(processed_schools)} schools")
+                logger.info(f"✓ Final progress saved: {len(processed_districts)} districts")
             except Exception as e:
                 logger.error(f"✗ Failed to save final progress: {e}", exc_info=True)
-        
+
+        # Deduplicate results CSV: one row per district, favour success over scrape_failed
+        try:
+            removed = deduplicate_results_csv(RESULTS_CSV)
+            if removed > 0:
+                logger.info(f"✓ Deduplicated {RESULTS_CSV}: removed {removed} duplicate row(s)")
+        except Exception as e:
+            logger.warning(f"Deduplication of results CSV failed: {e}", exc_info=True)
+
         # Check CSV file
         csv_count = 0
         if RESULTS_CSV.exists():
@@ -524,19 +555,19 @@ class ScraperOrchestrator:
         
         logger.info("=" * 60)
         logger.info("Pipeline completed!")
-        logger.info(f"Total schools processed: {total_schools}")
+        logger.info(f"Total districts processed: {total_districts}")
         logger.info(f"Successful scrapes: {self.processed_count}")
         logger.info(f"Errors: {self.error_count}")
-        logger.info(f"Schools in CSV: {csv_count}")
-        logger.info(f"Schools in progress.json: {len(processed_schools)}")
+        logger.info(f"Districts in CSV: {csv_count}")
+        logger.info(f"Districts in progress.json: {len(processed_districts)}")
         logger.info(f"Total time: {elapsed_time:.2f} seconds ({elapsed_time/60:.2f} minutes)")
-        if elapsed_time > 0:
-            logger.info(f"Average time per school: {elapsed_time/total_schools:.2f} seconds")
-            logger.info(f"Throughput: {total_schools/elapsed_time:.2f} schools/second ({total_schools*60/elapsed_time:.2f} schools/minute)")
+        if elapsed_time > 0 and total_districts > 0:
+            logger.info(f"Average time per district: {elapsed_time/total_districts:.2f} seconds")
+            logger.info(f"Throughput: {total_districts/elapsed_time:.2f} districts/second ({total_districts*60/elapsed_time:.2f} districts/minute)")
         logger.info(f"Results CSV: {RESULTS_CSV}")
         logger.info(f"Progress file: {self.progress_file}")
-        if csv_count != len(processed_schools):
-            logger.warning(f"⚠ WARNING: CSV has {csv_count} rows but {len(processed_schools)} schools were processed!")
+        if csv_count != len(processed_districts):
+            logger.warning(f"⚠ WARNING: CSV has {csv_count} rows but {len(processed_districts)} districts were processed!")
         logger.info("=" * 60)
 
 
@@ -564,17 +595,17 @@ def main():
         help='Do not resume from previous progress'
     )
     parser.add_argument(
-        '--max-schools',
+        '--max-districts',
         type=int,
         default=None,
-        help='Maximum number of schools to process (for testing)'
+        help='Maximum number of districts to process (for testing)'
     )
     parser.add_argument(
         '--max',
         type=int,
         default=None,
-        dest='max_schools',
-        help='Alias for --max-schools (maximum number of schools to process)'
+        dest='max_districts',
+        help='Alias for --max-districts (maximum number of districts to process)'
     )
     parser.add_argument(
         '--log-level',
@@ -613,6 +644,16 @@ def main():
         default=None,
         help=f'Maximum delay for adaptive rate limiting in seconds (default: {SCRAPING_CONFIG.get("max_delay", 2.0)})'
     )
+    parser.add_argument(
+        '--html',
+        action='store_true',
+        help='Generate HTML report after processing'
+    )
+    parser.add_argument(
+        '--rerun-failed',
+        action='store_true',
+        help='Rerun districts that have scrape_failed status'
+    )
     
     args = parser.parse_args()
     
@@ -625,15 +666,27 @@ def main():
         state=args.state,
         search_terms=args.terms,
         resume=not args.no_resume,
-        max_schools=args.max_schools,
+        max_districts=getattr(args, 'max_districts', None),
         workers=args.workers,
         delay=args.delay,
         min_delay=getattr(args, 'min_delay', None),
-        max_delay=getattr(args, 'max_delay', None)
+        max_delay=getattr(args, 'max_delay', None),
+        rerun_failed=args.rerun_failed
     )
     
     try:
         orchestrator.run()
+        
+        # Generate HTML report if requested
+        if args.html:
+            from csv_generator import generate_html_report
+            logger.info("Generating HTML report...")
+            try:
+                html_path = generate_html_report()
+                logger.info(f"✓ HTML report generated: {html_path}")
+            except Exception as e:
+                logger.error(f"Error generating HTML report: {e}", exc_info=True)
+        
     except KeyboardInterrupt:
         logger.info("Interrupted by user. Progress has been saved.")
         sys.exit(0)

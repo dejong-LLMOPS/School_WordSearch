@@ -1,15 +1,12 @@
 #!/usr/bin/env python3
 """Test the full pipeline on a single website."""
-import sys
-import os
-sys.path.insert(0, os.path.dirname(__file__))
-
 from utils.logging_config import setup_logging
 from web_scraper import scrape_school_urls
 from term_searcher import search_school_content
 from csv_generator import create_results_dataframe, append_to_csv
 from config import SEARCH_TERMS, RESULTS_CSV
 import pandas as pd
+import sys
 
 # Try to import AI context (optional)
 try:
@@ -157,4 +154,3 @@ print(f"  Terms found: {len(terms_found)}")
 print(f"  Total occurrences: {search_results.get('total_count', 0)}")
 print(f"  AI summaries: {len(ai_summaries)}")
 print(f"\nResults saved to: {test_csv}")
-

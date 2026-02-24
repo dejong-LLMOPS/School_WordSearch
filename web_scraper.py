@@ -24,29 +24,6 @@ except ImportError:
     CLOUDSCRAPER_AVAILABLE = False
     logger.warning("cloudscraper not available - bot protection bypass disabled. Install with: pip install cloudscraper")
 
-# #region agent log
-import json
-def _debug_log(location, message, data=None, hypothesis_id=None, run_id="run1"):
-    try:
-        import time
-        with open('/home/ndejong/CPF_Projects/School_WordSearch/.cursor/debug.log', 'a') as f:
-            log_entry = {
-                "runId": run_id,
-                "hypothesisId": hypothesis_id,
-                "location": location,
-                "message": message,
-                "data": data or {},
-                "timestamp": int(time.time() * 1000)
-            }
-            f.write(json.dumps(log_entry) + '\n')
-            f.flush()  # Ensure it's written immediately
-    except Exception as e:
-        # Log to stderr so we can see if there's an issue
-        import sys
-        print(f"DEBUG LOG ERROR: {e}", file=sys.stderr)
-# #endregion
-
-
 class URLCache:
     """
     Thread-safe URL-level cache for storing scraped pages.
@@ -158,19 +135,10 @@ class WebScraper:
         # Create cloudscraper session as fallback for bot protection
         self.cloudscraper_session = None
         self._cloudscraper_init_failed = False  # Track if initialization failed
-        # #region agent log
-        _debug_log("web_scraper.py:162", "Checking cloudscraper availability", {"CLOUDSCRAPER_AVAILABLE": CLOUDSCRAPER_AVAILABLE, "verify_ssl": self.verify_ssl}, "A")
-        # #endregion
         if CLOUDSCRAPER_AVAILABLE:
             try:
-                # #region agent log
-                _debug_log("web_scraper.py:166", "Before cloudscraper.create_scraper call", {"verify_ssl": self.verify_ssl, "cloudscraper_version": getattr(cloudscraper, '__version__', 'unknown'), "cloudscraper_module": str(type(cloudscraper))}, "B")
-                # #endregion
                 # Configure cloudscraper - verify parameter is NOT accepted by create_scraper()
                 # Instead, we'll set verify on the session after creation or pass it to individual requests
-                # #region agent log
-                _debug_log("web_scraper.py:170", "Attempting to create cloudscraper session without verify parameter", {"browser_config": {"browser": "chrome", "platform": "windows", "desktop": True}}, "C")
-                # #endregion
                 self.cloudscraper_session = cloudscraper.create_scraper(
                     browser={
                         'browser': 'chrome',
@@ -178,32 +146,12 @@ class WebScraper:
                         'desktop': True
                     }
                 )
-                # #region agent log
-                _debug_log("web_scraper.py:179", "cloudscraper session created, setting verify attribute", {"session_exists": self.cloudscraper_session is not None, "verify_ssl": self.verify_ssl, "session_has_verify_attr": hasattr(self.cloudscraper_session, 'verify') if self.cloudscraper_session else False}, "D")
-                # #endregion
                 # Set verify on the session object after creation
                 if self.cloudscraper_session:
                     self.cloudscraper_session.verify = self.verify_ssl
-                    # #region agent log
-                    _debug_log("web_scraper.py:184", "Set verify on cloudscraper session", {"verify_set": hasattr(self.cloudscraper_session, 'verify'), "verify_value": getattr(self.cloudscraper_session, 'verify', None)}, "D")
-                    # #endregion
-                # #region agent log
-                _debug_log("web_scraper.py:187", "cloudscraper session created successfully", {"session_exists": self.cloudscraper_session is not None, "session_type": str(type(self.cloudscraper_session))}, "A")
-                # #endregion
             except Exception as e:
                 self._cloudscraper_init_failed = True
                 logger.warning(f"Failed to initialize cloudscraper: {e}")
-                # #region agent log
-                _debug_log("web_scraper.py:192", "cloudscraper initialization failed", {"error": str(e), "error_type": type(e).__name__}, "A")
-                # #endregion
-                import traceback
-                # #region agent log
-                _debug_log("web_scraper.py:196", "cloudscraper initialization traceback", {"traceback": traceback.format_exc()}, "A")
-                # #endregion
-        else:
-            # #region agent log
-            _debug_log("web_scraper.py:200", "cloudscraper not available, skipping initialization", {}, "A")
-            # #endregion
         self.visited_urls: Set[str] = set()
         self.scraped_pages: List[Dict] = []
         # Adaptive delay tracking
@@ -351,22 +299,13 @@ class WebScraper:
     
     def is_bot_protection_page(self, html_content: str) -> bool:
         """Check if the page is a bot protection challenge."""
-        # #region agent log
-        _debug_log("web_scraper.py:296", "is_bot_protection_page called", {"content_length": len(html_content) if html_content else 0, "has_content": bool(html_content)}, "B")
-        # #endregion
         if not html_content:
-            # #region agent log
-            _debug_log("web_scraper.py:300", "Empty content detected, returning True for bot protection", {}, "B")
-            # #endregion
             return True  # Empty content might indicate bot protection
         
         try:
             content_lower = html_content.lower()
         except (AttributeError, UnicodeDecodeError) as e:
             logger.debug(f"Error converting content to lowercase for bot check: {e}")
-            # #region agent log
-            _debug_log("web_scraper.py:307", "Error converting to lowercase", {"error": str(e)}, "B")
-            # #endregion
             return False
         
         indicators = [
@@ -379,35 +318,20 @@ class WebScraper:
         
         # Check indicators
         found_indicators = [ind for ind in indicators if ind in content_lower]
-        # #region agent log
-        _debug_log("web_scraper.py:321", "Indicator check", {"found_indicators": found_indicators, "indicator_count": len(found_indicators)}, "B")
-        # #endregion
         
         # Also check for suspiciously short content with no links (might be bot protection)
         if len(html_content) < 1000:
             try:
                 soup = BeautifulSoup(html_content, 'html.parser')  # Use html.parser as fallback
                 links = soup.find_all('a', href=True)
-                # #region agent log
-                _debug_log("web_scraper.py:328", "Short content check", {"content_length": len(html_content), "link_count": len(links), "has_early_indicators": any(indicator in content_lower for indicator in indicators[:5])}, "B")
-                # #endregion
                 if len(links) == 0 and any(indicator in content_lower for indicator in indicators[:5]):
-                    # #region agent log
-                    _debug_log("web_scraper.py:332", "Bot protection detected: short content with no links and early indicators", {}, "B")
-                    # #endregion
                     return True
             except Exception as e:
                 logger.debug(f"Error parsing HTML for bot protection check: {e}")
-                # #region agent log
-                _debug_log("web_scraper.py:337", "Error parsing HTML for bot check", {"error": str(e)}, "B")
-                # #endregion
                 # If we can't parse, check indicators anyway
                 pass
         
         result = any(indicator in content_lower for indicator in indicators)
-        # #region agent log
-        _debug_log("web_scraper.py:344", "Final bot protection check result", {"is_bot_protection": result, "found_indicators": found_indicators}, "B")
-        # #endregion
         return result
     
     def extract_text(self, html_content: str) -> str:
@@ -524,7 +448,17 @@ class WebScraper:
                     if base_domain:
                         try:
                             link_domain = urlparse(full_url).netloc
-                            if link_domain != base_domain:
+                            
+                            # Normalize domains by removing 'www.' prefix for comparison
+                            def normalize_domain(domain: str) -> str:
+                                if domain.startswith('www.'):
+                                    return domain[4:]
+                                return domain
+                            
+                            base_domain_norm = normalize_domain(base_domain)
+                            link_domain_norm = normalize_domain(link_domain)
+                            
+                            if link_domain_norm != base_domain_norm:
                                 logger.debug(f"Skipping external link: {full_url} (base domain: {base_domain})")
                                 continue
                         except Exception as e:
@@ -554,7 +488,18 @@ class WebScraper:
                             full_url = self.normalize_url(href, base_url)
                             if self.is_valid_url(full_url):
                                 if base_domain:
-                                    if urlparse(full_url).netloc == base_domain:
+                                    link_domain = urlparse(full_url).netloc
+                                    
+                                    # Normalize domains by removing 'www.' prefix for comparison
+                                    def normalize_domain(domain: str) -> str:
+                                        if domain.startswith('www.'):
+                                            return domain[4:]
+                                        return domain
+                                    
+                                    base_domain_norm = normalize_domain(base_domain)
+                                    link_domain_norm = normalize_domain(link_domain)
+                                    
+                                    if link_domain_norm == base_domain_norm:
                                         links.append(full_url)
                                 elif self.is_same_domain(full_url, base_url):
                                     links.append(full_url)
@@ -593,12 +538,24 @@ class WebScraper:
         
         # Helper function to check if a URL is on the same domain
         def is_external_redirect(check_url: str) -> bool:
-            """Check if a URL redirects to an external domain."""
+            """Check if a URL redirects to an external domain.
+            Normalizes domains by removing 'www.' prefix for comparison."""
             if not base_domain:
                 return False
             try:
                 check_domain = urlparse(check_url).netloc
-                return check_domain != base_domain
+                
+                # Normalize domains by removing 'www.' prefix for comparison
+                # This handles common redirects like example.com -> www.example.com
+                def normalize_domain(domain: str) -> str:
+                    if domain.startswith('www.'):
+                        return domain[4:]
+                    return domain
+                
+                base_domain_norm = normalize_domain(base_domain)
+                check_domain_norm = normalize_domain(check_domain)
+                
+                return check_domain_norm != base_domain_norm
             except Exception:
                 return False
         
@@ -784,20 +741,10 @@ class WebScraper:
                 logger.debug(f"Error reading response text for bot protection check: {e}")
                 response_text = ""
             
-            # #region agent log
-            _debug_log("web_scraper.py:703", "Before bot protection check", {"url": url, "used_cloudscraper": used_cloudscraper, "response_text_length": len(response_text) if response_text else 0, "cloudscraper_session_exists": self.cloudscraper_session is not None}, "C")
-            # #endregion
-            
             is_bot_protection = self.is_bot_protection_page(response_text)
-            # #region agent log
-            _debug_log("web_scraper.py:708", "Bot protection check result", {"is_bot_protection": is_bot_protection, "used_cloudscraper": used_cloudscraper}, "C")
-            # #endregion
             
             if is_bot_protection and not used_cloudscraper:
                 logger.warning(f"Bot protection detected on {url}, retrying with cloudscraper...")
-                # #region agent log
-                _debug_log("web_scraper.py:712", "Bot protection detected, checking cloudscraper", {"cloudscraper_session_exists": self.cloudscraper_session is not None, "CLOUDSCRAPER_AVAILABLE": CLOUDSCRAPER_AVAILABLE}, "C")
-                # #endregion
                 if self.cloudscraper_session:
                     try:
                         # Retry with cloudscraper
@@ -873,9 +820,6 @@ class WebScraper:
                         self._cloudscraper_warned = True
                     # Continue with original response - it may still be usable
                     logger.info(f"Continuing with original response for {url} (cloudscraper not available, but original response may still be usable)")
-                    # #region agent log
-                    _debug_log("web_scraper.py:823", "cloudscraper not available warning", {"cloudscraper_session": self.cloudscraper_session is None, "CLOUDSCRAPER_AVAILABLE": CLOUDSCRAPER_AVAILABLE, "init_failed": getattr(self, '_cloudscraper_init_failed', False), "url": url}, "C")
-                    # #endregion
             
             # Extract content (handle encoding errors)
             try:
@@ -1118,9 +1062,19 @@ class WebScraper:
             use_cloudscraper_first = (depth == 0 and self.cloudscraper_session is not None)
             
             # Check if current URL is on the same domain (prevent following external links)
+            # Normalize domains by removing 'www.' prefix for comparison
             try:
                 current_domain = urlparse(current_url).netloc
-                if current_domain != base_domain:
+                
+                def normalize_domain(domain: str) -> str:
+                    if domain.startswith('www.'):
+                        return domain[4:]
+                    return domain
+                
+                base_domain_norm = normalize_domain(base_domain)
+                current_domain_norm = normalize_domain(current_domain)
+                
+                if current_domain_norm != base_domain_norm:
                     logger.debug(f"Skipping external domain URL: {current_url} (base domain: {base_domain})")
                     continue
             except Exception as e:
@@ -1233,85 +1187,52 @@ class WebScraper:
 def scrape_school_urls(school_url: Optional[str], district_url: Optional[str],
                        use_cache: bool = True, school_id: Optional[str] = None) -> List[Dict]:
     """
-    Scrape both school and district URLs if available.
+    Scrape only district URLs (school URLs are no longer scraped).
     Uses URL-level caching to avoid re-scraping the same URLs across schools.
-    Marks each page with its source (school or district).
+    Marks each page with its source as 'district'.
     
     Args:
-        school_url: School website URL
+        school_url: School website URL (ignored, kept for backward compatibility)
         district_url: District website URL
         use_cache: Whether to use cached results if available
         school_id: Optional school identifier for tracking which schools use which URLs
     
     Returns:
-        List of all scraped pages, each with a 'source' field ('school' or 'district')
+        List of all scraped pages, each with a 'source' field ('district')
     """
     scraper = WebScraper()
     all_pages = []
     
-    # Normalize URLs for comparison
-    def normalize_url(url):
-        if not url:
-            return None
-        return url.rstrip('/').lower()
-    
-    school_url_norm = normalize_url(school_url)
-    district_url_norm = normalize_url(district_url)
+    # Only scrape district URLs, skip school URLs
+    if not district_url:
+        logger.debug(f"No district URL provided, skipping scraping")
+        return []
     
     # Check URL-level cache first (most efficient - shared across all schools)
-    urls_to_scrape = []
-    cached_pages = []
+    cached = _global_url_cache.get(district_url)
+    if cached:
+        logger.debug(f"Using URL cache for district URL: {district_url}")
+        # Mark cached pages as from district
+        for page in cached:
+            page['source'] = 'district'
+        all_pages.extend(cached)
+        _global_url_cache.set(district_url, cached, school_id)
+        logger.info(f"All pages found in cache for district URL: {district_url}")
+        return all_pages
     
-    if school_url:
-        cached = _global_url_cache.get(school_url)
-        if cached:
-            logger.debug(f"Using URL cache for school URL: {school_url}")
-            # Mark cached pages as from school
-            for page in cached:
-                page['source'] = 'school'
-            cached_pages.extend(cached)
-            _global_url_cache.set(school_url, cached, school_id)
-        else:
-            urls_to_scrape.append(('school', school_url))
-    
-    if district_url and district_url_norm != school_url_norm:
-        cached = _global_url_cache.get(district_url)
-        if cached:
-            logger.debug(f"Using URL cache for district URL: {district_url}")
-            # Mark cached pages as from district
-            for page in cached:
-                page['source'] = 'district'
-            cached_pages.extend(cached)
-            _global_url_cache.set(district_url, cached, school_id)
-        else:
-            urls_to_scrape.append(('district', district_url))
-    
-    # If we got everything from cache, return early
-    if not urls_to_scrape and cached_pages:
-        logger.info(f"All URLs found in cache for {school_url or district_url}")
-        return cached_pages
-    
-    # Scrape URLs that weren't in cache
-    for url_type, url in urls_to_scrape:
-        if url:
-            logger.debug(f"Scraping {url_type} URL (not in cache): {url}")
-            pages = scraper.scrape_site(url)
-            # Mark pages with their source
-            for page in pages:
-                page['source'] = url_type
-            all_pages.extend(pages)
-            # Cache the scraped pages
-            _global_url_cache.set(url, pages, school_id)
-            # Also reset visited URLs for new domain if switching
-            if url_type == 'district':
-                scraper.visited_urls.clear()
-    
-    # Combine cached and newly scraped pages
-    all_pages = cached_pages + all_pages
+    # Scrape district URL if not in cache
+    logger.debug(f"Scraping district URL (not in cache): {district_url}")
+    pages = scraper.scrape_site(district_url)
+    # Mark pages with their source
+    for page in pages:
+        page['source'] = 'district'
+    all_pages.extend(pages)
+    # Cache the scraped pages
+    _global_url_cache.set(district_url, pages, school_id)
     
     # Optional per-school file cache (disabled by default - URL-level cache is more efficient)
     if all_pages and scraper.config.get('save_file_cache', False):
-        cache_key = f"school_{hash(school_url or '')}_{hash(district_url or '')}"
+        cache_key = f"district_{hash(district_url or '')}"
         scraper.save_cache(cache_key, all_pages)
     
     return all_pages
