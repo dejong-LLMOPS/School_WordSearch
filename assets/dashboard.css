@@ -168,8 +168,6 @@
 .dashboard-side-panel {
   flex: 1;
   min-width: 360px;
-  max-height: 90vh;
-  overflow-y: auto;
   border-left: 1px solid var(--border-strong);
   padding-left: var(--space-20);
   margin-left: var(--space-20);
@@ -228,10 +226,17 @@
    --------------------------------------------------------------------------- */
 .dashboard-table-wrap {
   min-height: 280px;
-  max-height: 420px;
-  overflow-y: auto;
-  overflow-x: auto;
   border-radius: var(--radius-lg);
+  overflow-x: visible;
+}
+
+/* No horizontal scroll on Dash DataTable */
+.dashboard-table-wrap .dash-table-container,
+.dashboard-table-wrap .dash-spreadsheet-container {
+  overflow-x: visible !important;
+}
+.dashboard-table-wrap .dash-table-container .dt-table-container {
+  overflow-x: visible !important;
 }
 
 .dashboard-table-caption {
@@ -263,8 +268,6 @@
   background-color: var(--surface-panel);
   border-radius: var(--radius-md);
   white-space: pre-wrap;
-  max-height: 400px;
-  overflow-y: auto;
   font-size: var(--font-size-base);
   line-height: 1.6;
 }

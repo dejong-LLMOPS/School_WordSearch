@@ -26,17 +26,6 @@ from dashboard_data import (
 
 logger = logging.getLogger(__name__)
 
-# #region agent log
-_DEBUG_LOG = Path(__file__).resolve().parent / ".cursor" / "debug-0dd64d.log"
-def _log(m: str, d: dict, hid: str):
-    try:
-        _DEBUG_LOG.parent.mkdir(parents=True, exist_ok=True)
-        with open(_DEBUG_LOG, "a") as f:
-            f.write(json.dumps({"sessionId": "0dd64d", "hypothesisId": hid, "message": m, "data": d, "timestamp": int(time.time() * 1000)}) + "\n")
-    except Exception:
-        pass
-# #endregion
-
 # Color scheme constants
 COLOR_SCHOOL = '#2E86AB'  # Blue
 COLOR_DISTRICT = '#f77f00'  # Orange
@@ -322,7 +311,7 @@ def create_districts_list(districts_data: List[Dict]) -> html.Div:
                 'borderCollapse': 'collapse',
                 'fontSize': '14px'
             })
-        ], style={'maxHeight': '600px', 'overflowY': 'auto'})
+        ], style={})
     ])
 
 
@@ -385,7 +374,7 @@ def create_schools_list(schools_data: List[Dict], category_name: str, descriptio
                 'borderCollapse': 'collapse',
                 'fontSize': '14px'
             })
-        ], style={'maxHeight': '600px', 'overflowY': 'auto'})
+        ], style={})
     ])
 
 
@@ -498,8 +487,6 @@ def create_school_detail_page(school_data: Dict) -> html.Div:
                 'whiteSpace': 'pre-wrap',
                 'fontSize': '14px',
                 'lineHeight': '1.8',
-                'maxHeight': '600px',
-                'overflowY': 'auto'
             }
         )
     ]))
@@ -697,7 +684,7 @@ def _build_district_table(state_districts):
                 row_selectable=False,
                 page_action="none",
                 fixed_rows={"headers": True},
-                style_table={"overflowX": "auto", "border": "1px solid #e0e0e0", "borderRadius": "8px"},
+                style_table={"border": "1px solid #e0e0e0", "borderRadius": "8px", "overflowX": "visible"},
                 style_cell={"textAlign": "left", "padding": "10px 12px", "fontSize": "14px", "border": "1px solid #eee", "minWidth": "80px"},
                 style_header={"backgroundColor": "#f5f5f5", "fontWeight": "600", "padding": "10px 12px", "border": "1px solid #e0e0e0"},
                 style_data_conditional=style_cond,
@@ -762,7 +749,7 @@ def _layout_state_overview(state_aggregates, national_total):
             html.Div(
                 id="district-table-container",
                 children=_table_placeholder,
-                style={"minHeight": "320px", "flex": "1", "overflow": "auto", "display": "block"},
+                style={"minHeight": "320px", "flex": "1", "display": "block"},
             ),
         ], style={"minHeight": "360px", "flex": "1 1 400px", "display": "flex", "flexDirection": "column"}),
         dcc.Store(id="selected-state", data=None),
@@ -812,18 +799,14 @@ def _district_detail_content(record, show_back_link=True):
     if terms_with_count:
         sections.append(html.Div([html.H3("Terms Found", className="section-title"), html.Ul([html.Li(f"{t['keyword']}: {t['count']}") for t in terms_with_count], style={"listStyle": "disc", "paddingLeft": "24px"})]))
     if ai_html:
-        _ai_summary_css = (
-            "body{font-family:sans-serif;padding:12px;font-size:14px;line-height:1.5;color:#333;}"
-            "p{margin:0 0 0.75em;}"
-            "h1,h2,h3,h4{margin:0.75em 0 0.35em;font-weight:600;}"
-            "h1{font-size:1.35em;} h2{font-size:1.2em;} h3{font-size:1.1em;} h4{font-size:1em;}"
-            "ul,ol{margin:0.5em 0;padding-left:1.5em;} li{margin:0.25em 0;}"
-            "blockquote{border-left:4px solid #ddd;margin:0.5em 0;padding-left:1em;color:#555;}"
-            "strong{font-weight:600;} em{font-style:italic;}"
-            "code,pre{background:#f5f5f5;padding:2px 6px;border-radius:3px;font-size:0.9em;} pre{overflow:auto;padding:10px;}"
-            "hr{margin:1em 0;border:0;border-top:1px solid #eee;}"
-        )
-        sections.append(html.Div([html.H3("AI Summary", className="section-title"), html.Div(html.Iframe(srcDoc=f"<!DOCTYPE html><html><head><style>{_ai_summary_css}</style></head><body>{ai_html}</body></html>", style={"width": "100%", "minHeight": "450px", "height": "450px", "border": "1px solid #ddd", "borderRadius": "5px"}), style={"maxHeight": "560px", "overflow": "auto"})]))
+        sections.append(html.Div([
+            html.H3("AI Summary", className="section-title"),
+            html.Div(
+                dcc.Markdown(ai_html, dangerously_allow_html=True),
+                className="dashboard-ai-summary-box",
+                style={"border": "1px solid #ddd", "borderRadius": "5px"},
+            ),
+        ]))
     elif ai_raw:
         sections.append(html.Div([html.H3("AI Summary", className="section-title"), html.Div(str(ai_raw), className="dashboard-ai-summary-box")]))
     else:
@@ -890,7 +873,6 @@ def create_app() -> dash.Dash:
             type="default",
             children=html.Div(id="page-content", className="dashboard-main"),
         ),
-        html.Footer("School Policy Term Dashboard · Keyword and policy term analysis by state and district.", className="breadcrumb", style={"marginTop": "24px", "textAlign": "center"}),
         dcc.Store(id="district-records-store", data=district_records),
         dcc.Store(id="state-aggregates-store", data=state_aggregates),
         dcc.Store(id="national-total-store", data=national_total),
@@ -926,7 +908,7 @@ def create_app() -> dash.Dash:
             return html.Div([
                 html.H1("School Policy Term Dashboard"),
                 html.P("Something went wrong loading this page.", style={"color": "#c00", "marginTop": "16px"}),
-                html.Pre(str(e), style={"fontSize": "12px", "overflow": "auto", "maxHeight": "200px", "marginTop": "8px"}),
+                html.Pre(str(e), style={"fontSize": "12px", "marginTop": "8px", "whiteSpace": "pre-wrap"}),
             ], className="dashboard-main", style={"padding": "20px"})
 
     _table_placeholder = html.Div(
@@ -959,6 +941,7 @@ def create_app() -> dash.Dash:
                 return dash.no_update, dash.no_update, dash.no_update, dash.no_update, dash.no_update
             return None, empty_summary, _table_placeholder, "Districts", ""
         state_code = str(state_code).strip().upper()[:2]
+        store_output = state_code  # store always updated from dropdown; no sync callback (was causing cycle)
         try:
             state_districts = get_state_districts(state_code, records)
             kw_breakdown = keyword_breakdown(state_districts)
@@ -972,23 +955,17 @@ def create_app() -> dash.Dash:
             else:
                 table = _build_district_table(districts_with_hits)
                 count_text = f"Showing {len(districts_with_hits)} districts"
-            return state_code, summary, table, heading, count_text
+            return store_output, summary, table, heading, count_text
         except Exception as e:
             logger.exception("on_state_select failed for state_code=%s", state_code)
             err_msg = html.Div([
                 html.P("Could not load state summary.", style={"color": "#c00", "marginBottom": "8px"}),
                 html.P(str(e), style={"fontSize": "12px", "color": "#666"}),
             ], style={"padding": "16px", "border": "1px solid #fcc", "borderRadius": "8px", "backgroundColor": "#fff5f5"})
-            return state_code, err_msg, _table_placeholder, "Districts", ""
+            return store_output, err_msg, _table_placeholder, "Districts", ""
 
-    @app.callback(
-        Output('state-dropdown', 'value'),
-        Input('selected-state', 'data'),
-        prevent_initial_call=False,
-    )
-    def sync_dropdown_to_store(selected_state):
-        """Keep dropdown value in sync with selected-state store so re-renders don't reset it to None."""
-        return selected_state
+    # Removed sync_dropdown_to_store: it created a static cycle (selected-state -> state-dropdown -> selected-state).
+    # Dropdown is set by user selection and by on_map_click_sync_dropdown; store is set by on_state_select only.
 
     @app.callback(
         Output('state-dropdown', 'value', allow_duplicate=True),
@@ -1040,9 +1017,6 @@ def create_app() -> dash.Dash:
         # active_cell.row is the index in the *displayed* (sorted/filtered) table.
         # derived_viewport_indices[i] = original data index of the row at display position i.
         # Use it so the clicked row always resolves to the correct district after sort/filter.
-        # #region agent log
-        _log("on_table_click", {"active_cell": active_cell, "viewport_indices_len": len(viewport_indices or []), "table_data_len": len(table_data or [])}, "T1")
-        # #endregion
         if not active_cell or not table_data or not records:
             return dash.no_update, dash.no_update
         row_idx = active_cell.get('row')
@@ -1056,9 +1030,6 @@ def create_app() -> dash.Dash:
         if original_idx < 0 or original_idx >= len(table_data):
             return dash.no_update, dash.no_update
         row = table_data[original_idx]
-        # #region agent log
-        _log("on_table_click row", {"row_idx": row_idx, "original_idx": original_idx, "id": row.get("id"), "_has_hits": row.get("_has_hits")}, "T2")
-        # #endregion
         if not row.get('_has_hits'):
             return dash.no_update, dash.no_update
         district_id = row.get('id')
@@ -1079,15 +1050,9 @@ def create_app() -> dash.Dash:
     def fill_district_panel_from_store(selected_district_id, records, selected_state_code):
         """Primary panel updater: runs when selected-district-id changes. Initial placeholder is in layout."""
         records = records or []
-        # #region agent log
-        _log("fill_district_panel_from_store", {"selected_district_id": selected_district_id, "records_len": len(records)}, "F1")
-        # #endregion
         if not selected_district_id:
             return _placeholder_panel
         record = get_district_by_id(selected_district_id, records)
-        # #region agent log
-        _log("fill_district_panel lookup", {"found": record is not None}, "F2")
-        # #endregion
         if not record:
             return html.Div("District not found.", className="empty-state empty-state--small")
         return _build_district_panel_children(record, selected_state_code, selected_district_id)
