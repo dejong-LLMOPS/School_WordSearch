@@ -315,7 +315,7 @@ Please provide a concise summary (2-3 sentences) explaining:
             is_district_level: Always True for district-level processing
         
         Returns:
-            Single cohesive summary string or None if error
+            Dict with 'summary' (str) and 'citations' (list of URL strings), or None if error.
         """
         if not self.api_key:
             return None
@@ -328,7 +328,10 @@ Please provide a concise summary (2-3 sentences) explaining:
         cached = self._get_cached_summary(cache_hash)
         if cached:
             logger.debug(f"Using cached district summary for {district_name} (hash: {cache_hash[:8]}...)")
-            return cached.get('ai_summary')
+            return {
+                "summary": cached.get("ai_summary"),
+                "citations": cached.get("citations") if isinstance(cached.get("citations"), list) else [],
+            }
         
         # Aggregate all page content
         all_content_parts = []
@@ -404,17 +407,20 @@ Based on all the content from this district's website, provide exactly 2 detaile
         
         logger.debug(f"Requesting unified AI summary for district: {district_name}")
         result = self._make_request(messages, max_tokens=800)  # More tokens for longer summary
-        
-        if result:
-            logger.debug(f"Received unified AI summary: {result[:100]}...")
-            # Cache the result
+
+        if not result:
+            return None
+        content = result.get("content") or ""
+        citations = result.get("citations") if isinstance(result.get("citations"), list) else []
+        if content:
+            logger.debug(f"Received unified AI summary: {content[:100]}...")
             self._set_cached_summary(cache_hash, {
-                'district_name': district_name,
-                'page_urls': page_urls,
-                'ai_summary': result
+                "district_name": district_name,
+                "page_urls": page_urls,
+                "ai_summary": content,
+                "citations": citations,
             })
-        
-        return result
+        return {"summary": content, "citations": citations}
 
 
 def get_ai_contextualization(search_results: Dict, page_content_map: Optional[Dict[str, str]] = None,
@@ -457,17 +463,19 @@ def get_ai_contextualization(search_results: Dict, page_content_map: Optional[Di
         else:
             # Always district-level (school_name is always None now)
             is_district_level = True
-            summary = client.contextualize_school_approach(
+            result = client.contextualize_school_approach(
                 None,  # school_name not used for district-level
                 district_name,
                 search_results,
                 page_content_map,
                 is_district_level=is_district_level
             )
-            if summary:
-                return {'summary': summary}
-            else:
-                return {}
+            if result and isinstance(result, dict):
+                return {
+                    "summary": result.get("summary") or "",
+                    "citations": result.get("citations") if isinstance(result.get("citations"), list) else [],
+                }
+            return {}
     
     # Per-term mode (legacy)
     if mode == 'per_term':

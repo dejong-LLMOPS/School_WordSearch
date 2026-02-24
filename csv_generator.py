@@ -308,7 +308,11 @@ def create_district_dataframe(district_data: Dict, search_results: Dict,
                 summary = summary_data.get('ai_summary', '')
                 ai_summary_parts.append(f"[{term} @ {url}]: {summary}")
         ai_summary_str = ' | '.join(ai_summary_parts) if ai_summary_parts else ''
-    
+
+    # Perplexity citations (AI engine sources) as semicolon-separated URLs
+    citations = ai_summaries.get('citations', [])
+    ai_engine_sources_str = '; '.join(str(u).strip() for u in citations) if isinstance(citations, list) else ''
+
     # Create row data (district-level) - exact column order as specified
     row_data = {
         'State': state,
@@ -316,6 +320,7 @@ def create_district_dataframe(district_data: Dict, search_results: Dict,
         'District Website': district_url,
         'Count of Schools in the District': schools_in_district,
         'AI Summary': ai_summary_str,
+        'AI Engine Sources': ai_engine_sources_str,
         'Context Snippets': context_snippets_str,
         'District Page URLs': district_page_urls,
         'District Pages With Terms': district_pages_with_terms,

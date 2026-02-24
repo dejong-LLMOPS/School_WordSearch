@@ -140,6 +140,15 @@ def csv_row_to_district_record(row: Dict[str, Any]) -> Dict[str, Any]:
     else:
         ai_summary = None
 
+    # AI Engine Sources (Perplexity citations): semicolon- or comma-separated URLs
+    sources_str = row.get("AI Engine Sources") or ""
+    if isinstance(sources_str, str) and sources_str.strip():
+        ai_engine_sources = [
+            u.strip() for u in sources_str.replace(";", ",").split(",") if u.strip()
+        ]
+    else:
+        ai_engine_sources = []
+
     return {
         "id": district_id,
         "state": state,
@@ -150,6 +159,7 @@ def csv_row_to_district_record(row: Dict[str, Any]) -> Dict[str, Any]:
         "keywordCounts": keyword_counts,
         "urls": urls,
         "aiSummary": ai_summary,
+        "aiEngineSources": ai_engine_sources,
         "sourceLinks": url_list[:50] if url_list else None,
         "scrapeStatus": scrape_status,
         "pagesWithTerms": pages_with_terms,

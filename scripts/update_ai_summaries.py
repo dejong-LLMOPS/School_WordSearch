@@ -315,13 +315,14 @@ def generate_new_summary(school_data: Dict, search_results: Dict,
     except Exception as e:
         logger.error(f"Error making API request: {e}")
         return None
-    
-    if result:
-        logger.info(f"Generated new summary for {school_name} ({len(result)} chars)")
-    else:
-        logger.warning(f"Failed to generate summary for {school_name}")
-    
-    return result
+
+    if result and isinstance(result, dict):
+        content = result.get("content") or ""
+        if content:
+            logger.info(f"Generated new summary for {school_name} ({len(content)} chars)")
+            return content
+    logger.warning(f"Failed to generate summary for {school_name}")
+    return None
 
 
 def create_backup(csv_path: Path) -> Path:

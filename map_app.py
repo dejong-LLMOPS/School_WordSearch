@@ -837,6 +837,13 @@ def _district_detail_content(record, show_back_link=True):
             link_children.append(html.P(f"Showing first {cap} of {len(urls_with_hits)} links.", style={"fontSize": "13px", "color": "#666", "marginBottom": "8px"}))
         link_children.append(html.Ul(link_items, className="dashboard-links-list"))
         sections.append(html.Div(link_children))
+    ai_engine_sources = record.get("aiEngineSources") or []
+    if ai_engine_sources:
+        ai_source_items = [html.Li(html.A(url, href=url, target="_blank", style={"color": COLOR_DISTRICT})) for url in ai_engine_sources]
+        sections.append(html.Div([
+            html.H3("AI Engine Additional Sources", className="section-title"),
+            html.Ul(ai_source_items, className="dashboard-links-list"),
+        ]))
     return sections
 
 
