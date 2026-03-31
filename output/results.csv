@@ -5194,3 +5194,549 @@ The district website content provides insufficient detail regarding concrete inf
 ,,,6,Woodbridge School District,,0,,0,http://www.woodbridgeraiders.net/,http://www.woodbridgeraiders.net/,,0,scrape_failed,DE
 ,,,1,Bryan Allen Stevenson School of Excellence,,0,,0,,,,0,no_url,DE
 ,,,8,Smyrna School District,,0,,0,http://www.smyrna.k12.de.us/,http://www.smyrna.k12.de.us/,,0,success,DE
+,,,7,Lake Forest School District,,0,,0,http://www.lf.k12.de.us/,http://www.lf.k12.de.us/,,0,success,DE
+,,,1,Sussex Technical School District,,0,,0,http://www.sussexvt.org,http://www.sussexvt.org,,0,success,DE
+,,,14,Capital School District,,0,,0,http://www.capital.k12.de.us/,http://www.capital.k12.de.us/,,0,success,DE
+,,,0,North Georgia RESA,,0,,0,,,,0,no_url,GA
+,,,19,Troup County,,0,,0,,,,0,no_url,GA
+,,,0,Northeast Georgia RESA,,0,,0,,,,0,no_url,GA
+,,,0,West Georgia RESA,,0,,0,,,,0,no_url,GA
+,,,0,Griffin RESA,,0,,0,,,,0,no_url,GA
+,,,0,Middle Georgia RESA,,0,,0,,,,0,no_url,GA
+,,,0,Oconee RESA,,0,,0,,,,0,no_url,GA
+,,,0,Central Savannah River RESA,,0,,0,,,,0,no_url,GA
+,,,0,Chattahoochee-Flint RESA,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools II- Statesboro STEAM Academy,,0,,0,http://www.statesborosteam.org,http://www.statesborosteam.org,,0,success,GA
+,,,0,First District RESA,,0,,0,,,,0,no_url,GA
+,,,0,Southwest Georgia RESA,,0,,0,,,,0,no_url,GA
+,,,0,Coastal Plains RESA,,0,,0,,,,0,no_url,GA
+,,,0,Okefenokee RESA,,0,,0,,,,0,no_url,GA
+,,,0,Pioneer RESA,,0,,0,http://www.pioneerresa.org,http://www.pioneerresa.org,,0,success,GA
+,,,1,Department of Corrections,,0,,0,,,,0,no_url,GA
+,,,28,Department of Juvenile Justice,,0,,0,,,,0,no_url,GA
+,,,1,Department of Human Resources,,0,,0,,,,0,no_url,GA
+,,,0,Department of Labor,,0,,0,,,,0,no_url,GA
+,,,5,Appling County,,0,,0,,,,0,no_url,GA
+,,,4,Atkinson County,,0,,0,,,,0,no_url,GA
+,,,87,Atlanta Public Schools,,0,,0,,,,0,no_url,GA
+,,,4,Bacon County,,0,,0,,,,0,no_url,GA
+,,,4,Baker County,,0,,0,,,,0,no_url,GA
+,,,6,Baldwin County,,0,,0,http://www.baldwin-county-schools.com,http://www.baldwin-county-schools.com,,0,scrape_failed,GA
+,,,0,Northwest Georgia RESA,,0,,0,http://www.nwgaresa.com/,http://www.nwgaresa.com/,,0,success,GA
+,,,1,State Specialty Schools II- Fulton Leadership Academy,,0,,0,http://www.fultonleadershipacademy.org,http://www.fultonleadershipacademy.org,,0,scrape_failed,GA
+,,,1,State Specialty Schools II- Pataula Charter Academy,,0,,0,http://www.pataula.net,http://www.pataula.net,,0,success,GA
+,,,1,State Specialty Schools II- Atlanta Heights Charter School,,0,,0,,,,0,no_url,GA
+,,,0,Heart of Georgia RESA,,0,,0,http://www.hgresa.org,http://www.hgresa.org,,0,success,GA
+,,,1,State Specialty Schools I- Ivy Preparatory Academy- Inc,,0,,0,http://www.ivyprepacademy.org,http://www.ivyprepacademy.org,,0,scrape_failed,GA
+,,,1,State Specialty Schools I- Odyssey Charter School,,0,,0,http://www.odysseycharterschool.net,http://www.odysseycharterschool.net,,0,success,GA
+,,,1,State Specialty Schools I- Cherokee Charter Academy,,0,,0,http://www.cherokecharter.org,http://www.cherokecharter.org,,0,success,GA
+,,,0,Metro RESA,,0,,0,http://www.mresa.org,http://www.mresa.org,,0,success,GA
+,,,1,State Specialty Schools I- Utopian Academy for the Arts Char,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools I- International Charter Sch of Atl,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools I- Foothills Regional High School,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools I- Scintilla Charter Academy,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools I- Dubois Integrity Academy,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools I- Georgia School for Innovation and,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools II- Cirrus Charter Academy,,0,,0,,,,0,no_url,GA
+,,,4,Banks County,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools II- Liberty Tech Charter Academy,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools II- Brookhaven Innovation Academy,,0,,0,http://biaschool.org,http://biaschool.org,,0,success,GA
+,,,1,State Specialty Schools II- Southwest Georgia S.T.E.M. Char,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools II- Genesis Innovation Academy-Girl,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools II- SAIL Charter Academy - School fo,,0,,0,http://www.sailga.org,http://www.sailga.org,,0,success,GA
+,,,1,State Specialty Schools I- Coastal Plains High School,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools II- Resurgence Hall Charter School,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools II- Genesis Innovation Academy-Boy,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools II- International Academy of Smyrna,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools II- International Charter Academy o,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools II- SLAM Academy of Atlanta,,0,,0,http://slamatlanta.com,http://slamatlanta.com,,0,success,GA
+,,,1,State Specialty Schools II- Academy For Classical Education,,0,,0,http://www.acemacon.org,http://www.acemacon.org,,0,success,GA
+,,,1,State Specialty Schools II- Spring Creek Charter Academy,,0,,0,,,,0,no_url,GA
+,,,3,State Schools,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools II- Ethos Classical Charter School,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools II- Baconton Community Charter Sch,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools II- Yi Hwang Academy of Language Ex,,0,,0,http://www.yhale.org,http://www.yhale.org,,0,success,GA
+,,,1,State Specialty Schools II- Furlow Charter School,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools II- Atlanta SMART Academy,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools II- Atlanta Unbound Academy,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools II- D.E.L.T.A. STEAM Academy,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools II- Georgia Fugees Academy Charter,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools II- Northwest Classical Academy,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools II- Amana Academy West Atlanta,,0,,0,,,,0,no_url,GA
+,,,17,Barrow County,,0,,0,,,,0,no_url,GA
+,,,19,Bartow County,,0,,0,http://www.bartow.k12.ga.us,http://www.bartow.k12.ga.us,,0,success,GA
+,,,5,Ben Hill County,,0,,0,,,,0,no_url,GA
+,,,5,Berrien County,,0,,0,http://www.berrien.k12.ga.us,http://www.berrien.k12.ga.us,,0,scrape_failed,GA
+,,,35,Bibb County,,0,,0,http://www.bibb.k12.ga.us,http://www.bibb.k12.ga.us,,0,scrape_failed,GA
+,,,1,State Specialty Schools II- Coweta Charter Academy,,0,,0,http://www.cowetacharteracademy.org,http://www.cowetacharteracademy.org,,0,success,GA
+,,,7,Brantley County,,0,,0,,,,0,no_url,GA
+,,,5,Bleckley County,,0,,0,http://www.bleckley.k12.ga.us,http://www.bleckley.k12.ga.us,,0,success,GA
+,,,6,Brooks County,,0,,0,,,,0,no_url,GA
+,,,10,Bryan County,,0,,0,,,,0,no_url,GA
+,,,5,Buford City,,0,,0,http://www.bufordcityschools.org,http://www.bufordcityschools.org,,0,success,GA
+,,,15,Bulloch County,,0,,0,,,,0,no_url,GA
+,,,5,Burke County,,0,,0,,,,0,no_url,GA
+,,,5,Butts County,,0,,0,http://www.butts.k12.ga.us,http://www.butts.k12.ga.us,,0,scrape_failed,GA
+,,,4,Bremen City,,0,,0,http://www.bremencs.com,http://www.bremencs.com,,0,success,GA
+,,,3,Calhoun County,,0,,0,http://www.calhoun.k12.ga.us,http://www.calhoun.k12.ga.us,,0,success,GA
+,,,12,Camden County,,0,,0,http://Camden.k12.ga.us,http://Camden.k12.ga.us,,0,scrape_failed,GA
+,,,4,Candler County,,0,,0,,,,0,no_url,GA
+,,,24,Carroll County,,0,,0,,,,0,no_url,GA
+,,,4,Carrollton City,,0,,0,,,,0,no_url,GA
+,,,4,Cartersville City,,0,,0,,,,0,no_url,GA
+,,,16,Catoosa County,,0,,0,,,,0,no_url,GA
+,,,4,Charlton County,,0,,0,,,,0,no_url,GA
+,,,58,Savannah-Chatham County,,0,,0,,,,0,no_url,GA
+,,,3,Chattahoochee County,,0,,0,,,,0,no_url,GA
+,,,5,Chattooga County,,0,,0,,,,0,no_url,GA
+,,,37,Cherokee County,,0,,0,,,,0,no_url,GA
+,,,3,Chickamauga City,,0,,0,http://www.chickamaugacityschools.org,http://www.chickamaugacityschools.org,,0,scrape_failed,GA
+,,,21,Clarke County,,0,,0,http://clarke.k12.ga.us,http://clarke.k12.ga.us,,0,scrape_failed,GA
+,,,2,Clay County,,0,,0,,,,0,no_url,GA
+,,,5,Calhoun City,,0,,0,http://www.calhounschools.org,http://www.calhounschools.org,,0,success,GA
+,,,3,Clinch County,,0,,0,,,,0,no_url,GA
+,,,110,Cobb County,,0,,0,,,,0,no_url,GA
+,,,12,Coffee County,,0,,0,,,,0,no_url,GA
+,,,13,Colquitt County,,0,,0,,,,0,no_url,GA
+,,,31,Columbia County,,0,,0,,,,0,no_url,GA
+,,,4,Commerce City,,0,,0,http://www.commerce-city.k12.ga.us,http://www.commerce-city.k12.ga.us,,0,scrape_failed,GA
+,,,4,Cook County,,0,,0,,,,0,no_url,GA
+,,,29,Coweta County,,0,,0,http://cowetaschools.org,http://cowetaschools.org,,0,success,GA
+,,,4,Crawford County,,0,,0,,,,0,no_url,GA
+,,,5,Crisp County,,0,,0,http://www.crisp.k12.ga.us,http://www.crisp.k12.ga.us,,0,scrape_failed,GA
+,,,4,Dade County,,0,,0,,,,0,no_url,GA
+,,,10,Dalton Public Schools,,0,,0,,,,0,no_url,GA
+,,,7,Dawson County,,0,,0,,,,0,no_url,GA
+,,,9,City Schools of Decatur,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools I- Mountain Education High School,,0,,0,http://www.mymec.org,http://www.mymec.org,,0,success,GA
+,,,131,DeKalb County,,0,,0,,,,0,no_url,GA
+,,,5,Dodge County,,0,,0,,,,0,no_url,GA
+,,,4,Dooly County,,0,,0,,,,0,no_url,GA
+,,,22,Dougherty County,,0,,0,,,,0,no_url,GA
+,,,35,Douglas County,,0,,0,,,,0,no_url,GA
+,,,5,Dublin City,,0,,0,,,,0,no_url,GA
+,,,6,Decatur County,,0,,0,http://www.dcboe.com,http://www.dcboe.com,,0,success,GA
+,,,8,Laurens County,,0,,0,http://lcboe.net,http://lcboe.net,,0,success,GA
+,,,2,Echols County,,0,,0,,,,0,no_url,GA
+,,,13,Effingham County,,0,,0,,,,0,no_url,GA
+,,,5,Elbert County,,0,,0,,,,0,no_url,GA
+,,,6,Emanuel County,,0,,0,,,,0,no_url,GA
+,,,4,Evans County,,0,,0,,,,0,no_url,GA
+,,,5,Fannin County,,0,,0,,,,0,no_url,GA
+,,,24,Fayette County,,0,,0,,,,0,no_url,GA
+,,,68,Clayton County,,0,,0,http://www.clayton.k12.ga.us,http://www.clayton.k12.ga.us,,0,success,GA
+,,,3,Early County,,0,,0,http://www.early.k12.ga.us,http://www.early.k12.ga.us,,0,success,GA
+,,,15,Floyd County,,0,,0,http://floydboe.net,http://floydboe.net,,0,success,GA
+,,,107,Fulton County,,0,,0,,,,0,no_url,GA
+,,,5,Franklin County,,0,,0,http://www.franklin.k12.ga.us,http://www.franklin.k12.ga.us,,0,success,GA
+,,,42,Forsyth County,,0,,0,http://www.forsyth.k12.ga.us,http://www.forsyth.k12.ga.us,,0,success,GA
+,,,2,Glascock County,,0,,0,,,,0,no_url,GA
+,,,17,Glynn County,,0,,0,,,,0,no_url,GA
+,,,10,Gordon County,,0,,0,http://gcbe.org,http://gcbe.org,,0,success,GA
+,,,7,Grady County,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools I- Georgia Cyber Academy,,0,,0,http://www.georgiacyber.org,http://www.georgiacyber.org,,0,success,GA
+,,,18,Griffin-Spalding County,,0,,0,,,,0,no_url,GA
+,,,141,Gwinnett County,,0,,0,,,,0,no_url,GA
+,,,14,Habersham County,,0,,0,,,,0,no_url,GA
+,,,10,Gainesville City,,0,,0,http://www.gcssk12.net,http://www.gcssk12.net,,0,success,GA
+,,,3,Hancock County,,0,,0,http://www.hancock.k12.ga.us,http://www.hancock.k12.ga.us,,0,success,GA
+,,,7,Haralson County,,0,,0,,,,0,no_url,GA
+,,,7,Harris County,,0,,0,,,,0,no_url,GA
+,,,5,Hart County,,0,,0,,,,0,no_url,GA
+,,,6,Heard County,,0,,0,,,,0,no_url,GA
+,,,53,Henry County,,0,,0,,,,0,no_url,GA
+,,,38,Houston County,,0,,0,,,,0,no_url,GA
+,,,3,Irwin County,,0,,0,http://www.irwin.k12.ga.us,http://www.irwin.k12.ga.us,,0,success,GA
+,,,12,Jackson County,,0,,0,,,,0,no_url,GA
+,,,4,Jasper County,,0,,0,,,,0,no_url,GA
+,,,4,Jeff Davis County,,0,,0,,,,0,no_url,GA
+,,,4,Jefferson City,,0,,0,,,,0,no_url,GA
+,,,5,Jefferson County,,0,,0,http://jefferson.k12.ga.us,http://jefferson.k12.ga.us,,0,success,GA
+,,,4,Jenkins County,,0,,0,,,,0,no_url,GA
+,,,3,Johnson County,,0,,0,http://www.johnsoncountyschools.org,http://www.johnsoncountyschools.org,,0,scrape_failed,GA
+,,,7,Jones County,,0,,0,,,,0,no_url,GA
+,,,4,Lamar County,,0,,0,http://lamar.k12.ga.us,http://lamar.k12.ga.us,,0,success,GA
+,,,3,Lanier County,,0,,0,,,,0,no_url,GA
+,,,8,Lee County,,0,,0,http://www.lee.k12.ga.us,http://www.lee.k12.ga.us,,0,success,GA
+,,,12,Liberty County,,0,,0,,,,0,no_url,GA
+,,,3,Lincoln County,,0,,0,http://lincolncountyschools.org,http://lincolncountyschools.org,,0,success,GA
+,,,5,Long County,,0,,0,,,,0,no_url,GA
+,,,11,Lowndes County,,0,,0,,,,0,no_url,GA
+,,,5,Lumpkin County,,0,,0,,,,0,no_url,GA
+,,,3,Macon County,,0,,0,,,,0,no_url,GA
+,,,5,Greene County,,0,,0,http://www.greene.k12.ga.us,http://www.greene.k12.ga.us,,0,success,GA
+,,,13,Marietta City,,0,,0,,,,0,no_url,GA
+,,,7,Madison County,,0,,0,http://www.madison.k12.ga.us,http://www.madison.k12.ga.us,,0,success,GA
+,,,6,McDuffie County,,0,,0,,,,0,no_url,GA
+,,,3,McIntosh County,,0,,0,,,,0,no_url,GA
+,,,2,Marion County,,0,,0,http://www.marion.k12.ga.us,http://www.marion.k12.ga.us,,0,success,GA
+,,,3,Miller County,,0,,0,http://www.miller.k12.ga.us,http://www.miller.k12.ga.us,,0,success,GA
+,,,4,Mitchell County,,0,,0,http://www.mitchell.k12.ga.us/,http://www.mitchell.k12.ga.us/,,0,success,GA
+,,,5,Monroe County,,0,,0,,,,0,no_url,GA
+,,,3,Montgomery County,,0,,0,,,,0,no_url,GA
+,,,4,Morgan County,,0,,0,,,,0,no_url,GA
+,,,11,Murray County,,0,,0,,,,0,no_url,GA
+,,,54,Muscogee County,,0,,0,,,,0,no_url,GA
+,,,22,Newton County,,0,,0,,,,0,no_url,GA
+,,,12,Oconee County,,0,,0,,,,0,no_url,GA
+,,,4,Oglethorpe County,,0,,0,,,,0,no_url,GA
+,,,34,Paulding County,,0,,0,,,,0,no_url,GA
+,,,7,Peach County,,0,,0,,,,0,no_url,GA
+,,,7,Meriwether County,,0,,0,http://www.meriwether.k12.ga.us,http://www.meriwether.k12.ga.us,,0,scrape_failed,GA
+,,,6,Pickens County,,0,,0,http://pickenscountyschools.org,http://pickenscountyschools.org,,0,scrape_failed,GA
+,,,5,Gilmer County,,0,,0,http://www.gilmerschools.com,http://www.gilmerschools.com,,0,success,GA
+,,,5,Pike County,,0,,0,,,,0,no_url,GA
+,,,11,Polk County,,0,,0,,,,0,no_url,GA
+,,,3,Pulaski County,,0,,0,http://www.pulaski.k12.ga.us,http://www.pulaski.k12.ga.us,,0,scrape_failed,GA
+,,,4,Putnam County,,0,,0,http://www.putnam.k12.ga.us,http://www.putnam.k12.ga.us,,0,success,GA
+,,,2,Quitman County,,0,,0,,,,0,no_url,GA
+,,,4,Rabun County,,0,,0,http://www.rabun.k12.ga.us,http://www.rabun.k12.ga.us,,0,scrape_failed,GA
+,,,3,Randolph County,,0,,0,http://www.randolphcountyschools.org,http://www.randolphcountyschools.org,,0,success,GA
+,,,52,Richmond County,,0,,0,,,,0,no_url,GA
+,,,18,Rockdale County,,0,,0,,,,0,no_url,GA
+,,,8,Rome City,,0,,0,http://www.rcs.rome.ga.us,http://www.rcs.rome.ga.us,,0,success,GA
+,,,2,Schley County,,0,,0,,,,0,no_url,GA
+,,,3,Screven County,,0,,0,,,,0,no_url,GA
+,,,2,Seminole County,,0,,0,http://www.seminole.k12.ga.us,http://www.seminole.k12.ga.us,,0,success,GA
+,,,5,Pierce County,,0,,0,http://www.pierce.k12.ga.us,http://www.pierce.k12.ga.us,,0,success,GA
+,,,6,Stephens County,,0,,0,,,,0,no_url,GA
+,,,3,Stewart County,,0,,0,,,,0,no_url,GA
+,,,3,Pelham City,,0,,0,http://www.pelham-city.k12.ga.us,http://www.pelham-city.k12.ga.us,,0,success,GA
+,,,4,Social Circle City,,0,,0,http://scboe.org,http://scboe.org,,0,scrape_failed,GA
+,,,1,Taliaferro County,,0,,0,,,,0,no_url,GA
+,,,5,Tattnall County,,0,,0,http://www.tattnallcountyschools.org,http://www.tattnallcountyschools.org,,0,scrape_failed,GA
+,,,4,Taylor County,,0,,0,,,,0,no_url,GA
+,,,4,Telfair County,,0,,0,,,,0,no_url,GA
+,,,3,Terrell County,,0,,0,,,,0,no_url,GA
+,,,7,Thomas County,,0,,0,,,,0,no_url,GA
+,,,1,Talbot County,,0,,0,http://www.talbot.k12.ga.us,http://www.talbot.k12.ga.us,,0,success,GA
+,,,11,Tift County,,0,,0,,,,0,no_url,GA
+,,,5,Toombs County,,0,,0,,,,0,no_url,GA
+,,,3,Towns County,,0,,0,,,,0,no_url,GA
+,,,2,Treutlen County,,0,,0,,,,0,no_url,GA
+,,,5,Sumter County,,0,,0,http://www.sumterschools.org,http://www.sumterschools.org,,0,success,GA
+,,,3,Turner County,,0,,0,,,,0,no_url,GA
+,,,5,Thomasville City,,0,,0,http://home.rose.net/~tcschool/,http://home.rose.net/~tcschool/,,0,scrape_failed,GA
+,,,5,Union County,,0,,0,,,,0,no_url,GA
+,,,4,Thomaston-Upson County,,0,,0,http://www.upson.k12.ga.us,http://www.upson.k12.ga.us,,0,success,GA
+,,,8,Valdosta City,,0,,0,,,,0,no_url,GA
+,,,4,Vidalia City,,0,,0,http://www.vidalia-city.k12.ga.us,http://www.vidalia-city.k12.ga.us,,0,scrape_failed,GA
+,,,3,Trion City,,0,,0,http://www.trionschools.org,http://www.trionschools.org,,0,success,GA
+,,,15,Walton County,,0,,0,,,,0,no_url,GA
+,,,15,Walker County,,0,,0,http://www.walkerschools.org,http://www.walkerschools.org,,0,success,GA
+,,,3,Warren County,,0,,0,,,,0,no_url,GA
+,,,4,Washington County,,0,,0,http://wchs01.washington.high.washington.k12.ga.us/,http://wchs01.washington.high.washington.k12.ga.us/,,0,scrape_failed,GA
+,,,8,Wayne County,,0,,0,,,,0,no_url,GA
+,,,2,Webster County,,0,,0,,,,0,no_url,GA
+,,,9,Ware County,,0,,0,http://www.ware.k12.ga.us,http://www.ware.k12.ga.us,,0,success,GA
+,,,6,White County,,0,,0,,,,0,no_url,GA
+,,,22,Whitfield County,,0,,0,,,,0,no_url,GA
+,,,3,Wilcox County,,0,,0,,,,0,no_url,GA
+,,,4,Wilkes County,,0,,0,,,,0,no_url,GA
+,,,4,Wilkinson County,,0,,0,,,,0,no_url,GA
+,,,5,Worth County,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools II- DeKalb Brilliance Academy,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools II- Resurgence Hall Middle Academy,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools II- Destination Career Academy of GA,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools I- Utopian Academy for the Arts Tril,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools II- PEACE Academy Charter School,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools II- Miles Ahead Charter School,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools II- Liberation Academy,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools II- The Anchor School,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools II- Zest Preparatory Academy School,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools II- Sankofa Montessori,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools II- RISE Preparatory Charter School,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools II- Excelsior Village Academies,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools I- Discovery Regional High School,,0,,0,,,,0,no_url,GA
+,,,1,State Specialty Schools II- Rocky Creek Charter Academy,,0,,0,,,,0,no_url,GA
+,,,3,Wheeler County,,0,,0,http://wheelercountyschools.org,http://wheelercountyschools.org,,0,success,GA
+,,,3,Twiggs County,,0,,0,http://www.twiggs.k12.ga.us,http://www.twiggs.k12.ga.us,,0,success,GA
+,,,1,State Specialty Schools I- Georgia Connections Academy,,0,,0,http://www.connectionsacademy.com/georgia-virtual-school/home.aspx,http://www.connectionsacademy.com/georgia-virtual-school/home.aspx,,0,success,GA
+,,,38,Hall County,,0,,0,http://www.hallco.org,http://www.hallco.org,,0,success,GA
+,,,298,Hawaii Department of Education,,0,,0,http://www.hawaiipublicschools.org,http://www.hawaiipublicschools.org,,0,success,HI
+,,,5,WEST BONNER COUNTY DISTRICT,,0,,0,,,,0,no_url,ID
+,,,13,LAKE PEND OREILLE SCHOOL DISTRICT,,0,,0,,,,0,no_url,ID
+,,,1,VICTORY CHARTER SCHOOL INC.,,0,,0,,,,0,no_url,ID
+,,,1,FALCON RIDGE PUBLIC CHARTER SCHOOL INC.,,0,,0,,,,0,no_url,ID
+,,,4,IDAHO VIRTUAL HIGH SCHOOL INC.,,0,,0,,,,0,no_url,ID
+,,,1,ROLLING HILLS PUBLIC CHARTER SCHOOL INC.,,0,,0,,,,0,no_url,ID
+,,,2,IDAHO VIRTUAL ACADEMY INC.,,0,,0,,,,0,no_url,ID
+,,,1,COMPASS PUBLIC CHARTER SCHOOL INC.,,0,,0,,,,0,no_url,ID
+,,,1,LIBERTY CHARTER SCHOOL INC.,,0,,0,,,,0,no_url,ID
+,,,2,INSPIRE ACADEMICS INC.,,0,,0,,,,0,no_url,ID
+,,,2,TROY SCHOOL DISTRICT,,0,,0,,,,0,no_url,ID
+,,,1,TAYLOR'S CROSSING PUBLIC CHARTER SCHOOL INC.,,0,,0,,,,0,no_url,ID
+,,,3,ABERDEEN DISTRICT,,0,,0,,,,0,no_url,ID
+,,,2,WHITEPINE JOINT SCHOOL DISTRICT,,0,,0,,,,0,no_url,ID
+,,,2,THE ACADEMY INC.,,0,,0,,,,0,no_url,ID
+,,,5,AMERICAN FALLS JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,3,IDAHO DEPARTMENT OF JUVENILE CORRECTIONS,,0,,0,,,,0,no_url,ID
+,,,1,ARBON ELEMENTARY DISTRICT,,0,,0,,,,0,no_url,ID
+,,,1,XAVIER CHARTER SCHOOL INC.,,0,,0,,,,0,no_url,ID
+,,,1,IDAHO DEPARTMENT OF CORRECTIONS,,0,,0,,,,0,no_url,ID
+,,,5,MOUNTAIN VIEW SCHOOL DISTRICT,,0,,0,,,,0,no_url,ID
+,,,2,SALMON RIVER JOINT SCHOOL DISTRICT,,0,,0,,,,0,no_url,ID
+,,,1,NORTH VALLEY ACADEMY INC.,,0,,0,,,,0,no_url,ID
+,,,1,WHITE PINE CHARTER SCHOOL INC.,,0,,0,,,,0,no_url,ID
+,,,1,VISION CHARTER SCHOOL INC.,,0,,0,,,,0,no_url,ID
+,,,2,ISUCCEED VIRTUAL HIGH SCHOOL INC.,,0,,0,,,,0,no_url,ID
+,,,1,IDAHO SCIENCE AND TECHNOLOGY CHARTER SCHOOL INC.,,0,,0,,,,0,no_url,ID
+,,,2,IDAHO VIRTUAL EDUCATION PARTNERS INC.,,0,,0,,,,0,no_url,ID
+,,,1,THE KOOTENAI BRIDGE ACADEMY INC.,,0,,0,,,,0,no_url,ID
+,,,1,AVERY SCHOOL DISTRICT,,0,,0,,,,0,no_url,ID
+,,,1,PALOUSE PRAIRIE EDUCATIONAL ORGANIZATION INC.,,0,,0,,,,0,no_url,ID
+,,,1,CANYON-OWYHEE SCHOOL SERVICE AGENCY (COSSA),,0,,0,,,,0,no_url,ID
+,,,1,BLACKFOOT CHARTER COMMUNITY LEARNING CENTER INC.,,0,,0,,,,0,no_url,ID
+,,,1,MONTICELLO MONTESSORI CHARTER SCHOOL INC.,,0,,0,,,,0,no_url,ID
+,,,1,THE SAGE INTERNATIONAL SCHOOL OF BOISE A PUBLIC CHARTER SCH,,0,,0,,,,0,no_url,ID
+,,,1,HERITAGE ACADEMY INC.,,0,,0,,,,0,no_url,ID
+,,,1,LEGACY PUBLIC CHARTER SCHOOL INC.,,0,,0,,,,0,no_url,ID
+,,,1,THE VILLAGE CHARTER SCHOOL INC.,,0,,0,,,,0,no_url,ID
+,,,1,NORTH IDAHO STEM CHARTER ACADEMY INC.,,0,,0,,,,0,no_url,ID
+,,,1,HERITAGE COMMUNITY CHARTER SCHOOL INC.,,0,,0,,,,0,no_url,ID
+,,,1,AMERICAN HERITAGE CHARTER SCHOOL INC.,,0,,0,,,,0,no_url,ID
+,,,1,CHIEF TAHGEE ELEMENTARY ACADEMY INC.,,0,,0,,,,0,no_url,ID
+,,,1,SANDPOINT CHARTER SCHOOL INC.,,0,,0,,,,0,no_url,ID
+,,,1,SYRINGA MOUNTAIN SCHOOL INC.,,0,,0,,,,0,no_url,ID
+,,,1,UPPER CARMEN PUBLIC CHARTER SCHOOL INC.,,0,,0,,,,0,no_url,ID
+,,,1,IDAHO STEM ACADEMY INC.,,0,,0,,,,0,no_url,ID
+,,,1,KTEC - Kootenai Tech Ed Campus,,0,,0,,,,0,no_url,ID
+,,,1,IDAHO COLLEGE AND CAREER READINESS ACADEMY INC.,,0,,0,,,,0,no_url,ID
+,,,1,GEM PREP: ONLINE LLC,,0,,0,,,,0,no_url,ID
+,,,1,COEUR D'ALENE CHARTER ACADEMY INC.,,0,,0,,,,0,no_url,ID
+,,,1,NORTH STAR CHARTER SCHOOL INC.,,0,,0,,,,0,no_url,ID
+,,,1,ALTURAS INTERNATIONAL ACADEMY INC.,,0,,0,,,,0,no_url,ID
+,,,1,THE POCATELLO COMMUNITY CHARTER SCHOOL INC.,,0,,0,,,,0,no_url,ID
+,,,1,GEM PREP: POCATELLO LLC,,0,,0,,,,0,no_url,ID
+,,,1,PEACE VALLEY CHARTER SCHOOL INC.,,0,,0,,,,0,no_url,ID
+,,,1,GEM PREP: MERIDIAN LLC,,0,,0,,,,0,no_url,ID
+,,,2,BASIN SCHOOL DISTRICT,,0,,0,,,,0,no_url,ID
+,,,1,FUTURE PUBLIC SCHOOL INC.,,0,,0,,,,0,no_url,ID
+,,,1,PROJECT IMPACT STEM ACADEMY INC.,,0,,0,,,,0,no_url,ID
+,,,1,PATHWAYS IN EDUCATION - NAMPA INC.,,0,,0,,,,0,no_url,ID
+,,,1,HAYDEN CANYON CHARTER SCHOOL INC.,,0,,0,,,,0,no_url,ID
+,,,1,FERN-WATERS PUBLIC CHARTER SCHOOL INC.,,0,,0,,,,0,no_url,ID
+,,,0,Idaho Digital Learning Academy,,0,,0,,,,0,no_url,ID
+,,,1,TREASURE VALLEY CLASSICAL ACADEMY INC.,,0,,0,,,,0,no_url,ID
+,,,1,ELEVATE ACADEMY INC.,,0,,0,,,,0,no_url,ID
+,,,1,ISLAND PARK CHARTER SCHOOL INC.,,0,,0,,,,0,no_url,ID
+,,,1,MOSAICS PUBLIC SCHOOL INC.,,0,,0,,,,0,no_url,ID
+,,,1,SAGE INTERNATIONAL SCHOOL MIDDLETON LLC,,0,,0,,,,0,no_url,ID
+,,,1,MCCALL COMMUNITY SCHOOL INC,,0,,0,,,,0,no_url,ID
+,,,1,THOMAS JEFFERSON CHARTER SCHOOL INC.,,0,,0,,,,0,no_url,ID
+,,,1,ANSER OF IDAHO INC.,,0,,0,,,,0,no_url,ID
+,,,1,GEM PREP: MERIDIAN NORTH LLC,,0,,0,,,,0,no_url,ID
+,,,1,DORAL ACADEMY OF IDAHO INC.,,0,,0,,,,0,no_url,ID
+,,,1,PINECREST ACADEMY OF IDAHO INC.,,0,,0,,,,0,no_url,ID
+,,,1,ALTURAS PREPARATORY ACADEMY INC,,0,,0,,,,0,no_url,ID
+,,,1,CARDINAL ACADEMY INCORPORATED,,0,,0,,,,0,no_url,ID
+,,,1,GEM PREP: MERIDIAN SOUTH LLC,,0,,0,,,,0,no_url,ID
+,,,1,ELEVATE ACADEMY NORTH LLC,,0,,0,,,,0,no_url,ID
+,,,1,ELEVATE ACADEMY NAMPA LLC,,0,,0,,,,0,no_url,ID
+,,,7,BEAR LAKE COUNTY DISTRICT,,0,,0,,,,0,no_url,ID
+,,,1,GEM PREP: NAMPA LLC,,0,,0,,,,0,no_url,ID
+,,,1,IDAHO ARTS CHARTER SCHOOL INC.,,0,,0,,,,0,no_url,ID
+,,,1,BLISS JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,52,BOISE INDEPENDENT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,8,BLAINE COUNTY DISTRICT,,0,,0,,,,0,no_url,ID
+,,,12,BLACKFOOT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,4,BUHL JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,3,BRUNEAU-GRAND VIEW JOINT SCHOOL DISTRICT,,0,,0,,,,0,no_url,ID
+,,,6,BOUNDARY COUNTY DISTRICT,,0,,0,,,,0,no_url,ID
+,,,2,CAMAS COUNTY DISTRICT,,0,,0,,,,0,no_url,ID
+,,,3,BUTTE COUNTY JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,11,CALDWELL DISTRICT,,0,,0,,,,0,no_url,ID
+,,,2,CASCADE DISTRICT,,0,,0,,,,0,no_url,ID
+,,,17,CASSIA COUNTY JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,13,VALLIVUE SCHOOL DISTRICT,,0,,0,,,,0,no_url,ID
+,,,2,CAMBRIDGE JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,1,CASTLEFORD DISTRICT,,0,,0,,,,0,no_url,ID
+,,,5,CHALLIS JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,2,CLARK COUNTY DISTRICT,,0,,0,,,,0,no_url,ID
+,,,2,COTTONWOOD JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,2,COUNCIL DISTRICT,,0,,0,,,,0,no_url,ID
+,,,20,COEUR D'ALENE DISTRICT,,0,,0,,,,0,no_url,ID
+,,,3,PLUMMER-WORLEY JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,5,PRESTON JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,1,DIETRICH DISTRICT,,0,,0,,,,0,no_url,ID
+,,,26,BONNEVILLE JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,1,CULDESAC JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,9,EMMETT INDEPENDENT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,5,FILER DISTRICT,,0,,0,,,,0,no_url,ID
+,,,3,FIRTH DISTRICT,,0,,0,,,,0,no_url,ID
+,,,8,FREMONT COUNTY JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,4,FRUITLAND DISTRICT,,0,,0,,,,0,no_url,ID
+,,,1,GENESEE JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,2,GARDEN VALLEY DISTRICT,,0,,0,,,,0,no_url,ID
+,,,4,GOODING JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,2,GRACE JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,3,GLENNS FERRY JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,2,HAGERMAN JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,2,HANSEN DISTRICT,,0,,0,,,,0,no_url,ID
+,,,1,HIGHLAND JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,3,HOMEDALE JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,3,HORSESHOE BEND SCHOOL DISTRICT,,0,,0,,,,0,no_url,ID
+,,,22,IDAHO FALLS DISTRICT,,0,,0,,,,0,no_url,ID
+,,,12,JEFFERSON COUNTY JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,4,KELLOGG JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,8,JEROME JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,3,KAMIAH JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,2,KENDRICK JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,6,KIMBERLY DISTRICT,,0,,0,,,,0,no_url,ID
+,,,2,KOOTENAI DISTRICT,,0,,0,,,,0,no_url,ID
+,,,13,KUNA JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,12,LAKELAND DISTRICT,,0,,0,,,,0,no_url,ID
+,,,6,MARSH VALLEY JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,3,LAPWAI DISTRICT,,0,,0,,,,0,no_url,ID
+,,,12,MADISON DISTRICT,,0,,0,,,,0,no_url,ID
+,,,5,MCCALL-DONNELLY JOINT SCHOOL DISTRICT,,0,,0,,,,0,no_url,ID
+,,,2,MACKAY JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,3,MARSING JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,1,MEADOWS VALLEY DISTRICT,,0,,0,,,,0,no_url,ID
+,,,13,LEWISTON INDEPENDENT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,2,MELBA JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,2,MIDVALE DISTRICT,,0,,0,,,,0,no_url,ID
+,,,62,JOINT SCHOOL DISTRICT NO. 2,,0,,0,,,,0,no_url,ID
+,,,6,MIDDLETON DISTRICT,,0,,0,,,,0,no_url,ID
+,,,10,MOUNTAIN HOME DISTRICT,,0,,0,,,,0,no_url,ID
+,,,11,MINIDOKA COUNTY JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,8,MOSCOW DISTRICT,,0,,0,,,,0,no_url,ID
+,,,1,MULLAN DISTRICT,,0,,0,,,,0,no_url,ID
+,,,1,MURTAUGH JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,26,NAMPA SCHOOL DISTRICT,,0,,0,,,,0,no_url,ID
+,,,3,NEW PLYMOUTH DISTRICT,,0,,0,,,,0,no_url,ID
+,,,1,NEZPERCE JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,3,NORTH GEM DISTRICT,,0,,0,,,,0,no_url,ID
+,,,2,NOTUS DISTRICT,,0,,0,,,,0,no_url,ID
+,,,5,ONEIDA COUNTY DISTRICT,,0,,0,,,,0,no_url,ID
+,,,8,OROFINO JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,3,PARMA DISTRICT,,0,,0,,,,0,no_url,ID
+,,,12,POST FALLS DISTRICT,,0,,0,,,,0,no_url,ID
+,,,5,PAYETTE JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,1,PLEASANT VALLEY ELEMENTARY DISTRICT,,0,,0,,,,0,no_url,ID
+,,,25,POCATELLO DISTRICT,,0,,0,,,,0,no_url,ID
+,,,1,RICHFIELD DISTRICT,,0,,0,,,,0,no_url,ID
+,,,2,POTLATCH DISTRICT,,0,,0,,,,0,no_url,ID
+,,,1,PRAIRIE ELEMENTARY DISTRICT,,0,,0,,,,0,no_url,ID
+,,,4,SALMON DISTRICT,,0,,0,,,,0,no_url,ID
+,,,2,RIRIE JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,1,ROCKLAND DISTRICT,,0,,0,,,,0,no_url,ID
+,,,9,SNAKE RIVER DISTRICT,,0,,0,,,,0,no_url,ID
+,,,4,SHOSHONE JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,7,SHELLEY JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,4,SODA SPRINGS JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,2,SOUTH LEMHI DISTRICT,,0,,0,,,,0,no_url,ID
+,,,5,ST MARIES JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,6,SUGAR-SALEM JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,1,SWAN VALLEY ELEMENTARY DISTRICT,,0,,0,,,,0,no_url,ID
+,,,7,TETON COUNTY DISTRICT,,0,,0,,,,0,no_url,ID
+,,,1,THREE CREEK JOINT ELEMENTARY DISTRICT,,0,,0,,,,0,no_url,ID
+,,,18,TWIN FALLS DISTRICT,,0,,0,,,,0,no_url,ID
+,,,2,VALLEY DISTRICT,,0,,0,,,,0,no_url,ID
+,,,3,WENDELL DISTRICT,,0,,0,,,,0,no_url,ID
+,,,3,WEST SIDE JOINT DISTRICT,,0,,0,,,,0,no_url,ID
+,,,2,WALLACE DISTRICT,,0,,0,,,,0,no_url,ID
+,,,4,WEST JEFFERSON DISTRICT,,0,,0,,,,0,no_url,ID
+,,,5,WEISER DISTRICT,,0,,0,,,,0,no_url,ID
+,,,4,WILDER DISTRICT,,0,,0,,,,0,no_url,ID
+,,,1,IDAHO BUREAU OF EDUCATIONAL SERVICES FOR THE DEAF AND THE BL,,0,,0,,,,0,no_url,ID
+,,,1,PROMISE ACADEMY INC,,0,,0,,,,0,no_url,ID
+,,,1,KOOTENAI CLASSICAL ACADEMY INC,,0,,0,,,,0,no_url,ID
+,,,1,PINECREST ACADEMY OF LEWISTON INC,,0,,0,,,,0,no_url,ID
+,,,1,GEM PREP: TWIN FALLS LLC,,0,,0,,,,0,no_url,ID
+,,,1,ELEVATE ACADEMY EAST IDAHO LLC,,0,,0,,,,0,no_url,ID
+,,,1,PATHWAYS IN EDUCATION - WEST ADA,,0,,0,,,,0,no_url,ID
+,,,1,DRY CREEK CHARTER INC.,,0,,0,,,,0,no_url,ID
+,,,1,HOLLISTER CHARTER SCHOOL INC,,0,,0,,,,0,no_url,ID
+,,,1,IDAHO NOVUS CLASSICAL ACADEMY LLC,,0,,0,,,,0,no_url,ID
+,,,1,NORTH IDAHO CLASSICAL ACADEMY LLC,,0,,0,,,,0,no_url,ID
+,,,6,Prairie Central CUSD 8,,0,,0,,,,0,no_url,IL
+,,,2,Norris City-Omaha-Enfield CUSD 3,,0,,0,http://www.ncoehs.white.k12.il.us,http://www.ncoehs.white.k12.il.us,,0,scrape_failed,IL
+,,,5,IDJJ Sch Dist 428,,0,,0,http://www.idoc.state.il.us,http://www.idoc.state.il.us,,0,scrape_failed,IL
+,,,2,Pinckneyville SD 50,,0,,0,http://www.jrpanther.com,http://www.jrpanther.com,,0,success,IL
+,,,5,Beach Park CCSD 3,,0,,0,http://bpd3.org,http://bpd3.org,,0,scrape_failed,IL
+,,,2,Casey-Westfield CUSD 4C,,0,,0,http://caseywestfield.org,http://caseywestfield.org,,0,success,IL
+,,,2,Goreville CUD 1,,0,,0,http://www.gorevilleschools.com,http://www.gorevilleschools.com,,0,success,IL
+,,,8,Eastern IL Area of Spec Educ,,0,,0,,,,0,no_url,IL
+,,,1,A E R O  Spec Educ Coop,,0,,0,,,,0,no_url,IL
+,,,5,Speed SEJA #802,,0,,0,,,,0,no_url,IL
+,,,5,Proviso Area Exceptional Child,,0,,0,,,,0,no_url,IL
+,,,4,TrueNorth Educl Cooprtv 804,,0,,0,,,,0,no_url,IL
+,,,7,NW Suburban Spec Educ Org,,0,,0,,,,0,no_url,IL
+,,,1,Philip J Rock Center and School,,0,,0,,,,0,no_url,IL
+,,,2,Joppa-Maple Grove UD 38,,0,,0,http://www.joppa38.com,http://www.joppa38.com,,0,success,IL
+,,,2,Eastland CUSD 308,,0,,0,http://www.eastland308.com,http://www.eastland308.com,,0,success,IL
+,,,3,Gallatin CUSD 7,,0,,0,http://www.roe20.k12.il.us,http://www.roe20.k12.il.us,,0,scrape_failed,IL
+,,,4,Franklin-Jefferson Co Sp Ed Dist,,0,,0,,,,0,no_url,IL
+,,,1,Iroquois Special Education,,0,,0,,,,0,no_url,IL
+,,,15,Tri-County Sp Ed Jnt Agreement,,0,,0,,,,0,no_url,IL
+,,,3,Mid-Valley Special Ed Coop,,0,,0,,,,0,no_url,IL
+,,,3,Kankakee Area Spec Educ Coop,,0,,0,,,,0,no_url,IL
+,,,8,Spec Educ Dist Lake County/Sedol,,0,,0,,,,0,no_url,IL
+,,,1,Saunemin CCSD 438,,0,,0,http://www.saunemin.org,http://www.saunemin.org,,0,success,IL
+,,,1,Macon-Piatt Spec Educ Jnt Agr,,0,,0,,,,0,no_url,IL
+,,,3,Kaskaskia Spec Educ District,,0,,0,,,,0,no_url,IL
+,,,3,Farmington Central CUSD 265,,0,,0,http://www.dist265.com,http://www.dist265.com,,0,success,IL
+,,,3,Four Rivers Spec Educ Dist,,0,,0,,,,0,no_url,IL
+,,,2,Ogle Co Education Cooperative,,0,,0,,,,0,no_url,IL
+,,,4,Black Hawk Area Sp Ed District,,0,,0,,,,0,no_url,IL
+,,,2,Tazewell-Mason Cntys Sp Ed Assoc,,0,,0,,,,0,no_url,IL
+,,,3,Marengo-Union E Cons D 165,,0,,0,http://marengo165.org,http://marengo165.org,,0,success,IL
+,,,3,Lincoln-Way Area Spec Ed JA Dist,,0,,0,,,,0,no_url,IL
+,,,3,Dept of Human Services,,0,,0,,,,0,no_url,IL
+,,,2,ISU  Laboratory Schools,,0,,0,,,,0,no_url,IL
+,,,1,University of Ill Lab School,,0,,0,,,,0,no_url,IL
+,,,1,Il Mathematics & Science Academy,,0,,0,,,,0,no_url,IL
+,,,2,Brussels CUSD 42,,0,,0,http://www.brussels42.net,http://www.brussels42.net,,0,success,IL
+,,,1,New Holland-Middletown ED 88,,0,,0,http://www.nhm88.com,http://www.nhm88.com,,0,success,IL
+,,,3,River Ridge CUSD 210,,0,,0,http://riverridge210.org,http://riverridge210.org,,0,success,IL
+,,,2,Heritage CUSD 8,,0,,0,http://www.heritage8.org,http://www.heritage8.org,,0,success,IL
+,,,3,A-C Central CUSD 262,,0,,0,http://www.a-ccentral.com,http://www.a-ccentral.com,,0,success,IL
+,,,3,Georgetown-Ridge Farm CUD 4,,0,,0,http://www.grf.k12.il.us,http://www.grf.k12.il.us,,0,success,IL
+,,,3,Ridgeview CUSD 19,,0,,0,http://www.ridgeview19.org,http://www.ridgeview19.org,,0,success,IL
+,,,4,Illini Central CUSD 189,,0,,0,http://www.illinicentral.org,http://www.illinicentral.org,,0,success,IL
+,,,3,Gibson City-Melvin-Sibley CUSD 5,,0,,0,http://www.gcmsk12.org,http://www.gcmsk12.org,,0,success,IL
+,,,2,Henry-Senachwine CUSD 5,,0,,0,http://www.hscusd5.org,http://www.hscusd5.org,,0,success,IL
+,,,1,Sangamon Area Spec Ed Dist,,0,,0,,,,0,no_url,IL
+,,,2,Williamson Co Spec Educ District,,0,,0,,,,0,no_url,IL
+,,,3,Blue Ridge CUSD 18,,0,,0,http://www.blueridge18.org,http://www.blueridge18.org,,0,success,IL
+,,,3,South Central CUD 401,,0,,0,http://www.southcentralschools.org,http://www.southcentralschools.org,,0,success,IL
+,,,2,Shiloh CUSD 1,,0,,0,http://www.shiloh1.org,http://www.shiloh1.org,,0,success,IL
+,,,3,Meridian CUSD 15,,0,,0,http://www.meridianhawks.net,http://www.meridianhawks.net,,0,success,IL
+https://news.wttw.com/2025/01/27/restorative-justice-programs-chicago-aim-break-cycles-recidivism; https://scholarlycommons.law.northwestern.edu/cgi/viewcontent.cgi?article=7486&context=jclc; https://www.cusd187.org/page/restorative-justice; https://www.cookcountycourtil.gov/division/restorative-justice-community-courts; https://www.chicagoappleseed.org/2024/02/22/restorative-justice/; https://alternativesyouth.org/restorative-justice/; https://lclc.net/restorative-justice/; https://www.d187.org/page/social-emotional-support-services; https://www.d187.org,"**Paragraph 1 - Philosophy and Conceptualization:** North Chicago School District 187 conceptualizes **restorative justice** as an integral component of its broader educational philosophy, which positions education as a ""vaccine"" against societal crises including COVID-19, systemic racism, and misinformation, emphasizing equity, critical thinking, and alignment with the district's mission to enable students ""to pursue and realize their unique purpose."" In the Superintendent's April 2021 blog post, this approach frames education—steeped in ""equity, creativity, curiosity, and rigor""—as a tool for addressing root causes of injustice, echoing James Baldwin's view of education as fostering independent decision-making and world analysis, without explicit mention of formal policies like a Student Code of Conduct but implicitly linking restorative practices to anti-racist and community-healing efforts amid events like the killings of George Floyd and Breonna Taylor. The district's single other reference, in an April 2024 announcement celebrating partner NewRoot's 25th anniversary, portrays **restorative justice** as vital community service positively impacting students' lives, tied to NewRoot's core value of ""radical love"" and vision of equity-rooted futures, suggesting a relational, harm-repairing philosophy rather than punitive discipline; these concepts interconnect as part of a holistic commitment to equity and student achievement, with no specific timelines, goals, or district-wide frameworks detailed, indicating a high-level philosophical endorsement integrated into communications and partnerships rather than codified policies.
+
+**Paragraph 2 - Infrastructure and Implementation:** The district's implementation of **restorative justice** manifests primarily through an external partnership with NewRoot, a community organization deemed ""vital"" for delivering these practices, as evidenced by district representatives—Neal Math and Science Academy Principal Mike Grenda and Director of Student Achievement Nicole Johnson—attending NewRoot's 25th Anniversary Gala in April 2024 to affirm ongoing collaboration, with no mentions of internal dedicated centers, departments, academies, staffing roles, coordinators, facilitators, training schedules, or timelines for district-led programs. This operationalizes the philosophy via valued ""D187 community partner"" efforts focused on student life impacts, alongside general district partnerships accessible via a linked page, but lacks evidence of specialized in-house infrastructure such as restorative justice coordinators, school-specific programs, or systemic integration across schools like Neal Math and Science Academy. The approach translates concept into practice through external alliance rather than autonomous structures, highlighting reliance on NewRoot's ""radical love""-driven services without specified internal personnel, budgets, or measurable implementation metrics.
+
+Source: District website only","[restorative justice @ https://www.d187.org/article/443662 (district)]: it is how we deal with the disagreement that can cause problems. This is why D187 is committed to restorative justice training throughout the district, starting in our middle and high school. This model provides a se | [restorative justice @ https://www.d187.org/article/1562135 (district)]: o celebrate this important milestone for a valued D187 community partner. NewRoot has been vital in restorative justice practices, serving our community and positively impacting our students' lives. Their commitment and",8,North Chicago SD 187,"https://www.d187.org/article/443662, https://www.d187.org/article/1562135",2,restorative justice,2,http://www.d187.org,http://www.d187.org,"https://www.d187.org/article/443662, https://www.d187.org/article/1562135",2,success,IL
+,,,4,Bureau Valley CUSD 340,,0,,0,http://www.bv340.com,http://www.bv340.com,,0,scrape_failed,IL
+,,,0,St Clair ROE Special Education,,0,,0,,,,0,no_url,IL
+,,,19,North DuPage Sp Ed Cooperative,,0,,0,,,,0,no_url,IL
+,,,2,Lewistown CUSD 97,,0,,0,,,,0,no_url,IL
+,,,6,Adam/Brwn/Cass/Morgn/Pik/Sctt ROE,,0,,0,http://www.roe1.org,http://www.roe1.org,,0,scrape_failed,IL
+,,,0,BMP Tri County Special Ed Coop,,0,,0,,,,0,no_url,IL
+,,,3,Midland CUSD 7,,0,,0,http://www.midland-7.net,http://www.midland-7.net,,0,success,IL
+,,,5,Boone/Winnebago ROE,,0,,0,,,,0,no_url,IL
+,,,2,Bureau/Henry/Stark ROE,,0,,0,,,,0,no_url,IL
+,,,8,Bnd/Chrstn/Effngh/Fytt/Mntgmr ROE,,0,,0,http://www.roe3.org,http://www.roe3.org,,0,success,IL
+,,,5,Carroll/Jo Daviess/Stephenson ROE,,0,,0,http://www.roe8.com,http://www.roe8.com,,0,scrape_failed,IL
+,,,4,Champaign/Ford ROE,,0,,0,,,,0,no_url,IL
+https://roe40ace.weebly.com; https://theviewfrom518.com/2018/11/30/principles-of-restorative-practices-in-our-classrooms/; http://www.roe40.com/stem-initiatives.html; https://roe40ace.weebly.com/staff.html; https://www.roe26.net/taoep/files/docs/TAOEPDirectory_2019-2020.pdf; https://www.roe12.org/wp-content/uploads/2022/06/Jersey.pdf; http://www.roe40.com/prof-development-meetings.html; https://www.ltcillinois.org/organizer/roe-40-calhoungreenejersymacoupin-counties/; http://www.roe40.com,"The Regional Office of Education (ROE) 40, serving Calhoun, Greene, Jersey, and Macoupin counties, conceptualizes **restorative justice** and **restorative practices** as integral components of a supportive educational framework, particularly within alternative education and professional development contexts, though explicit philosophical elaboration is limited in the available content. The term ""restorative justice"" appears in association with employment opportunities on the district's employment page, likely referencing training or roles tied to disciplinary interventions, while ""restorative practices"" is mentioned alongside mental health and staff wellness on the professional development page, framing it as a proactive approach to building relationships and addressing misbehavior collaboratively rather than punitively[1][7]. This aligns with broader district emphases on social-emotional learning (SEL) hubs, truancy interventions, and alternative education plans that prioritize therapeutic behavioral development and academic recovery, suggesting a philosophy that views these practices as tools for fostering responsibility, community, and equity in discipline, potentially countering traditional zero-tolerance models[1][2][5]. No specific documents like a Student Code of Conduct or mission statement directly articulate this philosophy, indicating a moderate commitment level manifested through integrated PD offerings rather than a district-wide mandate, with no timelines or goals explicitly stated, positioning restorative approaches as supportive rather than core to a transformative educational paradigm[7].
+
+Operationalizing these concepts, ROE 40 demonstrates tangible infrastructure through its **ROE #40 Alternative Center of Education (ACE) Programs** across the four counties, which include dedicated TAOEP (Truants' Alternative and Optional Education Program) services explicitly offering ""restorative justice training"" alongside individual counseling and credit recovery for at-risk students facing suspensions, zero-tolerance violations, or juvenile justice involvement[1][4][5]. Staffing includes specialized roles such as Director of Alternative Education Dirk Muffler overseeing ACE-Greene and ACE-Macoupin, Truancy Officers Joe Buttitta (Calhoun/Greene) and Cody Maguire (Macoupin), and teachers like Tammy Berry and Tony Cox delivering therapeutic interventions via individualized Alternative Education Plans reviewed by school teams[1][4]. Professional development infrastructure supports implementation through workshops on **restorative practices**, mental health, and wellness scheduled for 2025-2026 (e.g., March sessions at ROE offices), hosted under STEM Initiatives and SEL resources, translating philosophy into practice via targeted training for educators in the 14 districts[3][7]. This structure evidences an operationalized system with personnel, county-specific programs (e.g., ACE-Greene, ACE-Macoupin), and mutual enrollment agreements, ensuring restorative elements extend beyond policy to active intervention for disciplinary reassignment and behavioral growth[1][4][5].
+
+Source: District website only","[restorative justice @ http://www.roe40.com/employment-opportunities.html (district)]: CUSD #3 High School Art Teacher High School Science Teacher Special Education Teacher - Elementary Restorative Justice/Athletic Director Health/Drivers Education Please visit the district's website for positions and op | [restorative practices @ http://www.roe40.com/prof-development-meetings.html (district)]: fers sessions for a wide range of school stakeholders, with topics spanning: school nutrition, SEL, restorative practices, mental health, staff wellness, physical education, and more! There truly is something for everyon",7,Calhoun/Greene/Jersy/Macoupin ROE,"http://www.roe40.com/employment-opportunities.html, http://www.roe40.com/prof-development-meetings.html",2,"restorative justice, restorative practices",2,http://www.roe40.com,http://www.roe40.com,"http://www.roe40.com/employment-opportunities.html, http://www.roe40.com/prof-development-meetings.html",2,success,IL
+,,,9,Clintn/Jeffrsn/Marin/Washngtn ROE,,0,,0,http://www.roe13.k12.il.us,http://www.roe13.k12.il.us,,0,scrape_failed,IL
+,,,9,North Shore SD 112,,0,,0,http://www.nssd112.org,http://www.nssd112.org,,0,success,IL
+,,,2,Cowden-Herrick CUSD 3A,,0,,0,http://cowden-herrick.k12.il.us,http://cowden-herrick.k12.il.us,,0,success,IL
+,,,6,DeWitt/Livingstn/Logan/McLean ROE,,0,,0,,,,0,no_url,IL
+,,,3,De Kalb ROE,,0,,0,http://www.dekalbcounty.org/roe,http://www.dekalbcounty.org/roe,,0,scrape_failed,IL
+,,,3,DuPage ROE,,0,,0,http://www.dupageroe.org,http://www.dupageroe.org,,0,success,IL
+,,,2,Edw/Glt/Hlt/Hdn/Pop/Sln/Wbh/Wn/Wh,,0,,0,,,,0,no_url,IL
+,,,6,Frankln/Johnsn/Massc/Willimsn ROE,,0,,0,http://www.roe21.org,http://www.roe21.org,,0,success,IL
+,,,7,Clk/Cls/Cmbn/Dglas/Edgr/Mltr/Shlb,,0,,0,http://roe11.org,http://roe11.org,,0,success,IL
+,,,7,Grundy/Kendall ROE,,0,,0,http://www.roe24.org,http://www.roe24.org,,0,success,IL
+,,,5,Region 07 South Cook ISC 4,,0,,0,,,,0,no_url,IL
+,,,2,Clay/Cwford/Jsper/Lwrnce/Rhland,,0,,0,http://www.roe12.org,http://www.roe12.org,,0,success,IL
+,,,6,Alxndr/Jcksn/Pulsk/Prry/Union ROE,,0,,0,,,,0,no_url,IL
+,,,8,Hancck/Fultn/Schuylr/McDonogh ROE,,0,,0,http://www.roe26.net,http://www.roe26.net,,0,success,IL
+,,,7,Henderson/Knox/Mercer/Warren ROE,,0,,0,,,,0,no_url,IL
