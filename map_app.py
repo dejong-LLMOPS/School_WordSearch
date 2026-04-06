@@ -571,7 +571,15 @@ def _build_state_map_figure(state_aggregates: Dict, national_total: float) -> go
         for i, (n, h, sh, dk, td) in enumerate(zip(state_names, state_hits, state_shares, dists_with_kw, total_dists))
     ]
     # Colorscale: 0 = grey (no data), any positive share = blue gradient
-    colorscale = [[0, "#b0b0b0"], [0.0001, "#deebf7"], [1, "#08519c"]]
+    # zmax is set to the actual max share so the full color range is used
+    max_share = max((s for s in state_shares if s and s > 0), default=1.0)
+    # Threshold position for the grey->color transition, normalized to max_share
+    grey_threshold = min(0.0001 / max_share, 0.001) if max_share > 0 else 0.0001
+    colorscale = [[0, "#b0b0b0"], [grey_threshold, "#deebf7"], [1, "#08519c"]]
+    # Build evenly-spaced colorbar ticks anchored to the actual max
+    n_ticks = 5
+    tick_vals = [round(max_share * i / (n_ticks - 1), 4) for i in range(n_ticks)]
+    tick_text = [f"{v:.1%}" for v in tick_vals]
     fig = go.Figure(data=go.Choropleth(
         locations=all_state_codes,
         z=state_shares,
@@ -580,10 +588,9 @@ def _build_state_map_figure(state_aggregates: Dict, national_total: float) -> go
         hoverinfo="text",
         colorscale=colorscale,
         zmin=0,
-        zmid=0,
-        zmax=1,
+        zmax=max_share,
         showscale=True,
-        colorbar={"title": "Share", "tickvals": [0, 0.25, 0.5, 0.75, 1], "ticktext": ["0", "0.25", "0.5", "0.75", "1"]},
+        colorbar={"title": "Share", "tickvals": tick_vals, "ticktext": tick_text},
     ))
     fig.update_layout(title_text="US states by share of keyword hits", geo_scope="usa", margin=dict(l=0, r=0, t=40, b=0), height=400)
     fig.update_geos(visible=False)
@@ -724,7 +731,7 @@ def _layout_state_overview(state_aggregates, national_total):
     left_column = html.Div([
         html.Div([
             html.H1("School Policy Term Dashboard"),
-            html.Nav("State Overview", className="breadcrumb"),
+            html.Span("State Overview", className="breadcrumb"),
         ], className="dashboard-header"),
         national_summary_block,
         html.Div([
@@ -763,8 +770,8 @@ def _layout_state_overview(state_aggregates, national_total):
         className="dashboard-side-panel",
     )
     return html.Div([
-        html.Div([left_column, right_panel], style={"display": "flex", "flexWrap": "wrap", "gap": "0"}),
-    ], className="dashboard-main", style={"padding": "20px", "maxWidth": "1600px", "margin": "0 auto"})
+        html.Div([left_column, right_panel], style={"display": "flex", "flexWrap": "wrap", "gap": "24px", "alignItems": "flex-start"}),
+    ], className="dashboard-main")
 
 
 def _district_detail_content(record, show_back_link=True):
@@ -781,13 +788,11 @@ def _district_detail_content(record, show_back_link=True):
     ai_raw = record.get("aiSummary")
     ai_html = _ai_summary_to_html(ai_raw) if ai_raw else ""
     sections = []
-    header_links = []
-    if show_back_link:
-        header_links.append(dcc.Link("Back to State Overview", href="/dashboard/state", className="dashboard-link", style={"marginRight": "16px"}))
-    sections.append(html.Div(header_links + [
-        html.H2(name, style={"marginTop": "10px", "marginBottom": "5px"}),
-        html.P([html.Strong("State: "), state], style={"fontSize": "18px", "color": "#666"}),
-    ]))
+    # District name header (full-page mode suppresses the back link since header has breadcrumb)
+    sections.append(html.Div([
+        html.H2(name, style={"margin": "0 0 4px", "fontSize": "1.5rem", "fontWeight": "700"}),
+        html.P([html.Strong("State: "), state], style={"fontSize": "15px", "color": "#666", "margin": "0"}),
+    ], style={"paddingBottom": "16px", "borderBottom": "1px solid var(--surface-border)", "marginBottom": "16px"}))
     sections.append(html.Div([
         html.H3("Term Occurrence Summary", className="section-title"),
         html.Div([
@@ -804,7 +809,6 @@ def _district_detail_content(record, show_back_link=True):
             html.Div(
                 dcc.Markdown(ai_html, dangerously_allow_html=True),
                 className="dashboard-ai-summary-box",
-                style={"border": "1px solid #ddd", "borderRadius": "5px"},
             ),
         ]))
     elif ai_raw:
@@ -834,15 +838,18 @@ def _layout_district_detail(record):
     state_code = (record.get("state") or "").strip().upper()[:2]
     state_name = STATE_NAMES.get(state_code, state_code)
     district_name = record.get("districtName") or "District"
-    breadcrumb = html.Div([
-        dcc.Link("State Overview", href="/", className="dashboard-link"),
-        html.Span(" › ", style={"color": "#999"}),
-        html.Span(state_name, style={"color": "#666"}),
-        html.Span(" › ", style={"color": "#999"}),
-        html.Span(district_name, style={"fontWeight": "bold", "color": "#333"}),
-    ], className="breadcrumb", style={"marginBottom": "16px"})
+    header = html.Div([
+        html.H1("School Policy Term Dashboard"),
+        html.Span([
+            dcc.Link("State Overview", href="/", className="dashboard-link", style={"color": "rgba(255,255,255,0.7)"}),
+            html.Span(" › ", style={"color": "rgba(255,255,255,0.4)", "margin": "0 4px"}),
+            html.Span(state_name, style={"color": "rgba(255,255,255,0.7)"}),
+            html.Span(" › ", style={"color": "rgba(255,255,255,0.4)", "margin": "0 4px"}),
+            html.Span(district_name, style={"color": "#fff", "fontWeight": "600"}),
+        ], className="breadcrumb"),
+    ], className="dashboard-header")
     sections = _district_detail_content(record, show_back_link=True)
-    return html.Div([breadcrumb] + sections, className="dashboard-page")
+    return html.Div([header] + sections, className="dashboard-page")
 
 
 def create_app() -> dash.Dash:
@@ -988,15 +995,20 @@ def create_app() -> dash.Dash:
         district_name = record.get("districtName") or "District"
         breadcrumb = html.Div([
             html.Span("State Overview", style={"color": COLOR_NEUTRAL}),
-            html.Span(" › ", style={"color": "#999"}),
+            html.Span(" › ", style={"color": "#bbb", "margin": "0 4px"}),
             html.Span(state_name, style={"color": COLOR_NEUTRAL}),
-            html.Span(" › ", style={"color": "#999"}),
-            html.Span(district_name, style={"fontWeight": "bold", "color": "#333"}),
-        ], style={"fontSize": "13px", "marginBottom": "12px", "color": "#666"})
+            html.Span(" › ", style={"color": "#bbb", "margin": "0 4px"}),
+            html.Span(district_name, style={"fontWeight": "600", "color": "#333"}),
+        ], style={"fontSize": "12px", "marginBottom": "12px", "color": "#999",
+                  "background": "#f7f8fa", "padding": "6px 10px", "borderRadius": "6px",
+                  "border": "1px solid #e8e8e8"})
         sections = _district_detail_content(record, show_back_link=False)
-        close_btn = html.Button("Close", id="close-district-panel", className="dashboard-btn dashboard-btn--neutral", style={"marginBottom": "16px", "marginRight": "8px"})
-        open_full_link = dcc.Link("Open full page", href=f"/dashboard/district/{district_id}", target="_blank", style={"fontSize": "14px", "color": COLOR_DISTRICT})
-        return html.Div([breadcrumb, html.Div([close_btn, open_full_link], style={"marginBottom": "16px"})] + sections, style={"padding": "0 8px"})
+        close_btn = html.Button("✕ Close", id="close-district-panel", className="dashboard-btn dashboard-btn--neutral",
+                                style={"marginRight": "8px", "fontSize": "13px", "padding": "6px 14px"})
+        open_full_link = dcc.Link("Open full page ↗", href=f"/dashboard/district/{district_id}", target="_blank",
+                                  style={"fontSize": "13px", "color": COLOR_DISTRICT, "fontWeight": "500"})
+        return html.Div([breadcrumb, html.Div([close_btn, open_full_link],
+                         style={"marginBottom": "16px", "display": "flex", "alignItems": "center"})] + sections)
 
     _placeholder_panel = html.Div([
         html.P(["Click a row or the ", html.Span("View details", style={"color": "#f77f00", "textDecoration": "underline", "fontWeight": "500"}), " link in the table to see district details and AI summary here."], style={"margin": "0", "color": "#666"}),
