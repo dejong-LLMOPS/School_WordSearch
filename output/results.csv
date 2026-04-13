@@ -15768,3 +15768,958 @@ I recommend conducting a more comprehensive web scrape or direct review of those
 ,,,4,Van Wert City,,0,,0,http://vwcs.net/,http://vwcs.net/,,0,success,OH
 ,,,2,Marion Local,,0,,0,http://www.marionlocal.org/,http://www.marionlocal.org/,,0,success,OH
 ,,,1,Unity Academy,,0,,0,,,,0,no_url,OH
+,,,1,Solon Academy,,0,,0,http://solonacademy.org,http://solonacademy.org,,0,success,OH
+,,,1,Westlake Academy,,0,,0,http://wlakeacademy.org,http://wlakeacademy.org,,0,success,OH
+,,,7,Wooster City,,0,,0,http://www.woostercityschools.org/,http://www.woostercityschools.org/,,0,success,OH
+,,,1,Legacy Academy of Excellence,,0,,0,http://legacy1870.com/,http://legacy1870.com/,,0,success,OH
+,,,1,Gateway Online Academy of Ohio,,0,,0,http://ohio.gatewayonlineacademy.com,http://ohio.gatewayonlineacademy.com,,0,success,OH
+,,,3,Northwestern Local,,0,,0,http://www.northwestern-wayne.k12.oh.us,http://www.northwestern-wayne.k12.oh.us,,0,success,OH
+,,,5,Marietta City,,0,,0,http://www.marietta-city.org/,http://www.marietta-city.org/,,0,success,OH
+,,,1,Victory Academy of Toledo,,0,,0,http://victorytoledo.com,http://victorytoledo.com,,0,scrape_failed,OH
+,,,1,Sheffield Academy,,0,,0,http://sheffieldacademy.org,http://sheffieldacademy.org,,0,success,OH
+,,,1,Lorain Preparatory High School,,0,,0,http://lorainprephs.org,http://lorainprephs.org,,0,success,OH
+,,,1,Strongsville Academy,,0,,0,http://strongsvilleacademy.org,http://strongsvilleacademy.org,,0,success,OH
+,,,1,ChallengeU Ohio Community School,,0,,0,http://www.challengeu.com,http://www.challengeu.com,,0,success,OH
+,,,1,Hinckley Preparatory Academy,,0,,0,http://hinckleyprep.org/about/,http://hinckleyprep.org/about/,,0,success,OH
+,,,1,AkroTech High School,,0,,0,http://www.akrotech4kids.org,http://www.akrotech4kids.org,,0,scrape_failed,OH
+,,,1,Engage High School,,0,,0,http://engagehsedu.org/,http://engagehsedu.org/,,0,success,OH
+,,,1,Pathfinder Career Academy of Ohio,,0,,0,http://oh.pathfindercareeracademy.com,http://oh.pathfindercareeracademy.com,,0,success,OH
+,,,1,Mosaic Classical Academy,,0,,0,http://www.mosaicclassical.org,http://www.mosaicclassical.org,,0,success,OH
+,,,1,Fairfield Preparatory Academy,,0,,0,http://fpacad.org,http://fpacad.org,,0,success,OH
+,,,1,Franklin Learning Academy,,0,,0,http://franklinacad.org,http://franklinacad.org,,0,success,OH
+,,,3,Ohio Deaf and Blind Education Services,,0,,0,,,,0,no_url,OH
+,,,1,Springfield Sports Academy,,0,,0,http://springfieldsa.org,http://springfieldsa.org,,0,success,OH
+,,,1,Southern Ohio Career Academy,,0,,0,http://www.socaedu.org,http://www.socaedu.org,,0,success,OH
+,,,1,Steel City High School,,0,,0,http://steelcityhigh.org,http://steelcityhigh.org,,0,success,OH
+,,,1,ACE Community Academy,,0,,0,http://www.acegeauga.org,http://www.acegeauga.org,,0,success,OH
+,,,1,Heart of Ohio Classical Academy,,0,,0,http://wwww.ohioclassical.org,http://wwww.ohioclassical.org,,0,scrape_failed,OH
+,,,1,New Richmond Preparatory Academy,,0,,0,http://www.newrichmondprep.org/,http://www.newrichmondprep.org/,,0,success,OH
+,,,1,Northeast Ohio Classical Academy,,0,,0,http://www.neocacademy.org,http://www.neocacademy.org,,0,success,OH
+,,,3,Miami Trace Local,,0,,0,http://www.miamitrace.k12.oh.us/,http://www.miamitrace.k12.oh.us/,,0,success,OH
+,,,1,Southeast Ohio Classical Academy,,0,,0,http://www.socacademy.org,http://www.socacademy.org,,0,success,OH
+,,,1,Ginn-Thompson School for Girls,,0,,0,http://ginnthompson.org/,http://ginnthompson.org/,,0,success,OH
+,,,1,Columbus Noor Academy,,0,,0,http://www.noormastery.org,http://www.noormastery.org,,0,success,OH
+,,,1,Lake Erie Bilingual Academy,,0,,0,http://lebilingual.org,http://lebilingual.org,,0,success,OH
+,,,1,Career Prep Virtual High School. Inc.,,0,,0,http://www.careerprepvirtual.com,http://www.careerprepvirtual.com,,0,scrape_failed,OH
+,,,1,Huron Sports Academy,,0,,0,http://huronsa.org,http://huronsa.org,,0,success,OH
+,,,1,LINC Academy Columbus,,0,,0,http://linccolumbus.org,http://linccolumbus.org,,0,success,OH
+,,,1,Columbus Bilingual West,,0,,0,http://cbwschool.org,http://cbwschool.org,,0,success,OH
+,,,1,Mater Academy Preparatory Inc.,,0,,0,http://www.matercolumbus.org,http://www.matercolumbus.org,,0,success,OH
+,,,1,Community STE(A)M Academy - Xenia,,0,,0,http://communitysteam.com/,http://communitysteam.com/,,0,success,OH
+,,,4,Orange City,,0,,0,http://www.orangeschools.org/,http://www.orangeschools.org/,,0,success,OH
+,,,1,Cincinnati Classical Academy,,0,,0,http://www.cincyclassical.org/,http://www.cincyclassical.org/,,0,success,OH
+,,,4,Carlisle Local,,0,,0,http://www.carlisleindians.org/,http://www.carlisleindians.org/,,0,success,OH
+https://ideapublicschools.org/our-schools/idea-valley-view/; https://oeds.ode.state.oh.us/OrgOverview/index/190187; https://ideapublicschools.org/regions/greater-cincinnati/; https://www.greatschools.org/ohio/cincinnati/12620-IDEA-Greater-Cincinnati-Inc/; https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&Zip=45204&Miles=5&ID=391003510847; https://ideapublicschools.org; https://www.niche.com/k12/idea-greater-cincinnati-inc-cincinnati-oh/; https://education.ohio.gov/Topics/Community-Schools/Community-Schools-Documents/Schools/IDEA-Greater-Cincinnati-Inc; https://ideapublicschools.org/regions/greater-cincinnati/policies/board-approved-policies/,"I cannot provide the analysis you've requested because the search results provided do not contain sufficient information about IDEA Greater Cincinnati Inc's district-wide approach to restorative justice and restorative practices.
+
+While the search results include a brief reference to ""restorative practices"" on the Student Support Services page—where it is mentioned as part of the school culture approach alongside ""consistent behavior systems"" and ""discipline protocols""—the results lack the detailed philosophical frameworks, specific policies, implementation infrastructure, dedicated programs, staffing structures, and operational systems necessary to write the two comprehensive analytical paragraphs you've requested.
+
+The search results focus primarily on IDEA Valley View and general IDEA Public Schools information rather than providing district-specific documentation about restorative justice philosophy, policy documents, dedicated coordinators or positions, training schedules, or concrete implementation systems for IDEA Greater Cincinnati Inc specifically.
+
+To complete this analysis accurately, you would need access to:
+- IDEA Greater Cincinnati Inc's Student Code of Conduct or discipline policies
+- District-level strategic plans or educational philosophy documents
+- Specific program descriptions and staffing rosters
+- Training and implementation timelines
+- Any dedicated restorative justice or restorative practices centers or departments
+
+The current search results are insufficient to support the evidence-based, detailed analysis you've requested.","[restorative practices @ https://ideapublicschools.org/student-support-services/ (district)]: IDEA fosters a save, inclusive, and collaborative environment through consistent behavior systems, restorative practices, and discipline protocols. Safety & Belonging Behavior Supports Discipline Protocols Culture & Disc | [restorative justice @ https://ideapublicschools.org/our-schools/idea-rundberg/ (district)]: in providing cultural competence training for educational institutions. She holds certifications in restorative justices practices, which she integrates into her training programs to foster inclusive and equitable educa",1,IDEA Greater Cincinnati Inc,"https://ideapublicschools.org/student-support-services/, https://ideapublicschools.org/our-schools/idea-rundberg/",2,"restorative justice, restorative practices",2,http://ideapublicschools.org/regions/cincinnati/,http://ideapublicschools.org/regions/cincinnati/,"https://ideapublicschools.org/student-support-services/, https://ideapublicschools.org/our-schools/idea-rundberg/",2,success,OH
+,,,7,Kings Local,,0,,0,http://www.kingslocal.net/,http://www.kingslocal.net/,,0,success,OH
+,,,3,Wayne Local,,0,,0,http://www.wayne-local.com/,http://www.wayne-local.com/,,0,success,OH
+https://en.wikipedia.org/wiki/Hilliard_City_School_District; https://hilliardohio.gov/schools/; https://business.hilliardchamber.org/list/Details/hilliard-city-school-district-4014906; https://www.applitrack.com/hilliard/onlineapp/default.aspx?all=1; https://www.hilliardschools.org; https://www.willard.k12.oh.us,"**Paragraph 1 - Philosophy and Conceptualization:** Hilliard City School District's philosophy frames **restorative practices** as a core component of fostering safe, caring, and equitable learning environments, emphasizing relational repair and positive behavior interventions over punitive measures. This conceptualization is evident in the Britton-Norwich Learning Campus's commitment to making every student feel ""safe, cared for and valued,"" where restorative practices are implemented alongside morning meetings and proactive positive behavior supports, aligning with the district's broader **Portrait of a Learner** that cultivates empathetic citizens, critical thinkers, purposeful communicators, self-advocates, and resilient learners. These practices relate to the district's mission—""Hilliard City Schools will ensure that every student is Ready For Tomorrow""—and vision to ""Embrace, Empower and Inspire students, families, and communities in an active partnership,"" positioning them as integral to a rigorous, innovative, and collaborative educational approach that integrates students' unique experiences into grade-level content delivery using evidence-based curricula like Wit and Wisdom and Illustrative Math. The Human Resources leadership, exemplified by Executive Director Melissa Klosterman-Lando's expertise in restorative practices, staff well-being, and equitable practices, underscores a servant leadership philosophy that embeds these concepts into human capital strategy, though no specific timelines, goals, or formal policies like a Student Code of Conduct are detailed on the referenced pages, indicating a conceptual integration at the school and departmental levels rather than district-wide mandates.
+
+**Paragraph 2 - Infrastructure and Implementation:** The district operationalizes **restorative practices** through dedicated departmental resources and school-specific programs, demonstrating translation from philosophy to practice via the **Thrive & Grow Wellness** initiative, which prominently features a **Restorative Practices** section alongside tools like Zones of Regulation, Ross Greene Behavior Supports, and Signs of Suicide, accessible under the Wellness Menu to support staff and student mental health. At the **Britton-Norwich Learning Campus** (encompassing Britton Elementary K-2 and Norwich Elementary 3-5), implementation includes restorative practices integrated with the **Zones of Regulation** and **LEAD like a Lynx** Positive Behavior Intervention System (PBIS), supported by morning meetings across both buildings. Staffing infrastructure is anchored in the Human Resources department, led by Executive Director Melissa Klosterman-Lando, whose expertise explicitly includes restorative practices, alongside roles like Wellness Coordinator Liz McClellan, HR Coordinator Greg Hennes, and support secretaries, forming a network for staff development and equitable practices. No dedicated centers, academies, training schedules, or implementation timelines are specified, but the consistent mention across Human Resources, Wellness, and a specific elementary campus pages illustrates an operationalized system with specialized personnel and programmatic links rather than abstract policy.
+
+Source: District website only","[restorative practices @ https://www.hilliardschools.org/departments/human-resources/ (district)]: ncipal, special education coordinator, and educator. Melissa’s expertise includes staff well-being, restorative practices, and mental health support. A recognized community leader, she serves on the ADAMH Board of Trustee | [restorative practices @ https://www.hilliardschools.org/departments/wellness/thrive-grow/ (district)]: Coming Soon – Book Recommendations Ross Greene Behavior Supports Website Coming Soon – Video Series Restorative Practices Zones of Regulation Signs of Suicide Healthy Social Media – Common Sense Media Webpage ATTENDANCE E | [restorative practices @ https://www.hilliardschools.org/es/britton-norwich/about-us/ (district)]: y student feel safe, cared for and valued within our community. We hold morning meetings, implement restorative practices, and proactively incorporate positive behavior supports within both buildings. Specifically, we use | [restorative practices @ https://www.hilliardschools.org/departments/human-resources/ (district)]: ncipal, special education coordinator, and educator. Melissa’s expertise includes staff well-being, restorative practices, and mental health support. A recognized community leader, she serves on the ADAMH Board of Trustee | [restorative practices @ https://www.hilliardschools.org/departments/wellness/thrive-grow/ (district)]: Coming Soon – Book Recommendations Ross Greene Behavior Supports Website Coming Soon – Video Series Restorative Practices Zones of Regulation Signs of Suicide Healthy Social Media – Common Sense Media Webpage ATTENDANCE E | [restorative practices @ https://www.hilliardschools.org/es/britton-norwich/about-us/ (district)]: y student feel safe, cared for and valued within our community. We hold morning meetings, implement restorative practices, and proactively incorporate positive behavior supports within both buildings. Specifically, we use",24,Hilliard City,"https://www.hilliardschools.org/departments/human-resources/, https://www.hilliardschools.org/departments/wellness/thrive-grow/, https://www.hilliardschools.org/es/britton-norwich/about-us/, https://www.hilliardschools.org/departments/human-resources/, https://www.hilliardschools.org/departments/wellness/thrive-grow/, https://www.hilliardschools.org/es/britton-norwich/about-us/",6,restorative practices,6,http://www.hilliardschools.org/,http://www.hilliardschools.org/,"https://www.hilliardschools.org/departments/human-resources/, https://www.hilliardschools.org/departments/wellness/thrive-grow/, https://www.hilliardschools.org/es/britton-norwich/about-us/, https://www.hilliardschools.org/departments/human-resources/, https://www.hilliardschools.org/departments/wellness/thrive-grow/, https://www.hilliardschools.org/es/britton-norwich/about-us/",6,success,OH
+,,,3,Ironton City School District,,0,,0,http://www.tigertown.com/,http://www.tigertown.com/,,0,success,OH
+,,,4,Buckeye Local,,0,,0,http://www.buckeyeschools.info/,http://www.buckeyeschools.info/,,0,success,OH
+,,,57,Toledo City,,0,,0,http://www.tps.org/,http://www.tps.org/,,0,success,OH
+,,,0,KIAMICHI TECH. CENTER- ATOKA,,0,,0,,,,0,no_url,OK
+,,,0,INDIAN CAPITAL TECHNOLOGY CTR,,0,,0,,,,0,no_url,OK
+,,,0,WESTERN TECHNOLOGY CENTER,,0,,0,,,,0,no_url,OK
+,,,0,SOUTHERN OK TECH. CTR.,,0,,0,,,,0,no_url,OK
+,,,0,CADDO KIOWA TECH. CTR.,,0,,0,,,,0,no_url,OK
+,,,0,KIAMICHI TECH. CENTER- DURANT,,0,,0,,,,0,no_url,OK
+,,,0,NORTHEAST TECH. CENTER- KANSAS,,0,,0,,,,0,no_url,OK
+,,,0,MOORE NORMAN TECH. CTR.,,0,,0,,,,0,no_url,OK
+,,,0,CANADIAN VALLEY TECH. CTR.,,0,,0,,,,0,no_url,OK
+,,,0,AUTRY TECH. CTR.,,0,,0,,,,0,no_url,OK
+,,,0,CENTRAL TECH. CTR.,,0,,0,,,,0,no_url,OK
+,,,0,KIAMICHI TECH. CENTER- HUGO,,0,,0,,,,0,no_url,OK
+,,,0,GREAT PLAINS TECH. CTR.,,0,,0,,,,0,no_url,OK
+,,,0,CANADIAN VALLEY TECH,,0,,0,,,,0,no_url,OK
+,,,0,KIAMICHI TECH. CENTER,,0,,0,,,,0,no_url,OK
+,,,0,KIAMICHI TECH. CENTER- STIGLER,,0,,0,,,,0,no_url,OK
+,,,0,WES WATKINS TECH. CTR.,,0,,0,,,,0,no_url,OK
+,,,0,SOUTHWEST TECH. CTR.,,0,,0,,,,0,no_url,OK
+,,,0,PIONEER TECH. CTR.,,0,,0,,,,0,no_url,OK
+,,,0,CHISHOLM TRAIL TECH. CTR.,,0,,0,,,,0,no_url,OK
+,,,1,LAKESIDE SCHOOL,,0,,0,,,,0,no_url,OK
+,,,0,KIAMICHI TECH. CENTER- IDABEL,,0,,0,,,,0,no_url,OK
+,,,0,KIAMICHI TECH. CENTER- POTEAU,,0,,0,,,,0,no_url,OK
+,,,0,METRO TECH. CTR.,,0,,0,,,,0,no_url,OK
+,,,0,NORTHEAST TECH. CENTER,,0,,0,,,,0,no_url,OK
+,,,0,MID-AMERICA TECH. CTR.,,0,,0,,,,0,no_url,OK
+,,,0,NORTHWEST TECH. CENTER- FAIRVIEW,,0,,0,,,,0,no_url,OK
+,,,0,EASTERN OK COUNTY TECH. CTR.,,0,,0,,,,0,no_url,OK
+,,,0,MERIDIAN TECH. CTR.,,0,,0,,,,0,no_url,OK
+,,,0,GREEN COUNTRY TECH. CTR.,,0,,0,,,,0,no_url,OK
+,,,0,FRANCIS TUTTLE TECH. CTR.,,0,,0,,,,0,no_url,OK
+,,,0,INDIAN CAPITAL TECH. CTR.,,0,,0,,,,0,no_url,OK
+,,,0,KIAMICHI TECH. CENTER- MCALESTER,,0,,0,,,,0,no_url,OK
+,,,0,MID-DEL TECH. CTR.,,0,,0,,,,0,no_url,OK
+,,,0,TULSA TECH. CTR.,,0,,0,,,,0,no_url,OK
+,,,0,PONTOTOC TECH. CTR.,,0,,0,,,,0,no_url,OK
+,,,0,NORTHEAST TECH. CENTER- AFTON,,0,,0,,,,0,no_url,OK
+,,,0,RED RIVER TECH. CTR.,,0,,0,,,,0,no_url,OK
+,,,0,NORTHWEST TECH. CENTER- ALVA,,0,,0,,,,0,no_url,OK
+,,,0,GORDON COOPER TECH. CTR.,,0,,0,,,,0,no_url,OK
+,,,0,HIGH PLAINS TECH  CTR.,,0,,0,,,,0,no_url,OK
+,,,0,GREAT PLAINS,,0,,0,,,,0,no_url,OK
+,,,0,TRI COUNTY TECH. CTR.,,0,,0,,,,0,no_url,OK
+,,,0,WESTERN TECH. CTR.,,0,,0,,,,0,no_url,OK
+,,,0,NORTHEAST TECH. CENTER- CLAREMORE,,0,,0,,,,0,no_url,OK
+,,,3,OKLAHOMA UNION,,0,,0,http://okunion.k12.ok.us,http://okunion.k12.ok.us,,0,scrape_failed,OK
+,,,2,BURNS FLAT-DILL CITY,,0,,0,http://www.bfdc.school/,http://www.bfdc.school/,,0,scrape_failed,OK
+,,,0,CHOCTAW NATION ILC,,0,,0,http://www.choctawinterlocal.org,http://www.choctawinterlocal.org,,0,scrape_failed,OK
+,,,0,POOLED INVESTMENT ILC,,0,,0,,,,0,no_url,OK
+,,,0,OSAGE COUNTY ILC,,0,,0,http://ocic.k12.ok.us,http://ocic.k12.ok.us,,0,scrape_failed,OK
+,,,2,CHEROKEE IMMERSION CHARTER ES,,0,,0,http://www.cherokee.org/all-services/education-services/sequoyah-schools,http://www.cherokee.org/all-services/education-services/sequoyah-schools,,0,scrape_failed,OK
+,,,1,KIPP OKC COLLEGE PREP CHARTER,,0,,0,http://www.kippok.org,http://www.kippok.org,,0,success,OK
+,,,2,KEYS,,0,,0,http://www.keyscougars.org,http://www.keyscougars.org,,0,success,OK
+,,,3,HYDRO-EAKLY,,0,,0,http://www.hydroeakly.k12.ok.us,http://www.hydroeakly.k12.ok.us,,0,success,OK
+,,,2,TIMBERLAKE,,0,,0,http://www.tlake.k12.ok.us,http://www.tlake.k12.ok.us,,0,success,OK
+,,,2,OKLAHOMA SCHOOL FOR THE DEAF,,0,,0,http://www.osd.k12.ok.us,http://www.osd.k12.ok.us,,0,success,OK
+,,,3,OKLAHOMA VIRTUAL CHARTER ACADEMY,,0,,0,http://www.okvirtual.net/,http://www.okvirtual.net/,,0,scrape_failed,OK
+,,,2,FRONTIER,,0,,0,http://www.frontierok.com,http://www.frontierok.com,,0,success,OK
+,,,2,KIPP TULSA ACADEMY CHARTER,,0,,0,http://www.kipptulsa.org,http://www.kipptulsa.org,,0,success,OK
+,,,3,ASTEC CHARTER SCHOOL,,0,,0,http://www.astec-k12.com,http://www.astec-k12.com,,0,scrape_failed,OK
+,,,2,INSIGHT SCHOOL OF OKLAHOMA (CHARTER),,0,,0,http://ok.insightschools.net,http://ok.insightschools.net,,0,scrape_failed,OK
+,,,3,OKLAHOMA CONNECTIONS ACADEMY (CHARTER),,0,,0,http://www.connectionseducation.com/okca,http://www.connectionseducation.com/okca,,0,scrape_failed,OK
+,,,1,JOHN REX CHARTER SCHOOL,,0,,0,http://www.johnrexschool.org,http://www.johnrexschool.org,,0,success,OK
+,,,2,OKLAHOMA YOUTH ACADEMY (CHARTER),,0,,0,http://www.ok.gov/oja/,http://www.ok.gov/oja/,,0,scrape_failed,OK
+,,,2,COLLEGE BOUND ACADEMY of TULSA,,0,,0,http://www.collegeboundschool.org,http://www.collegeboundschool.org,,0,scrape_failed,OK
+,,,3,TULSA HONOR CHARTER ACADEMY,,0,,0,http://www.tulsahonor.org,http://www.tulsahonor.org,,0,scrape_failed,OK
+,,,1,HUPFELD CHARTER ACADEMY at WESTERN VILLAGE,,0,,0,http://www.wvacademy.com,http://www.wvacademy.com,,0,success,OK
+,,,2,HARDING FINE ARTS CHARTER ACADEMY,,0,,0,http://hardingfinearts.org/,http://hardingfinearts.org/,,0,success,OK
+,,,1,DEBORAH BROWN COMMUNITY CHARTER SCHOOL,,0,,0,http://www.dbcstulsa.org,http://www.dbcstulsa.org,,0,success,OK
+,,,1,TULSA LEGACY CHARTER SCHOOL,,0,,0,http://www.tulsalegacy.org,http://www.tulsalegacy.org,,0,success,OK
+,,,1,SANKOFA CHARTER SCHOOL,,0,,0,http://www.sankofaschooltulsa.com,http://www.sankofaschooltulsa.com,,0,success,OK
+,,,1,CARLTON LANDING ACADEMY (CHARTER),,0,,0,http://www.carltonlandingacademy.org,http://www.carltonlandingacademy.org,,0,success,OK
+,,,4,NORTH ROCK CREEK,,0,,0,http://www.nrcps.org,http://www.nrcps.org,,0,success,OK
+,,,3,DOVE SCHOOLS OF TULSA (CHARTER),,0,,0,http://www.doveschools.org,http://www.doveschools.org,,0,success,OK
+,,,0,FIVE-STAR ILC,,0,,0,http://www.fsilc.k12.ok.us,http://www.fsilc.k12.ok.us,,0,success,OK
+,,,2,TULSA SCHOOL OF ARTS AND SCIENCES CHARTER,,0,,0,http://www.tsas.org,http://www.tsas.org,,0,success,OK
+,,,5,DOVE SCHOOLS OF OKC (CHARTER),,0,,0,http://www.doveschools.org/,http://www.doveschools.org/,,0,success,OK
+,,,10,SANTA FE SOUTH CHARTER,,0,,0,http://www.santafesouth.org,http://www.santafesouth.org,,0,success,OK
+,,,3,ACADEMY OF SEMINOLE (CHARTER),,0,,0,http://theacademyofseminole.org,http://theacademyofseminole.org,,0,success,OK
+,,,1,WESTERN GATEWAY (CHARTER),,0,,0,http://westerngateway.school/,http://westerngateway.school/,,0,success,OK
+,,,2,EPIC CHARTER VIRTUAL SCHOOL,,0,,0,http://www.epiccharterschools.org,http://www.epiccharterschools.org,,0,success,OK
+,,,2,OLUSTEE-ELDORADO,,0,,0,http://www.olustee.k12.ok.us,http://www.olustee.k12.ok.us,,0,success,OK
+,,,2,AFTON,,0,,0,http://www.aftonschools.net,http://www.aftonschools.net,,0,success,OK
+,,,3,Dove Virtual Academy (CHARTER),,0,,0,http://www.dovevirtual.org/,http://www.dovevirtual.org/,,0,success,OK
+,,,3,AGRA,,0,,0,http://www.agra.k12.ok.us/,http://www.agra.k12.ok.us/,,0,success,OK
+,,,3,ADAIR,,0,,0,http://www.adair.k12.ok.us,http://www.adair.k12.ok.us,,0,success,OK
+,,,2,ALINE-CLEO,,0,,0,http://www.alinecleo.k12.ok.us,http://www.alinecleo.k12.ok.us,,0,success,OK
+,,,0,TRI-COUNTY ILC,,0,,0,http://www.ringling.k12.ok.us,http://www.ringling.k12.ok.us,,0,success,OK
+,,,2,ALEX,,0,,0,http://www.alex.k12.ok.us/,http://www.alex.k12.ok.us/,,0,success,OK
+,,,1,ALLEN-BOWDEN,,0,,0,http://www.allenbowden.org,http://www.allenbowden.org,,0,success,OK
+,,,5,ALVA,,0,,0,http://www.alvaschools.com,http://www.alvaschools.com,,0,success,OK
+,,,7,ALTUS,,0,,0,http://www.altusps.com,http://www.altusps.com,,0,success,OK
+,,,5,ANADARKO,,0,,0,http://www.apswarriors.com,http://www.apswarriors.com,,0,success,OK
+,,,1,ALBION,,0,,0,http://www.albion.k12.ok.us,http://www.albion.k12.ok.us,,0,scrape_failed,OK
+,,,2,GRAHAM-DUSTIN,,0,,0,http://www.graham-dustin.k12.ok.us,http://www.graham-dustin.k12.ok.us,,0,success,OK
+,,,3,ANTLERS,,0,,0,http://www.antlers.k12.ok.us,http://www.antlers.k12.ok.us,,0,success,OK
+https://nces.ed.gov/ccd/districtsearch/district_detail.asp?Search=1&County=CLEVELAND&details=1&ID2=4000801; https://www.lemondenorman.org; https://www.niche.com/k12/le-monde-international-school-norman-ok/; https://www.lemondenorman.org/admissions; https://lemondeimmersion.org/enrollment-information/; https://www.lemondenorman.org/what-is-a-charter-school; https://www.lemondenorman.org/families; https://www.publicschoolreview.com/oklahoma/le-monde-international-charter-school-district/4000801-school-district,"I cannot provide the analysis you've requested because the search results provided do not contain sufficient evidence to support a comprehensive, evidence-based summary of Le Monde International Charter School's district-wide approach to restorative practices.
+
+While the search results include a reference to the 2025-2026 Student Handbook that mentions ""restorative practices"" in the context of the Code of Conduct & Behavior Supports section, the actual detailed content of that handbook page is not fully provided in the search results. The excerpt included discusses the school's bullying policy, prevention efforts, and support services, but does not elaborate on the specific philosophy, conceptualization, infrastructure, programs, staffing, or implementation details related to restorative practices.
+
+To provide the two detailed analytical paragraphs you've requested—one on philosophy and conceptualization, and one on infrastructure and implementation—I would need access to:
+
+- The complete 2025-2026 Student Handbook section on restorative practices and Code of Conduct
+- District policy documents that detail restorative justice frameworks
+- Information about dedicated staff positions, coordinators, or programs focused on restorative practices
+- Specific training schedules, timelines, or implementation details
+- District mission statements or strategic plans that frame restorative practices within their educational approach
+
+The current search results provide only a brief mention that restorative practices exist within their behavior supports framework, but lack the substantive detail necessary for a rigorous, evidence-based analysis.
+
+**Source: District website only**","[restorative practices @ https://www.lemondenorman.org/275630_2 (district)]: ardies, school day routines. Code of Conduct & Behavior Supports – Expectations, interventions, and restorative practices. Safety & Security – Emergency procedures, drills, and visitor protocols. Health & Wellness – Clini",1,LE MONDE INTERNATIONAL (CHARTER),https://www.lemondenorman.org/275630_2,1,restorative practices,1,http://www.lemondenorman.org,http://www.lemondenorman.org,https://www.lemondenorman.org/275630_2,1,success,OK
+,,,3,THOMAS-FAY-CUSTER UNIFIED DIST,,0,,0,http://www.thomas.k12.ok.us,http://www.thomas.k12.ok.us,,0,success,OK
+,,,1,DAVIDSON,,0,,0,http://davidson.k12.ok.us/public-notices/,http://davidson.k12.ok.us/public-notices/,,0,success,OK
+,,,2,ARNETT,,0,,0,http://www.arnett.k12.ok.us,http://www.arnett.k12.ok.us,,0,success,OK
+,,,3,AMBER-POCASSET,,0,,0,http://www.amposchools.org,http://www.amposchools.org,,0,success,OK
+,,,2,ATOKA,,0,,0,http://www.atoka.org,http://www.atoka.org,,0,success,OK
+,,,2,ASHER,,0,,0,http://www.asher.k12.ok.us,http://www.asher.k12.ok.us,,0,success,OK
+,,,1,BANNER,,0,,0,http://www.bannerschool.net,http://www.bannerschool.net,,0,success,OK
+,,,3,BARNSDALL,,0,,0,http://www.barnsdallschools.org,http://www.barnsdallschools.org,,0,scrape_failed,OK
+,,,2,BALKO,,0,,0,http://www.balko.k12.ok.us/,http://www.balko.k12.ok.us/,,0,success,OK
+,,,3,ARKOMA,,0,,0,http://arkoma.k12.ok.us,http://arkoma.k12.ok.us,,0,success,OK
+,,,1,BEARDEN,,0,,0,http://www.beardenelementary.org,http://www.beardenelementary.org,,0,scrape_failed,OK
+,,,1,AVANT,,0,,0,http://www.avant.k12.ok.us,http://www.avant.k12.ok.us,,0,success,OK
+,,,2,BEAVER,,0,,0,http://www.beaver.k12.ok.us/,http://www.beaver.k12.ok.us/,,0,success,OK
+,,,1,COMANCHE ACADEMY (CHARTER),,0,,0,http://www.comancheacademy.com,http://www.comancheacademy.com,,0,success,OK
+,,,3,HARDING INDEPENDENCE (CHARTER),,0,,0,http://www.hardingcharterprep.org,http://www.hardingcharterprep.org,,0,success,OK
+,,,3,OKLAHOMA SCHOOL FOR THE BLIND,,0,,0,http://www.osb.k12.ok.us,http://www.osb.k12.ok.us,,0,success,OK
+,,,6,ARDMORE,,0,,0,http://www.ardmoreschools.org,http://www.ardmoreschools.org,,0,success,OK
+,,,3,BEGGS,,0,,0,http://www.beggs.k12.ok.us,http://www.beggs.k12.ok.us,,0,success,OK
+,,,3,BERRYHILL,,0,,0,http://www.berryhillschools.org,http://www.berryhillschools.org,,0,success,OK
+,,,2,ACHILLE,,0,,0,http://www.achilleisd.org/,http://www.achilleisd.org/,,0,success,OK
+,,,1,BISHOP,,0,,0,http://www.Bishop.K12.ok.us,http://www.Bishop.K12.ok.us,,0,scrape_failed,OK
+,,,10,BIXBY,,0,,0,http://bixby.ok.schoolwebpages.com,http://bixby.ok.schoolwebpages.com,,0,success,OK
+,,,3,BLACKWELL,,0,,0,http://www.blackwell.k12.ok.us,http://www.blackwell.k12.ok.us,,0,success,OK
+,,,6,ADA,,0,,0,http://www.adacougars.net,http://www.adacougars.net,,0,success,OK
+,,,2,BLAIR,,0,,0,http://www.blairschool.org,http://www.blairschool.org,,0,success,OK
+,,,0,SEMINOLE COUNTY ILC,,0,,0,http://www.butnerpublicschools.com,http://www.butnerpublicschools.com,,0,success,OK
+,,,3,BETHEL,,0,,0,http://bethel.k12.ok.us,http://bethel.k12.ok.us,,0,success,OK
+,,,2,BOISE CITY,,0,,0,http://www.bcpsd.org,http://www.bcpsd.org,,0,success,OK
+,,,4,BETHANY,,0,,0,http://www.bethanyschools.com,http://www.bethanyschools.com,,0,success,OK
+,,,3,E-SCHOOL VIRTUAL ACADEMY (CHARTER),,0,,0,http://www.eschoolacademy.org,http://www.eschoolacademy.org,,0,success,OK
+,,,2,BENNINGTON,,0,,0,http://www.benningtonisd.org/,http://www.benningtonisd.org/,,0,success,OK
+,,,4,BLANCHARD,,0,,0,http://www.blanchard.k12.ok.us,http://www.blanchard.k12.ok.us,,0,success,OK
+,,,2,BRAGGS,,0,,0,http://www.braggsschool.com,http://www.braggsschool.com,,0,success,OK
+,,,9,BARTLESVILLE,,0,,0,http://www.bps-ok.org,http://www.bps-ok.org,,0,success,OK
+,,,2,BELFONTE,,0,,0,http://www.belfonte.k12.ok.us/,http://www.belfonte.k12.ok.us/,,0,success,OK
+,,,1,BRIGGS,,0,,0,http://www.briggs.k12.ok.us,http://www.briggs.k12.ok.us,,0,success,OK
+,,,3,BLUEJACKET,,0,,0,http://www.bluejacket.k12.ok.us,http://www.bluejacket.k12.ok.us,,0,success,OK
+,,,2,BOKOSHE,,0,,0,http://www.bokosheschool.org,http://www.bokosheschool.org,,0,success,OK
+,,,4,BROKEN BOW,,0,,0,http://www.bbisdapp.org,http://www.bbisdapp.org,,0,scrape_failed,OK
+,,,1,ANDERSON,,0,,0,http://www.andersontrojans.org,http://www.andersontrojans.org,,0,success,OK
+,,,2,BUFFALO,,0,,0,http://www.buffalo.k12.ok.us,http://www.buffalo.k12.ok.us,,0,success,OK
+,,,1,BRUSHY,,0,,0,http://www.brushy.k12.ok.us,http://www.brushy.k12.ok.us,,0,success,OK
+,,,2,BUFFALO VALLEY,,0,,0,http://www.bvpsd.org,http://www.bvpsd.org,,0,success,OK
+,,,2,BOWLEGS,,0,,0,http://www.bowlegs.k12.ok.us,http://www.bowlegs.k12.ok.us,,0,success,OK
+,,,4,BRISTOW,,0,,0,http://www.bristow.k12.ok.us,http://www.bristow.k12.ok.us,,0,success,OK
+,,,1,BOWRING,,0,,0,http://www.bowringps.k12.ok.us,http://www.bowringps.k12.ok.us,,0,success,OK
+,,,2,BIG PASTURE,,0,,0,http://www.bigpasture.org,http://www.bigpasture.org,,0,success,OK
+,,,2,CALUMET,,0,,0,http://www.chs.k12.ok.us,http://www.chs.k12.ok.us,,0,success,OK
+,,,2,BURLINGTON,,0,,0,http://www.burlingtonschool.com/,http://www.burlingtonschool.com/,,0,success,OK
+,,,2,CAMERON,,0,,0,http://www.cameronps.org,http://www.cameronps.org,,0,success,OK
+,,,2,CANADIAN,,0,,0,http://www.canadian.k12.ok.us,http://www.canadian.k12.ok.us,,0,success,OK
+,,,2,BRAY-DOYLE,,0,,0,http://www.braydoyle.k12.ok.us/,http://www.braydoyle.k12.ok.us/,,0,success,OK
+,,,2,ALLEN,,0,,0,http://www.allenmustangs.org,http://www.allenmustangs.org,,0,success,OK
+,,,2,CANTON,,0,,0,http://canton.k12.ok.us/,http://canton.k12.ok.us/,,0,success,OK
+,,,3,CACHE,,0,,0,http://www.cacheps.org,http://www.cacheps.org,,0,success,OK
+,,,2,CARNEY,,0,,0,http://www.carney.k12.ok.us,http://www.carney.k12.ok.us,,0,success,OK
+,,,3,CASHION,,0,,0,http://www.cashionps.org,http://www.cashionps.org,,0,success,OK
+,,,3,CARNEGIE,,0,,0,http://www.carnegieschools.com,http://www.carnegieschools.com,,0,success,OK
+,,,4,CATOOSA,,0,,0,http://www.catoosaps.net/,http://www.catoosaps.net/,,0,success,OK
+,,,2,CAVE SPRINGS,,0,,0,http://www.cavesprings.k12.ok.us,http://www.cavesprings.k12.ok.us,,0,success,OK
+,,,3,BOSWELL,,0,,0,http://www.boswellschools.org,http://www.boswellschools.org,,0,success,OK
+,,,2,BILLINGS,,0,,0,http://www.billings.k12.ok.us,http://www.billings.k12.ok.us,,0,success,OK
+,,,3,CENTRAL HIGH,,0,,0,http://www.central.k12.ok.us/index.htm,http://www.central.k12.ok.us/index.htm,,0,scrape_failed,OK
+,,,27,BROKEN ARROW,,0,,0,http://www.baschools.org/,http://www.baschools.org/,,0,success,OK
+,,,2,CHATTANOOGA,,0,,0,http://www.chatty.k12.ok.us,http://www.chatty.k12.ok.us,,0,success,OK
+,,,4,CHECOTAH,,0,,0,http://www.checotah.k12.ok.us,http://www.checotah.k12.ok.us,,0,success,OK
+,,,3,CHELSEA,,0,,0,http://www.chelseadragons.net,http://www.chelseadragons.net,,0,success,OK
+,,,3,CHEROKEE,,0,,0,http://cherokee.k12.ok.us/,http://cherokee.k12.ok.us/,,0,success,OK
+,,,2,CHEYENNE,,0,,0,http://www.cheyenne.k12.ok.us,http://www.cheyenne.k12.ok.us,,0,success,OK
+,,,5,CHICKASHA,,0,,0,http://www.chickasha.k12.ok.us,http://www.chickasha.k12.ok.us,,0,scrape_failed,OK
+,,,2,CANUTE,,0,,0,http://www.canuteschools.com,http://www.canuteschools.com,,0,success,OK
+,,,5,CHOUTEAU-MAZIE,,0,,0,http://www.chouteauwildcats.com/,http://www.chouteauwildcats.com/,,0,success,OK
+,,,2,CIMARRON,,0,,0,http://www.cimarron.k12.ok.us/,http://www.cimarron.k12.ok.us/,,0,success,OK
+,,,2,CALVIN,,0,,0,http://www.calvin.k12.ok.us,http://www.calvin.k12.ok.us,,0,success,OK
+,,,2,CLAYTON,,0,,0,http://www.clayton.k12.ok.us,http://www.clayton.k12.ok.us,,0,success,OK
+,,,1,CLEORA,,0,,0,http://www.cleora.net,http://www.cleora.net,,0,success,OK
+,,,2,CADDO,,0,,0,http://www.caddoisd.org,http://www.caddoisd.org,,0,success,OK
+,,,5,CLINTON,,0,,0,http://www.clintonokschools.org,http://www.clintonokschools.org,,0,success,OK
+,,,3,COALGATE,,0,,0,http://www.coalgateschools.org/,http://www.coalgateschools.org/,,0,success,OK
+,,,5,BYNG,,0,,0,http://www.byngschools.com,http://www.byngschools.com,,0,success,OK
+,,,4,CLEVELAND,,0,,0,http://www.clevelandtigers.com,http://www.clevelandtigers.com,,0,success,OK
+,,,8,CHOCTAW-NICOMA PARK,,0,,0,http://www.cnpschools.org,http://www.cnpschools.org,,0,success,OK
+,,,6,COLLINSVILLE,,0,,0,http://www.collinsville.k12.ok.us,http://www.collinsville.k12.ok.us,,0,success,OK
+,,,3,COMANCHE,,0,,0,http://www.cpsok.org,http://www.cpsok.org,,0,success,OK
+,,,2,ARAPAHO-BUTLER,,0,,0,http://www.arapaho.k12.ok.us/,http://www.arapaho.k12.ok.us/,,0,success,OK
+,,,3,COMMERCE,,0,,0,http://www.commercetigers.net,http://www.commercetigers.net,,0,success,OK
+,,,3,CORDELL,,0,,0,http://www.cordell.k12.ok.us,http://www.cordell.k12.ok.us,,0,success,OK
+,,,6,CLAREMORE,,0,,0,http://claremore.k12.ok.us,http://claremore.k12.ok.us,,0,success,OK
+,,,2,COVINGTON-DOUGLAS,,0,,0,http://AWICKER@CDWILDCATS.COM,http://AWICKER@CDWILDCATS.COM,,0,scrape_failed,OK
+,,,8,COWETA,,0,,0,http://www.cowetaps.com,http://www.cowetaps.com,,0,success,OK
+,,,2,CALERA,,0,,0,http://www.caleraisd.org,http://www.caleraisd.org,,0,success,OK
+,,,3,CRESCENT,,0,,0,http://www.crescentok.com,http://www.crescentok.com,,0,success,OK
+,,,3,CROOKED OAK,,0,,0,http://www.crookedoak.org,http://www.crookedoak.org,,0,success,OK
+,,,4,CHANDLER,,0,,0,http://www.chandler.k12.ok.us/,http://www.chandler.k12.ok.us/,,0,success,OK
+,,,2,CANEY,,0,,0,http://www.caneyisd.org,http://www.caneyisd.org,,0,success,OK
+,,,2,COYLE,,0,,0,http://www.coyle.k12.ok.us,http://www.coyle.k12.ok.us,,0,success,OK
+,,,2,COLEMAN,,0,,0,http://www.coleman.k12.ok.us/,http://www.coleman.k12.ok.us/,,0,success,OK
+,,,1,DAHLONEGAH,,0,,0,http://www.dahlonegah.k12.ok.us,http://www.dahlonegah.k12.ok.us,,0,success,OK
+,,,2,COPAN,,0,,0,http://www.copan.k12.ok.us,http://www.copan.k12.ok.us,,0,success,OK
+,,,3,CYRIL,,0,,0,http://www.cyrilschools.org,http://www.cyrilschools.org,,0,success,OK
+,,,1,DARLINGTON,,0,,0,http://www.darlingtonps.org,http://www.darlingtonps.org,,0,success,OK
+,,,1,CRUTCHO,,0,,0,http://www.crutchoesd.org,http://www.crutchoesd.org,,0,success,OK
+,,,1,COTTONWOOD,,0,,0,http://www.cottonwoodschool.net,http://www.cottonwoodschool.net,,0,success,OK
+,,,1,DENISON,,0,,0,http://www.denison.k12.ok.us,http://www.denison.k12.ok.us,,0,success,OK
+,,,2,CROWDER,,0,,0,http://www.crowder.k12.ok.us,http://www.crowder.k12.ok.us,,0,success,OK
+,,,3,DEWAR,,0,,0,http://www.dewar.k12.ok.us,http://www.dewar.k12.ok.us,,0,success,OK
+,,,2,COLCORD,,0,,0,http://www.colcordschools.com/,http://www.colcordschools.com/,,0,success,OK
+,,,4,OKEMAH,,0,,0,http://www.okemahk12.com,http://www.okemahk12.com,,0,success,OK
+,,,2,BATTIEST,,0,,0,http://battiest.k12.ok.us,http://battiest.k12.ok.us,,0,success,OK
+,,,2,DOVER,,0,,0,http://www.dover.k12.ok.us,http://www.dover.k12.ok.us,,0,success,OK
+,,,2,DRUMMOND,,0,,0,http://www.drummond.k12.ok.us,http://www.drummond.k12.ok.us,,0,success,OK
+,,,3,DRUMRIGHT,,0,,0,http://www.drumright.k12.ok.us,http://www.drumright.k12.ok.us,,0,success,OK
+,,,2,DUKE,,0,,0,http://www.dukeschools.org,http://www.dukeschools.org,,0,success,OK
+,,,3,DALE,,0,,0,http://www.dale.k12.ok.us,http://www.dale.k12.ok.us,,0,success,OK
+,,,2,DAVENPORT,,0,,0,http://www.davenportk12.com/,http://www.davenportk12.com/,,0,success,OK
+,,,2,EAGLETOWN,,0,,0,http://www.eagletownisd.org/index.htm,http://www.eagletownisd.org/index.htm,,0,scrape_failed,OK
+,,,2,CENTRAL,,0,,0,http://www.centralps.k12.ok.us,http://www.centralps.k12.ok.us,,0,success,OK
+,,,3,DIBBLE,,0,,0,http://www.dibbleps.org/,http://www.dibbleps.org/,,0,success,OK
+,,,3,BOONE-APACHE,,0,,0,http://www.apacheps.org,http://www.apacheps.org,,0,success,OK
+,,,3,DEWEY,,0,,0,http://www.deweyk12.org,http://www.deweyk12.org,,0,success,OK
+,,,5,CUSHING,,0,,0,http://www.cushingtigers.com,http://www.cushingtigers.com,,0,success,OK
+,,,6,EL RENO,,0,,0,http://www.elrenops.org,http://www.elrenops.org,,0,success,OK
+,,,4,ELK CITY,,0,,0,http://www.elkcityschools.com,http://www.elkcityschools.com,,0,success,OK
+,,,3,ELMORE CITY-PERNELL,,0,,0,http://www.ecpbadgers.com,http://www.ecpbadgers.com,,0,success,OK
+,,,8,DUNCAN,,0,,0,http://www.duncanps.org,http://www.duncanps.org,,0,success,OK
+,,,1,PEAVINE,,0,,0,http://www.peavinepanthers.net/,http://www.peavinepanthers.net/,,0,success,OK
+,,,2,ERICK,,0,,0,http://www.erick.k12.ok.us/,http://www.erick.k12.ok.us/,,0,success,OK
+,,,2,EARLSBORO,,0,,0,http://www.earlsboro.k12.ok.us,http://www.earlsboro.k12.ok.us,,0,success,OK
+,,,3,FAIRLAND,,0,,0,http://www.fpsowls.com/,http://www.fpsowls.com/,,0,success,OK
+,,,4,COLBERT,,0,,0,http://www.colbertisd.org,http://www.colbertisd.org,,0,success,OK
+,,,15,ENID,,0,,0,http://www.enidpublicschools.org,http://www.enidpublicschools.org,,0,success,OK
+,,,1,FANSHAWE,,0,,0,http://fanshawegrizzlies.org,http://fanshawegrizzlies.org,,0,success,OK
+,,,28,EDMOND,,0,,0,http://www.edmondschools.net,http://www.edmondschools.net,,0,success,OK
+,,,7,DURANT,,0,,0,http://www.durantisd.org,http://www.durantisd.org,,0,success,OK
+,,,1,FOREST GROVE,,0,,0,http://forestgrove.k12.ok.us,http://forestgrove.k12.ok.us,,0,success,OK
+,,,3,ELGIN,,0,,0,http://www.elginps.org,http://www.elginps.org,,0,success,OK
+,,,2,CEMENT,,0,,0,http://www.cement.k12.ok.us,http://www.cement.k12.ok.us,,0,success,OK
+,,,2,FELT,,0,,0,http://www.felt.k12.ok.us/,http://www.felt.k12.ok.us/,,0,scrape_failed,OK
+,,,4,DICKSON,,0,,0,http://www.dickson.k12.ok.us,http://www.dickson.k12.ok.us,,0,success,OK
+,,,3,DAVIS,,0,,0,http://www.daviswolves.org,http://www.daviswolves.org,,0,success,OK
+,,,3,FOYIL,,0,,0,http://www.foyil.k12.ok.us,http://www.foyil.k12.ok.us,,0,success,OK
+,,,2,FORGAN,,0,,0,http://www.forganschool.com,http://www.forganschool.com,,0,success,OK
+,,,1,FRIEND,,0,,0,http://www.friend.k12.ok.us,http://www.friend.k12.ok.us,,0,success,OK
+,,,9,DEER CREEK,,0,,0,http://www.deercreekschools.org,http://www.deercreekschools.org,,0,success,OK
+,,,3,FLETCHER,,0,,0,http://fletcherschools.org,http://fletcherschools.org,,0,success,OK
+,,,3,FAIRVIEW,,0,,0,http://www.fairviewschools.net/,http://www.fairviewschools.net/,,0,success,OK
+,,,2,FREEDOM,,0,,0,http://www.freedom.k12.ok.us,http://www.freedom.k12.ok.us,,0,success,OK
+,,,2,FOX,,0,,0,http://www.foxps.k12.ok.us/,http://www.foxps.k12.ok.us/,,0,success,OK
+,,,3,GERONIMO,,0,,0,http://www.geronimo.k12.ok.us,http://www.geronimo.k12.ok.us,,0,success,OK
+,,,2,GANS,,0,,0,http://www.gans.k12.ok.us,http://www.gans.k12.ok.us,,0,success,OK
+,,,3,EUFAULA,,0,,0,http://www.eufaula.k12.ok.us/,http://www.eufaula.k12.ok.us/,,0,success,OK
+,,,5,GLENPOOL,,0,,0,http://www.glenpoolps.org,http://www.glenpoolps.org,,0,success,OK
+,,,2,GLENCOE,,0,,0,http://www.glencoe.k12.ok.us,http://www.glencoe.k12.ok.us,,0,success,OK
+,,,3,GORE,,0,,0,http://www.gorepublicschools.org,http://www.gorepublicschools.org,,0,success,OK
+,,,1,FRINK-CHAMBERS,,0,,0,http://www.frink.k12.ok.us,http://www.frink.k12.ok.us,,0,success,OK
+,,,2,GRANDFIELD,,0,,0,http://www.grandfield.k12.ok.us/,http://www.grandfield.k12.ok.us/,,0,scrape_failed,OK
+,,,1,GRAND VIEW,,0,,0,http://www.grandviewchargers.org,http://www.grandviewchargers.org,,0,success,OK
+,,,2,GOODWELL,,0,,0,http://www.goodwell.k12.ok.us,http://www.goodwell.k12.ok.us,,0,scrape_failed,OK
+,,,2,GRACEMONT,,0,,0,http://www.gracemont.k12.ok.us,http://www.gracemont.k12.ok.us,,0,success,OK
+,,,3,FREDERICK,,0,,0,http://www.frederickbombers.net,http://www.frederickbombers.net,,0,success,OK
+,,,4,GROVE,,0,,0,http://www.ridgerunners.net,http://www.ridgerunners.net,,0,success,OK
+,,,2,FORT SUPPLY,,0,,0,http://www.fortsupply.k12.ok.us,http://www.fortsupply.k12.ok.us,,0,success,OK
+,,,3,EMPIRE,,0,,0,http://www.empireschools.org,http://www.empireschools.org,,0,success,OK
+,,,1,GYPSY,,0,,0,http://www.gypsy.k12.ok.us,http://www.gypsy.k12.ok.us,,0,success,OK
+,,,8,GUYMON,,0,,0,http://www.guymontigers.com,http://www.guymontigers.com,,0,success,OK
+,,,1,FLOWER MOUND,,0,,0,http://www.flowermound.k12.ok.us,http://www.flowermound.k12.ok.us,,0,success,OK
+,,,1,GRANDVIEW,,0,,0,http://grandviewschool.k12.ok.us,http://grandviewschool.k12.ok.us,,0,success,OK
+,,,1,GROVE,,0,,0,http://www.grove.k12.ok.us,http://www.grove.k12.ok.us,,0,success,OK
+,,,1,GLOVER,,0,,0,http://www.glover.k12.ok.us,http://www.glover.k12.ok.us,,0,success,OK
+,,,2,HARDESTY,,0,,0,http://www.hardesty.k12.ok.us,http://www.hardesty.k12.ok.us,,0,success,OK
+,,,3,FORT TOWSON,,0,,0,http://www.forttowson.k12.ok.us,http://www.forttowson.k12.ok.us,,0,success,OK
+,,,2,FARGO,,0,,0,http://www.fargo.k12.ok.us/,http://www.fargo.k12.ok.us/,,0,success,OK
+,,,2,DEPEW,,0,,0,http://www.depew.k12.ok.us,http://www.depew.k12.ok.us,,0,success,OK
+,,,2,HAMMON,,0,,0,http://www.hammon.k12.ok.us,http://www.hammon.k12.ok.us,,0,success,OK
+,,,3,HARTSHORNE,,0,,0,http://www.hartshorne.k12.ok.us/,http://www.hartshorne.k12.ok.us/,,0,success,OK
+,,,2,HEAVENER,,0,,0,http://heavenerschools.org,http://heavenerschools.org,,0,success,OK
+,,,2,GARBER,,0,,0,http://www.garber.k12.ok.us/,http://www.garber.k12.ok.us/,,0,success,OK
+,,,2,GRANITE,,0,,0,http://www.granite.k12.ok.us,http://www.granite.k12.ok.us,,0,success,OK
+,,,3,HILLDALE,,0,,0,http://www.hilldaleps.org,http://www.hilldaleps.org,,0,scrape_failed,OK
+,,,3,HASKELL,,0,,0,http://www.haskellps.org,http://www.haskellps.org,,0,success,OK
+,,,3,HINTON,,0,,0,http://www.hintonschools.org,http://www.hintonschools.org,,0,success,OK
+,,,2,HANNA,,0,,0,http://www.hanna.k12.ok.us/,http://www.hanna.k12.ok.us/,,0,success,OK
+,,,2,HAILEYVILLE,,0,,0,http://www.haileyville.k12.ok.us,http://www.haileyville.k12.ok.us,,0,success,OK
+,,,3,HOBART,,0,,0,http://www.hobart.k12.ok.us,http://www.hobart.k12.ok.us,,0,success,OK
+,,,3,HOLLIS,,0,,0,http://www.hollis.k12.ok.us,http://www.hollis.k12.ok.us,,0,success,OK
+,,,1,HODGEN,,0,,0,http://www.hodgen.k12.ok.us/,http://www.hodgen.k12.ok.us/,,0,success,OK
+,,,1,HARMONY,,0,,0,http://www.harmonyps.org,http://www.harmonyps.org,,0,success,OK
+,,,3,HEALDTON,,0,,0,http://www.healdtonschools.org,http://www.healdtonschools.org,,0,success,OK
+,,,2,HOWE,,0,,0,http://www.howeschools.org,http://www.howeschools.org,,0,success,OK
+,,,3,HENNESSEY,,0,,0,http://www.hps.k12.ok.us,http://www.hps.k12.ok.us,,0,success,OK
+,,,3,HULBERT,,0,,0,http://www.hulbertriders.net,http://www.hulbertriders.net,,0,success,OK
+,,,4,IDABEL,,0,,0,http://www.idabelps.org/,http://www.idabelps.org/,,0,success,OK
+,,,5,HARRAH,,0,,0,http://www.harrahschools.com,http://www.harrahschools.com,,0,success,OK
+,,,2,INDIANOLA,,0,,0,http://www.indianola.k12.ok.us/,http://www.indianola.k12.ok.us/,,0,success,OK
+,,,1,HAYWOOD,,0,,0,http://www.haywood.k12.ok.us,http://www.haywood.k12.ok.us,,0,success,OK
+,,,3,INOLA,,0,,0,http://www.inola.k12.ok.us/,http://www.inola.k12.ok.us/,,0,success,OK
+,,,4,JAY,,0,,0,http://www.jayps.org,http://www.jayps.org,,0,success,OK
+,,,1,HOLLY CREEK,,0,,0,http://www.hollycreek.org,http://www.hollycreek.org,,0,success,OK
+,,,8,JENKS,,0,,0,http://www.jenksps.org,http://www.jenksps.org,,0,success,OK
+,,,3,JONES,,0,,0,http://www.jones.k12.ok.us,http://www.jones.k12.ok.us,,0,success,OK
+,,,2,MIDWAY,,0,,0,http://midway.k12.ok.us/,http://midway.k12.ok.us/,,0,success,OK
+,,,3,KANSAS,,0,,0,http://www.kansasps.com,http://www.kansasps.com,,0,success,OK
+,,,1,JUSTUS-TIAWAH,,0,,0,http://www.justustiawah.com,http://www.justustiawah.com,,0,success,OK
+,,,1,KENWOOD,,0,,0,http://kenwoodindians.com,http://kenwoodindians.com,,0,scrape_failed,OK
+,,,2,KEOTA,,0,,0,http://www.keota.k12.ok.us/,http://www.keota.k12.ok.us/,,0,success,OK
+,,,3,HENRYETTA,,0,,0,http://www.henryetta.k12.ok.us/,http://www.henryetta.k12.ok.us/,,0,success,OK
+,,,4,FORT GIBSON,,0,,0,http://www.fortgibsontigers.org,http://www.fortgibsontigers.org,,0,success,OK
+,,,3,KETCHUM,,0,,0,http://www.ketchumwarriors.com,http://www.ketchumwarriors.com,,0,success,OK
+,,,1,KILDARE,,0,,0,http://Kidare.k12.ok.us,http://Kidare.k12.ok.us,,0,scrape_failed,OK
+,,,1,JUSTICE,,0,,0,http://www.justice.k12.ok.us,http://www.justice.k12.ok.us,,0,success,OK
+,,,3,HOLDENVILLE,,0,,0,http://www.holdenville.k12.ok.us,http://www.holdenville.k12.ok.us,,0,success,OK
+,,,4,HOMINY,,0,,0,http://www.hominy.k12.ok.us,http://www.hominy.k12.ok.us,,0,success,OK
+,,,4,HUGO,,0,,0,http://www.hugoschools.com,http://www.hugoschools.com,,0,success,OK
+,,,2,KIOWA,,0,,0,http://www.kiowa.k12.ok.us,http://www.kiowa.k12.ok.us,,0,success,OK
+,,,2,HOOKER,,0,,0,http://www.hookerpublicschools.net,http://www.hookerpublicschools.net,,0,success,OK
+,,,2,KREMLIN-HILLSDALE,,0,,0,http://www.kremlin.k12.ok.us,http://www.kremlin.k12.ok.us,,0,success,OK
+,,,2,DEER CREEK-LAMONT,,0,,0,http://www.dclak12.org,http://www.dclak12.org,,0,scrape_failed,OK
+,,,1,LANE,,0,,0,http://www.lanepublicschools.com/,http://www.lanepublicschools.com/,,0,success,OK
+,,,3,KONAWA,,0,,0,http://www.konawa.k12.ok.us,http://www.konawa.k12.ok.us,,0,success,OK
+,,,3,LATTA,,0,,0,http://www.latta.k12.ok.us,http://www.latta.k12.ok.us,,0,success,OK
+,,,3,HAWORTH,,0,,0,http://www.haworth.k12.ok.us,http://www.haworth.k12.ok.us,,0,success,OK
+,,,2,LE FLORE,,0,,0,http://www.leflore.k12.ok.us,http://www.leflore.k12.ok.us,,0,success,OK
+,,,1,LEACH,,0,,0,http://www.leachschool.net,http://www.leachschool.net,,0,success,OK
+,,,2,INDIAHOMA,,0,,0,http://www.indiahoma.k12.ok.us,http://www.indiahoma.k12.ok.us,,0,success,OK
+,,,2,KINTA,,0,,0,http://www.kinta.k12.ok.us,http://www.kinta.k12.ok.us,,0,success,OK
+,,,3,KIEFER,,0,,0,http://www.kiefer.k12.ok.us,http://www.kiefer.k12.ok.us,,0,success,OK
+,,,3,LIBERTY,,0,,0,http://www.libertyps.org,http://www.libertyps.org,,0,success,OK
+,,,3,LINDSAY,,0,,0,http://www.lindsay.k12.ok.us,http://www.lindsay.k12.ok.us,,0,success,OK
+,,,3,LITTLE AXE,,0,,0,http://www.littleaxeps.org,http://www.littleaxeps.org,,0,success,OK
+,,,1,LIBERTY,,0,,0,http://www.liberty.seq.k12.ok.us,http://www.liberty.seq.k12.ok.us,,0,success,OK
+,,,4,KELLYVILLE,,0,,0,http://www.kellyvilleschools.org,http://www.kellyvilleschools.org,,0,success,OK
+,,,1,LONE STAR,,0,,0,http://www.lonestar.k12.ok.us,http://www.lonestar.k12.ok.us,,0,scrape_failed,OK
+,,,2,LEEDEY,,0,,0,http://www.leedey.k12.ok.us,http://www.leedey.k12.ok.us,,0,success,OK
+,,,2,LONE WOLF,,0,,0,http://lonewolfschool.com,http://lonewolfschool.com,,0,success,OK
+,,,3,LOOKEBA SICKLES,,0,,0,http://www.lookeba.k12.ok.us,http://www.lookeba.k12.ok.us,,0,success,OK
+,,,1,LOWREY,,0,,0,http://www.lowrey.k12.ok.us,http://www.lowrey.k12.ok.us,,0,success,OK
+,,,1,KREBS,,0,,0,http://krebs.k12.ok.us,http://krebs.k12.ok.us,,0,success,OK
+,,,2,MACOMB,,0,,0,http://www.macomb.k12.ok.us,http://www.macomb.k12.ok.us,,0,success,OK
+,,,4,LONE GROVE,,0,,0,http://www.lonegrove.k12.ok.us,http://www.lonegrove.k12.ok.us,,0,success,OK
+,,,4,LOCUST GROVE,,0,,0,http://www.lg.k12.ok.us,http://www.lg.k12.ok.us,,0,success,OK
+,,,4,MANGUM,,0,,0,http://www.mangum.k12.ok.us,http://www.mangum.k12.ok.us,,0,success,OK
+,,,1,MANNSVILLE,,0,,0,http://www.mannsvilleschools.com,http://www.mannsvilleschools.com,,0,scrape_failed,OK
+,,,1,MAPLE,,0,,0,http://www.mapleschool.us,http://www.mapleschool.us,,0,success,OK
+,,,3,LEXINGTON,,0,,0,http://www.lexington.k12.ok.us/,http://www.lexington.k12.ok.us/,,0,success,OK
+,,,1,LUKFATA,,0,,0,http://www.lukfata.org,http://www.lukfata.org,,0,success,OK
+,,,3,KINGSTON,,0,,0,http://www.kingston.k12.ok.us/,http://www.kingston.k12.ok.us/,,0,success,OK
+,,,1,MARYETTA,,0,,0,http://www.maryetta.org,http://www.maryetta.org,,0,scrape_failed,OK
+,,,7,GUTHRIE,,0,,0,http://www.guthrieps.net,http://www.guthrieps.net,,0,success,OK
+,,,2,MAUD,,0,,0,http://www.maud.k12.ok.us/,http://www.maud.k12.ok.us/,,0,success,OK
+,,,2,LAVERNE,,0,,0,http://www.laverne.k12.ok.us,http://www.laverne.k12.ok.us,,0,success,OK
+,,,2,MCCURTAIN,,0,,0,http://www.mccurtainschools.org,http://www.mccurtainschools.org,,0,success,OK
+,,,5,KINGFISHER,,0,,0,http://www.kingfisher.k12.ok.us/,http://www.kingfisher.k12.ok.us/,,0,success,OK
+,,,3,MARIETTA,,0,,0,http://www.mariettaisd.org,http://www.mariettaisd.org,,0,success,OK
+,,,5,MCLOUD,,0,,0,http://www.mcloudschools.us,http://www.mcloudschools.us,,0,success,OK
+,,,2,MEDFORD,,0,,0,http://www.medford.k12.ok.us,http://www.medford.k12.ok.us,,0,success,OK
+,,,3,MEEKER,,0,,0,http://www.meeker.k12.ok.us,http://www.meeker.k12.ok.us,,0,success,OK
+,,,2,MASON,,0,,0,http://www.mason.k12.ok.us/,http://www.mason.k12.ok.us/,,0,success,OK
+,,,1,JENNINGS,,0,,0,http://www.jennings.k12.ok.us,http://www.jennings.k12.ok.us,,0,success,OK
+,,,1,MARBLE CITY,,0,,0,http://www.mcps.k12.ok.us,http://www.mcps.k12.ok.us,,0,success,OK
+,,,1,MIDDLEBERG,,0,,0,http://www.middleberg.k12.ok.us,http://www.middleberg.k12.ok.us,,0,success,OK
+,,,2,MILBURN,,0,,0,http://www.milburnps.org,http://www.milburnps.org,,0,success,OK
+,,,1,MCCORD,,0,,0,http://www.mccordschool.net,http://www.mccordschool.net,,0,success,OK
+,,,5,MANNFORD,,0,,0,http://www.mannfordschool.com/,http://www.mannfordschool.com/,,0,success,OK
+,,,3,MILLWOOD,,0,,0,http://www.millwoodps.org,http://www.millwoodps.org,,0,success,OK
+,,,1,MOFFETT,,0,,0,http://www.moffett.k12.ok.us,http://www.moffett.k12.ok.us,,0,success,OK
+,,,2,MERRITT,,0,,0,http://www.merritt.k12.ok.us,http://www.merritt.k12.ok.us,,0,success,OK
+,,,3,GEARY,,0,,0,http://www.gearyschools.org/,http://www.gearyschools.org/,,0,success,OK
+,,,1,MONROE,,0,,0,http://www.monroe.k12.ok.us,http://www.monroe.k12.ok.us,,0,scrape_failed,OK
+,,,2,MILL CREEK,,0,,0,http://www.millcreek.k12.ok.us,http://www.millcreek.k12.ok.us,,0,success,OK
+,,,19,MIDWEST CITY-DEL CITY,,0,,0,http://www.mid-del.net,http://www.mid-del.net,,0,success,OK
+,,,1,MOSELEY,,0,,0,http://www.moseleyschool.com,http://www.moseleyschool.com,,0,success,OK
+,,,3,MINCO,,0,,0,http://www.minco.k12.ok.us/,http://www.minco.k12.ok.us/,,0,success,OK
+,,,34,MOORE,,0,,0,http://www.mooreschools.com,http://www.mooreschools.com,,0,success,OK
+,,,2,MOYERS,,0,,0,http://moyersisd.org,http://moyersisd.org,,0,scrape_failed,OK
+,,,3,MULDROW,,0,,0,http://www.muldrowps.org/,http://www.muldrowps.org/,,0,success,OK
+,,,2,MULHALL-ORLANDO,,0,,0,http://www.mulhall-orlando.k12.ok.us/,http://www.mulhall-orlando.k12.ok.us/,,0,success,OK
+,,,10,MUSKOGEE,,0,,0,http://www.muskogeeps.org/,http://www.muskogeeps.org/,,0,success,OK
+,,,2,MOSS,,0,,0,http://www.moss.k12.ok.us/,http://www.moss.k12.ok.us/,,0,success,OK
+,,,2,SHARON-MUTUAL,,0,,0,http://www.smps.k12.ok.us,http://www.smps.k12.ok.us,,0,success,OK
+,,,3,MORRISON,,0,,0,http://www.morrisonps.com,http://www.morrisonps.com,,0,success,OK
+,,,3,MORRIS,,0,,0,http://www.morrisschools.net,http://www.morrisschools.net,,0,success,OK
+,,,2,NEW LIMA,,0,,0,http://www.newlima.k12.ok.us/,http://www.newlima.k12.ok.us/,,0,success,OK
+,,,1,NASHOBA,,0,,0,http://www.nashoba.k12.ok.us,http://www.nashoba.k12.ok.us,,0,scrape_failed,OK
+,,,6,MIAMI,,0,,0,http://www.miamiwardogs.com,http://www.miamiwardogs.com,,0,success,OK
+,,,3,NINNEKAH,,0,,0,http://www.ninnekah.k12.ok.us,http://www.ninnekah.k12.ok.us,,0,success,OK
+,,,5,NOBLE,,0,,0,http://www.nobleps.com,http://www.nobleps.com,,0,success,OK
+,,,4,NEWCASTLE,,0,,0,http://www.newcastle.k12.ok.us,http://www.newcastle.k12.ok.us,,0,success,OK
+https://en.wikipedia.org/wiki/Lawton_Public_Schools; https://www.lawtoncs.org; https://www.lawtonpsf.org; https://www.lawtonps.org; https://play.google.com/store/apps/details?id=com.apptegy.lawtonok&hl=ln,"**Paragraph 1 - Philosophy and Conceptualization:** The Lawton Public Schools district conceptualizes **restorative practices** as a core component of an educational philosophy centered on building school communities through love, trust, fairness, support, accountability, and safety, positioning it alongside cultural diversity and socio-emotional learning to retain troubled youth and elevate student outcomes. This framing emerges from their sponsorship of a free public workshop by educator Robert Jackson on March 5, 2026, at Lawton High School, where restorative practices are highlighted as refined techniques to empower administrators, educators, parents, and students, challenging them to use authority effectively while fostering high expectations akin to a ""no excuses"" approach that transforms low-performing youth into successful professionals. No explicit district policies, such as a Student Code of Conduct, mission statements, or frameworks, are referenced to define or interrelate restorative practices with terms like restorative justice, race equity, or discipline practices; instead, the district integrates it conceptually as a motivational tool for activation and retention, demonstrating a preliminary commitment through Project AWARE sponsorship without mentioned timelines, goals, or district-wide policy embedding, suggesting an aspirational rather than fully articulated philosophical foundation.
+
+**Paragraph 2 - Infrastructure and Implementation:** Lawton Public Schools operationalizes **restorative practices** through Project AWARE, a sponsored initiative featuring a single free workshop led by Robert Jackson on March 5, 2026, at 5:30 p.m. in the Lawton High School auditorium (601 Fort Sill Boulevard), with logistical support including free Chick-fil-A dinners for the first 275 attendees, managed by Danna Bross as Project AWARE community manager. No dedicated centers, departments, academies, coordinators, facilitators, training schedules, or ongoing programs are detailed beyond this event, which lacks evidence of broader staffing, school-specific implementations, or timelines for systemic rollout, indicating that restorative practices remain at a promotional, event-based level rather than a robust infrastructure with specialized personnel or operational systems translating philosophy into sustained practice across the district.
+
+Source: District website only","[restorative practices @ https://www.lawtonps.org/article/2728475 (district)]: tertainers. As a motivational speaker, Jackson has become an expert in teaching cultural diversity, restorative practices and socio-emotional learning, and how to keep troubled youth in school. He said his goal is to guid",23,LAWTON,https://www.lawtonps.org/article/2728475,1,restorative practices,1,http://www.lawtonps.org,http://www.lawtonps.org,https://www.lawtonps.org/article/2728475,1,success,OK
+,,,3,CHISHOLM,,0,,0,http://www.chisholm.k12.ok.us,http://www.chisholm.k12.ok.us,,0,success,OK
+,,,3,NOWATA,,0,,0,http://www.npsok.org,http://www.npsok.org,,0,success,OK
+,,,3,NAVAJO,,0,,0,http://www.navajo.k12.ok.us,http://www.navajo.k12.ok.us,,0,success,OK
+,,,1,OAK GROVE,,0,,0,http://www.oakgrove.k12.ok.us,http://www.oakgrove.k12.ok.us,,0,success,OK
+,,,2,MOUNDS,,0,,0,http://www.moundsps.com,http://www.moundsps.com,,0,success,OK
+,,,3,LUTHER,,0,,0,http://www.lutherlions.org,http://www.lutherlions.org,,0,success,OK
+,,,1,NORWOOD,,0,,0,http://www.norwood.k12.ok.us,http://www.norwood.k12.ok.us,,0,success,OK
+,,,1,OAKDALE,,0,,0,http://www.oakdale.org,http://www.oakdale.org,,0,success,OK
+,,,3,OKEENE,,0,,0,http://okeene.k12.ok.us/,http://okeene.k12.ok.us/,,0,success,OK
+,,,16,MUSTANG,,0,,0,http://www.mustangps.org,http://www.mustangps.org,,0,success,OK
+,,,2,MOORELAND,,0,,0,http://www.mooreland.k12.ok.us,http://www.mooreland.k12.ok.us,,0,success,OK
+,,,3,MARLOW,,0,,0,http://www.marlow.k12.ok.us,http://www.marlow.k12.ok.us,,0,success,OK
+,,,2,OLIVE,,0,,0,http://www.olive.k12.ok.us,http://www.olive.k12.ok.us,,0,success,OK
+,,,3,MADILL,,0,,0,http://www.madillok.com,http://www.madillok.com,,0,success,OK
+,,,6,MCALESTER,,0,,0,http://www.mcalester.k12.ok.us,http://www.mcalester.k12.ok.us,,0,success,OK
+,,,2,OILTON,,0,,0,http://www.oilton.k12.ok.us,http://www.oilton.k12.ok.us,,0,success,OK
+,,,2,OAKS-MISSION,,0,,0,http://www.oaksmissionschools.com,http://www.oaksmissionschools.com,,0,success,OK
+,,,1,OSAGE HILLS,,0,,0,http://www.osagehills.k12.ok.us,http://www.osagehills.k12.ok.us,,0,success,OK
+,,,3,OKMULGEE,,0,,0,http://www.okmulgeeps.com,http://www.okmulgeeps.com,,0,success,OK
+,,,1,OSAGE,,0,,0,http://www.osageelementary.com,http://www.osageelementary.com,,0,success,OK
+,,,2,OKAY,,0,,0,http://www.okayps.org,http://www.okayps.org,,0,success,OK
+,,,1,PANOLA,,0,,0,http://www.panolabearcats.org,http://www.panolabearcats.org,,0,scrape_failed,OK
+,,,2,PAOLI,,0,,0,http://www.paoli.k12.ok.us/,http://www.paoli.k12.ok.us/,,0,success,OK
+,,,1,OPTIMA,,0,,0,http://optima.k12.ok.us,http://optima.k12.ok.us,,0,success,OK
+,,,4,PAWHUSKA,,0,,0,http://www.pawhuskadistrict.org,http://www.pawhuskadistrict.org,,0,success,OK
+,,,25,NORMAN,,0,,0,http://www.normanpublicschools.org,http://www.normanpublicschools.org,,0,success,OK
+,,,2,OKTAHA,,0,,0,http://www.oktahaschool.com/,http://www.oktahaschool.com/,,0,success,OK
+,,,1,PEGGS,,0,,0,http://peggspanthers.com,http://peggspanthers.com,,0,scrape_failed,OK
+,,,1,PECKHAM,,0,,0,http://www.peckham.k12.ok.us,http://www.peckham.k12.ok.us,,0,success,OK
+,,,3,NEWKIRK,,0,,0,http://www.newkirk.k12.ok.us,http://www.newkirk.k12.ok.us,,0,success,OK
+,,,4,PERKINS-TRYON,,0,,0,http://www.p-t.k12.ok.us/,http://www.p-t.k12.ok.us/,,0,success,OK
+,,,3,PERRY,,0,,0,http://www.perry.k12.ok.us,http://www.perry.k12.ok.us,,0,success,OK
+,,,2,PITTSBURG,,0,,0,http://www.pittsburg.k12.ok.us,http://www.pittsburg.k12.ok.us,,0,success,OK
+,,,4,PAULS VALLEY,,0,,0,http://www.paulsvalleyschools.com,http://www.paulsvalleyschools.com,,0,success,OK
+,,,2,LOMEGA,,0,,0,http://www.lomega.k12.ok.us,http://www.lomega.k12.ok.us,,0,success,OK
+,,,2,MAYSVILLE,,0,,0,http://maysville.k12.ok.us,http://maysville.k12.ok.us,,0,success,OK
+,,,3,POCOLA,,0,,0,http://www.pocola.k12.ok.us,http://www.pocola.k12.ok.us,,0,success,OK
+,,,3,OKARCHE,,0,,0,http://www.okarche.k12.ok.us,http://www.okarche.k12.ok.us,,0,success,OK
+,,,11,PONCA CITY,,0,,0,http://www.pcps.us,http://www.pcps.us,,0,success,OK
+,,,2,PADEN,,0,,0,http://www.paden.k12.ok.us,http://www.paden.k12.ok.us,,0,success,OK
+,,,3,PANAMA,,0,,0,http://www.panama.k12.ok.us/,http://www.panama.k12.ok.us/,,0,success,OK
+,,,4,PRAGUE,,0,,0,http://www.prague.k12.ok.us,http://www.prague.k12.ok.us,,0,success,OK
+,,,1,PLEASANT GROVE,,0,,0,http://www.pleasantgroveschools.com,http://www.pleasantgroveschools.com,,0,success,OK
+,,,2,PRESTON,,0,,0,http://prestonps.com,http://prestonps.com,,0,success,OK
+,,,3,PAWNEE,,0,,0,http://www.pawnee.k12.ok.us/,http://www.pawnee.k12.ok.us/,,0,success,OK
+,,,7,PIEDMONT,,0,,0,http://www.piedmontschools.org/,http://www.piedmontschools.org/,,0,success,OK
+,,,4,PURCELL,,0,,0,http://www.purcellps.org,http://www.purcellps.org,,0,success,OK
+,,,5,PRYOR,,0,,0,http://www.pryorschools.org,http://www.pryorschools.org,,0,success,OK
+,,,3,QUAPAW,,0,,0,http://www.qpswildcats.com,http://www.qpswildcats.com,,0,success,OK
+,,,2,QUINTON,,0,,0,http://www.quintonschools.com,http://www.quintonschools.com,,0,success,OK
+,,,3,POND CREEK-HUNTER,,0,,0,http://www.pondcreek-hunter.k12.ok.us/,http://www.pondcreek-hunter.k12.ok.us/,,0,success,OK
+,,,3,RATTAN,,0,,0,http://www.rattan.k12.ok.us,http://www.rattan.k12.ok.us,,0,success,OK
+,,,58,OKLAHOMA CITY,,0,,0,http://www.okcps.org,http://www.okcps.org,,0,success,OK
+,,,2,RED OAK,,0,,0,http://www.redoak.k12.ok.us,http://www.redoak.k12.ok.us,,0,success,OK
+,,,2,REYDON,,0,,0,http://www.reydon.k12.ok.us,http://www.reydon.k12.ok.us,,0,success,OK
+,,,1,PRETTY WATER,,0,,0,http://www.prettywater.k12.ok.us,http://www.prettywater.k12.ok.us,,0,success,OK
+,,,1,PIONEER,,0,,0,http://pioneerk8.k12.ok.us,http://pioneerk8.k12.ok.us,,0,success,OK
+,,,2,RIPLEY,,0,,0,http://www.ripley.k12.ok.us,http://www.ripley.k12.ok.us,,0,success,OK
+,,,13,OWASSO,,0,,0,http://www.owassops.org,http://www.owassops.org,,0,success,OK
+,,,2,PORUM,,0,,0,http://www.porum.k12.ok.us,http://www.porum.k12.ok.us,,0,success,OK
+,,,1,ROCKY MOUNTAIN,,0,,0,http://www.rockymtn.k12.ok.us,http://www.rockymtn.k12.ok.us,,0,success,OK
+,,,2,ROFF,,0,,0,http://www.roff.k12.ok.us/,http://www.roff.k12.ok.us/,,0,success,OK
+,,,3,ROLAND,,0,,0,http://www.rolandschools.org,http://www.rolandschools.org,,0,success,OK
+,,,26,PUTNAM CITY,,0,,0,http://www.putnamcityschools.org,http://www.putnamcityschools.org,,0,success,OK
+,,,2,PRUE,,0,,0,http://www.prue.k12.ok.us,http://www.prue.k12.ok.us,,0,success,OK
+,,,1,KEYSTONE,,0,,0,http://www.keystonerangers.org,http://www.keystonerangers.org,,0,success,OK
+,,,2,RYAN,,0,,0,http://www.ryan.k12.ok.us,http://www.ryan.k12.ok.us,,0,success,OK
+,,,2,SOUTH COFFEYVILLE,,0,,0,http://scps.k12.ok.us,http://scps.k12.ok.us,,0,success,OK
+,,,3,SALINA,,0,,0,http://www.salinawildcats.org,http://www.salinawildcats.org,,0,success,OK
+,,,1,RAVIA,,0,,0,http://www.ravia.k12.ok.us,http://www.ravia.k12.ok.us,,0,success,OK
+,,,3,RUSH SPRINGS,,0,,0,http://www.rushsprings.k12.ok.us/,http://www.rushsprings.k12.ok.us/,,0,success,OK
+,,,1,RIVERSIDE,,0,,0,http://www.riverside.k12.ok.us,http://www.riverside.k12.ok.us,,0,success,OK
+,,,3,PIONEER-PLEASANT VALE,,0,,0,http://www.ppv.k12.ok.us,http://www.ppv.k12.ok.us,,0,success,OK
+,,,5,POTEAU,,0,,0,http://www.poteau.k12.ok.us,http://www.poteau.k12.ok.us,,0,success,OK
+,,,2,SCHULTER,,0,,0,http://www.schulter.k12.ok.us,http://www.schulter.k12.ok.us,,0,success,OK
+,,,3,SEILING,,0,,0,http://www.seiling.k12.ok.us,http://www.seiling.k12.ok.us,,0,success,OK
+,,,4,PLAINVIEW,,0,,0,http://www.plainview.k12.ok.us,http://www.plainview.k12.ok.us,,0,success,OK
+,,,3,RINGLING,,0,,0,http://www.ringling.k12.ok.us/,http://www.ringling.k12.ok.us/,,0,success,OK
+,,,4,SALLISAW,,0,,0,http://www.sallisawps.org,http://www.sallisawps.org,,0,success,OK
+,,,1,RYAL,,0,,0,http://www.ryal.k12.ok.us,http://www.ryal.k12.ok.us,,0,success,OK
+,,,1,SHADY POINT,,0,,0,http://www.spk12.org,http://www.spk12.org,,0,success,OK
+,,,2,SASAKWA,,0,,0,http://www.sasakwaschools.org/,http://www.sasakwaschools.org/,,0,success,OK
+,,,1,SHADY GROVE,,0,,0,http://sites.google.com/shadygrove.k12.ok.us/shadygrove/home,http://sites.google.com/shadygrove.k12.ok.us/shadygrove/home,,0,success,OK
+,,,7,SHAWNEE,,0,,0,http://www.shawnee.k12.ok.us/,http://www.shawnee.k12.ok.us/,,0,success,OK
+,,,8,SAND SPRINGS,,0,,0,http://www.sandites.org,http://www.sandites.org,,0,success,OK
+,,,5,SKIATOOK,,0,,0,http://www.skiatookschools.org,http://www.skiatookschools.org,,0,success,OK
+,,,3,SMITHVILLE,,0,,0,http://www.smithville.k12.ok.us/,http://www.smithville.k12.ok.us/,,0,success,OK
+,,,5,SEMINOLE,,0,,0,http://www.sps.k12.ok.us/,http://www.sps.k12.ok.us/,,0,success,OK
+,,,2,SOPER,,0,,0,http://www.soperschools.com/,http://www.soperschools.com/,,0,scrape_failed,OK
+,,,1,SOUTH ROCK CREEK,,0,,0,http://www.src.k12.ok.us.com,http://www.src.k12.ok.us.com,,0,scrape_failed,OK
+,,,3,SAYRE,,0,,0,http://www.sayre.k12.ok.us,http://www.sayre.k12.ok.us,,0,success,OK
+,,,3,SHIDLER,,0,,0,http://www.shidlerpublicschools.org,http://www.shidlerpublicschools.org,,0,success,OK
+,,,2,SAVANNA,,0,,0,http://www.savanna.k12.ok.us/,http://www.savanna.k12.ok.us/,,0,success,OK
+,,,4,BRIDGE CREEK,,0,,0,http://www.bridgecreekbobcats.org,http://www.bridgecreekbobcats.org,,0,success,OK
+,,,1,STIDHAM,,0,,0,http://www.stidham.k12.ok.us,http://www.stidham.k12.ok.us,,0,success,OK
+,,,3,STIGLER,,0,,0,http://www.stiglerps.com,http://www.stiglerps.com,,0,success,OK
+,,,2,SPRINGER,,0,,0,http://www.springerschools.com,http://www.springerschools.com,,0,success,OK
+,,,7,SAPULPA,,0,,0,http://www.sapulpaps.org/,http://www.sapulpaps.org/,,0,success,OK
+,,,2,STERLING,,0,,0,http://www.sterlingtigers.org/,http://www.sterlingtigers.org/,,0,success,OK
+,,,1,STRAIGHT,,0,,0,http://www.straighteagles.com,http://www.straighteagles.com,,0,scrape_failed,OK
+,,,2,SHATTUCK,,0,,0,http://www.shattuck.k12.ok.us,http://www.shattuck.k12.ok.us,,0,success,OK
+,,,2,STRINGTOWN,,0,,0,http://www.stringtown.k12.ok.us,http://www.stringtown.k12.ok.us,,0,scrape_failed,OK
+,,,2,STROTHER,,0,,0,http://www.strother.k12.ok.us,http://www.strother.k12.ok.us,,0,success,OK
+,,,3,STROUD,,0,,0,http://www.stroud.k12.ok.us,http://www.stroud.k12.ok.us,,0,success,OK
+,,,3,SNYDER,,0,,0,http://www.snyder.k12.ok.us,http://www.snyder.k12.ok.us,,0,success,OK
+,,,4,SULPHUR,,0,,0,http://www.sulphurk12.org,http://www.sulphurk12.org,,0,success,OK
+,,,3,STILWELL,,0,,0,http://www.stilwellk12.org,http://www.stilwellk12.org,,0,success,OK
+,,,2,SENTINEL,,0,,0,http://www.sentinel.k12.ok.us,http://www.sentinel.k12.ok.us,,0,success,OK
+,,,6,TAHLEQUAH,,0,,0,http://www.tahlequahschools.org,http://www.tahlequahschools.org,,0,success,OK
+,,,3,SPIRO,,0,,0,http://www.spiro.k12.ok.us,http://www.spiro.k12.ok.us,,0,success,OK
+,,,9,STILLWATER,,0,,0,http://www.stillwaterschools.com,http://www.stillwaterschools.com,,0,success,OK
+,,,1,ROBIN HILL,,0,,0,http://robinhill.socs.net,http://robinhill.socs.net,,0,success,OK
+,,,2,STUART,,0,,0,http://www.stuart.k12.ok.us,http://www.stuart.k12.ok.us,,0,success,OK
+,,,1,TENKILLER,,0,,0,http://www.tenkiller.k12.ok.us,http://www.tenkiller.k12.ok.us,,0,success,OK
+,,,2,RINGWOOD,,0,,0,http://www.ringwood.k12.ok.us/,http://www.ringwood.k12.ok.us/,,0,success,OK
+,,,5,TECUMSEH,,0,,0,http://www.tecumseh.k12.ok.us,http://www.tecumseh.k12.ok.us,,0,success,OK
+,,,2,TEXHOMA,,0,,0,http://www.texhoma61.net,http://www.texhoma61.net,,0,success,OK
+,,,2,MOUNTAIN VIEW-GOTEBO,,0,,0,http://www.mvgschools.com,http://www.mvgschools.com,,0,success,OK
+,,,2,TEMPLE,,0,,0,http://www.templeps.org,http://www.templeps.org,,0,success,OK
+,,,3,TALIHINA,,0,,0,http://www.talihina.k12.ok.us,http://www.talihina.k12.ok.us,,0,success,OK
+,,,3,TONKAWA,,0,,0,http://www.tonkawa.k12.ok.us,http://www.tonkawa.k12.ok.us,,0,success,OK
+,,,2,TALOGA,,0,,0,http://www.taloga.k12.ok.us,http://www.taloga.k12.ok.us,,0,success,OK
+,,,2,PORTER CONSOLIDATED,,0,,0,http://www.porter.k12.ok.us,http://www.porter.k12.ok.us,,0,success,OK
+,,,3,STRATFORD,,0,,0,http://www.stratford.k12.ok.us,http://www.stratford.k12.ok.us,,0,success,OK
+,,,2,TUPELO,,0,,0,http://www.tupelo.k12.ok.us,http://www.tupelo.k12.ok.us,,0,success,OK
+,,,3,WOODLAND,,0,,0,http://www.woodland.k12.ok.us/,http://www.woodland.k12.ok.us/,,0,success,OK
+,,,2,TURPIN,,0,,0,http://www.turpinps.org,http://www.turpinps.org,,0,success,OK
+,,,1,TURKEY FORD,,0,,0,http://www.turkeyford.net,http://www.turkeyford.net,,0,success,OK
+,,,2,TIPTON,,0,,0,http://www.tiptontigers.net,http://www.tiptontigers.net,,0,success,OK
+,,,3,THACKERVILLE,,0,,0,http://www.thackervilleschools.org,http://www.thackervilleschools.org,,0,success,OK
+,,,1,TUSKAHOMA,,0,,0,http://www.tuskahoma.k12.ok.us,http://www.tuskahoma.k12.ok.us,,0,success,OK
+,,,2,TYRONE,,0,,0,http://tyrone@tyronebobcats.org,http://tyrone@tyronebobcats.org,,0,scrape_failed,OK
+,,,3,STONEWALL,,0,,0,http://www.stonewall.k12.ok.us,http://www.stonewall.k12.ok.us,,0,success,OK
+,,,2,UNION CITY,,0,,0,http://www.unioncity.k12.ok.us,http://www.unioncity.k12.ok.us,,0,success,OK
+,,,3,VALLIANT,,0,,0,http://www.vpsd.org,http://www.vpsd.org,,0,success,OK
+,,,1,TWIN HILLS,,0,,0,http://www.twinhills.k12.ok.us,http://www.twinhills.k12.ok.us,,0,success,OK
+,,,3,CANEY VALLEY,,0,,0,http://www.caneyvalleyschool.org/,http://www.caneyvalleyschool.org/,,0,success,OK
+,,,3,VELMA-ALMA,,0,,0,http://www.velma-alma.com,http://www.velma-alma.com,,0,scrape_failed,OK
+,,,5,TUTTLE,,0,,0,http://www.tuttleschools.org,http://www.tuttleschools.org,,0,success,OK
+,,,2,SWEETWATER,,0,,0,http://www.sweetwater.k12.ok.us,http://www.sweetwater.k12.ok.us,,0,success,OK
+,,,2,TUSHKA,,0,,0,http://tushka.k12.ok.us,http://tushka.k12.ok.us,,0,success,OK
+,,,2,VARNUM,,0,,0,http://www.varnum.k12.ok.us,http://www.varnum.k12.ok.us,,0,success,OK
+,,,3,VINITA,,0,,0,http://www.vinitahornets.com,http://www.vinitahornets.com,,0,success,OK
+,,,69,TULSA,,0,,0,http://www.tulsaschools.org,http://www.tulsaschools.org,,0,success,OK
+,,,4,WAGONER,,0,,0,http://www.wagonerps.org,http://www.wagonerps.org,,0,success,OK
+,,,3,WALTERS,,0,,0,http://www.waltersps.org,http://www.waltersps.org,,0,success,OK
+,,,2,WANETTE,,0,,0,http://www.wanetteschools.org,http://www.wanetteschools.org,,0,scrape_failed,OK
+,,,1,WAINWRIGHT,,0,,0,http://sites.google.com/wainwrightk8.org/news/home,http://sites.google.com/wainwrightk8.org/news/home,,0,success,OK
+,,,2,VICI,,0,,0,http://www.vicischools.k12.ok.us,http://www.vicischools.k12.ok.us,,0,success,OK
+,,,1,TANNEHILL,,0,,0,http://www.tannehill.k12.ok.us,http://www.tannehill.k12.ok.us,,0,success,OK
+,,,4,SILO,,0,,0,http://www.siloisd.org,http://www.siloisd.org,,0,success,OK
+,,,2,VANOSS,,0,,0,http://www.vanoss.k12.ok.us,http://www.vanoss.k12.ok.us,,0,success,OK
+,,,2,WAUKOMIS,,0,,0,http://www.waukomis.k12.ok.us,http://www.waukomis.k12.ok.us,,0,success,OK
+,,,4,OOLOGAH-TALALA,,0,,0,http://www.oologah.k12.ok.us,http://www.oologah.k12.ok.us,,0,success,OK
+,,,3,WASHINGTON,,0,,0,http://www.wps-isd.com,http://www.wps-isd.com,,0,success,OK
+,,,2,WAYNOKA,,0,,0,http://www.waynoka.k12.ok.us,http://www.waynoka.k12.ok.us,,0,success,OK
+,,,6,WEATHERFORD,,0,,0,http://www.wpsok.org,http://www.wpsok.org,,0,success,OK
+,,,2,WEBBERS FALLS,,0,,0,http://www.webbersfalls.k12.ok.us,http://www.webbersfalls.k12.ok.us,,0,success,OK
+,,,3,WAYNE,,0,,0,http://www.wayne.k12.ok.us,http://www.wayne.k12.ok.us,,0,success,OK
+,,,3,TISHOMINGO,,0,,0,http://www.tishomingo.k12.ok.us,http://www.tishomingo.k12.ok.us,,0,success,OK
+,,,3,WELCH,,0,,0,http://www.welchwildcats.net,http://www.welchwildcats.net,,0,success,OK
+,,,8,WESTERN HEIGHTS,,0,,0,http://www.westernheights.k12.ok.us,http://www.westernheights.k12.ok.us,,0,success,OK
+,,,3,WESTVILLE,,0,,0,http://www.westville.k12.ok.us,http://www.westville.k12.ok.us,,0,success,OK
+,,,3,VIAN,,0,,0,http://www.vian.k12.ok.us,http://www.vian.k12.ok.us,,0,success,OK
+,,,2,WATTS,,0,,0,http://wattsschool.com,http://wattsschool.com,,0,success,OK
+,,,1,WHITE OAK,,0,,0,http://www.whiteoakranchers.webador.com,http://www.whiteoakranchers.webador.com,,0,success,OK
+,,,17,UNION,,0,,0,http://www.unionps.org/,http://www.unionps.org/,,0,success,OK
+,,,2,WAPANUCKA,,0,,0,http://wpss.k12.ok.us,http://wpss.k12.ok.us,,0,success,OK
+,,,2,WETUMKA,,0,,0,http://www.wetumka.k12.ok.us,http://www.wetumka.k12.ok.us,,0,success,OK
+,,,1,WHITEFIELD,,0,,0,http://www.whitefield.k12.ok.us,http://www.whitefield.k12.ok.us,,0,success,OK
+,,,1,WICKLIFFE,,0,,0,http://www.wickliffeschool.com,http://www.wickliffeschool.com,,0,success,OK
+,,,2,WHITESBORO,,0,,0,http://whitesboro.k12.ok.us,http://whitesboro.k12.ok.us,,0,scrape_failed,OK
+,,,1,WHITEBEAD,,0,,0,http://whitebead.net,http://whitebead.net,,0,success,OK
+,,,2,WILSON,,0,,0,http://www.wpstigers.k12.ok.us,http://www.wpstigers.k12.ok.us,,0,success,OK
+,,,3,WEWOKA,,0,,0,http://www.wps.k12.ok.us,http://www.wps.k12.ok.us,,0,success,OK
+,,,2,WISTER,,0,,0,http://www.wisterschools.org,http://www.wisterschools.org,,0,success,OK
+,,,7,WOODWARD,,0,,0,http://www.woodwardps.net,http://www.woodwardps.net,,0,success,OK
+,,,3,WATONGA,,0,,0,http://www.watongapublicschools.com,http://www.watongapublicschools.com,,0,success,OK
+,,,3,WYANDOTTE,,0,,0,http://www.wyandotte.k12.ok.us,http://www.wyandotte.k12.ok.us,,0,success,OK
+,,,2,VERDEN,,0,,0,http://www.verdenschools.org,http://www.verdenschools.org,,0,success,OK
+,,,2,WYNONA,,0,,0,http://www.wynona.k12.ok.us,http://www.wynona.k12.ok.us,,0,scrape_failed,OK
+,,,3,WELLSTON,,0,,0,http://www.wellstonschools.org,http://www.wellstonschools.org,,0,success,OK
+,,,3,YALE,,0,,0,http://www.yale.k12.ok.us,http://www.yale.k12.ok.us,,0,success,OK
+,,,12,YUKON,,0,,0,http://www.yukonps.com,http://www.yukonps.com,,0,scrape_failed,OK
+,,,1,ZANEIS,,0,,0,http://sites.google.com/zaneis.k12.ok.us/zaneispublicschool/home,http://sites.google.com/zaneis.k12.ok.us/zaneispublicschool/home,,0,success,OK
+,,,2,YARBROUGH,,0,,0,http://www.yarbrough.k12.ok.us,http://www.yarbrough.k12.ok.us,,0,success,OK
+,,,1,WHITE ROCK,,0,,0,http://www.whiterock.k12.ok.us,http://www.whiterock.k12.ok.us,,0,success,OK
+,,,1,ZION,,0,,0,http://www.zionjets.com,http://www.zionjets.com,,0,success,OK
+,,,3,WILBURTON,,0,,0,http://www.wilburtondiggers.org,http://www.wilburtondiggers.org,,0,success,OK
+,,,1,WK JACKSON LEADERSHIP CHARTER ACADEMY,,0,,0,http://www.wkjackson.org,http://www.wkjackson.org,,0,success,OK
+,,,2,FORT COBB-BROXTON,,0,,0,http://www.fcbmustangs.com,http://www.fcbmustangs.com,,0,success,OK
+,,,2,TULSA CLASSICAL ACADEMY (CHARTER),,0,,0,http://WWW.TULSACLASSICAL.ORG,http://WWW.TULSACLASSICAL.ORG,,0,scrape_failed,OK
+,,,2,BINGER-ONEY,,0,,0,http://sites.google.com/a/binger-oney.k12.ok.us/binger-oney-public-school/home,http://sites.google.com/a/binger-oney.k12.ok.us/binger-oney-public-school/home,,0,success,OK
+,,,2,Virtual Preparatory Academy (CHARTER),,0,,0,http://oklahoma.virtualpreparatoryacademy.com/,http://oklahoma.virtualpreparatoryacademy.com/,,0,success,OK
+,,,1,PROUD TO PARTNER LEADERSHIP CHARTER ACADEMY,,0,,0,http://www.ptpla.org,http://www.ptpla.org,,0,success,OK
+,,,3,WYNNEWOOD,,0,,0,http://www.wynnewood.k12.ok.us,http://www.wynnewood.k12.ok.us,,0,success,OK
+,,,3,WELEETKA,,0,,0,http://www.weleetka.k12.ok.us,http://www.weleetka.k12.ok.us,,0,success,OK
+,,,3,WRIGHT CITY,,0,,0,http://www.wcisd.org,http://www.wcisd.org,,0,success,OK
+,,,2,WILSON,,0,,0,http://www.wilson.k12.ok.us,http://www.wilson.k12.ok.us,,0,success,OK
+,,,1,WOODALL,,0,,0,http://www.woodall.k12.ok.us,http://www.woodall.k12.ok.us,,0,success,OK
+,,,2,TURNER,,0,,0,http://www.turnerisd.org,http://www.turnerisd.org,,0,success,OK
+,,,3,SPERRY,,0,,0,http://www.sperry.k12.ok.us,http://www.sperry.k12.ok.us,,0,success,OK
+,,,3,SEQUOYAH,,0,,0,http://www.sequoyaheagles.net,http://www.sequoyaheagles.net,,0,success,OK
+,,,2,WARNER,,0,,0,http://www.warner.k12.ok.us,http://www.warner.k12.ok.us,,0,success,OK
+,,,2,ROCK CREEK,,0,,0,http://www.rockcreekisd.net,http://www.rockcreekisd.net,,0,success,OK
+,,,3,WAURIKA,,0,,0,http://www.waurikaschools.org,http://www.waurikaschools.org,,0,success,OK
+,,,4,VERDIGRIS,,0,,0,http://www.vps.k12.ok.us,http://www.vps.k12.ok.us,,0,success,OK
+,,,1,Northwest Regional ESD,,0,,0,http://www.nwresd.k12.or.us,http://www.nwresd.k12.or.us,,0,scrape_failed,OR
+,,,0,Grant ESD,,0,,0,http://www.grantesd.k12.or.us,http://www.grantesd.k12.or.us,,0,scrape_failed,OR
+,,,1,South Coast ESD,,0,,0,http://www.scesd.k12.or.us,http://www.scesd.k12.or.us,,0,success,OR
+,,,2,South Wasco County SD 1,,0,,0,http://www.swasco.net,http://www.swasco.net,,0,success,OR
+,,,4,Gervais SD 1,,0,,0,http://www.gervais.k12.or.us,http://www.gervais.k12.or.us,,0,success,OR
+,,,0,Linn Benton Lincoln ESD,,0,,0,http://www.lblesd.k12.or.us,http://www.lblesd.k12.or.us,,0,scrape_failed,OR
+,,,2,Falls City SD 57,,0,,0,http://www.fallscityschools.org,http://www.fallscityschools.org,,0,success,OR
+,,,0,Malheur ESD Region 14,,0,,0,http://www.malesd.k12.or.us,http://www.malesd.k12.or.us,,0,scrape_failed,OR
+,,,1,InterMountain ESD,,0,,0,http://www.imesd.k12.or.us,http://www.imesd.k12.or.us,,0,success,OR
+,,,4,Vale SD 84,,0,,0,http://www.valesd.org,http://www.valesd.org,,0,success,OR
+,,,3,Harrisburg SD 7J,,0,,0,http://www.harrisburg.k12.or.us,http://www.harrisburg.k12.or.us,,0,success,OR
+,,,0,Malheur County SD 51,,0,,0,,,,0,no_url,OR
+,,,8,ODE YCEP District,,0,,0,,,,0,no_url,OR
+,,,0,ODE JDEP District,,0,,0,,,,0,no_url,OR
+,,,0,ODE Head Start,,0,,0,,,,0,no_url,OR
+,,,1,Ione SD R2,,0,,0,http://www.ione.k12.or.us,http://www.ione.k12.or.us,,0,success,OR
+,,,0,Region 18 ESD,,0,,0,http://www.r18esd.org,http://www.r18esd.org,,0,success,OR
+,,,0,ODE LTCT District,,0,,0,,,,0,no_url,OR
+,,,0,ODE Hospital Program District,,0,,0,,,,0,no_url,OR
+,,,0,North Central ESD,,0,,0,http://www.ncesd.k12.or.us,http://www.ncesd.k12.or.us,,0,success,OR
+,,,0,Harney ESD Region XVII,,0,,0,http://www.harneyesd.k12.or.us,http://www.harneyesd.k12.or.us,,0,success,OR
+,,,7,North Wasco County SD 21,,0,,0,http://www.nwasco.k12.or.us,http://www.nwasco.k12.or.us,,0,success,OR
+,,,0,Lake ESD,,0,,0,http://www.lakeesd.k12.or.us,http://www.lakeesd.k12.or.us,,0,success,OR
+,,,3,Myrtle Point SD 41,,0,,0,http://www.mpsd.k12.or.us,http://www.mpsd.k12.or.us,,0,success,OR
+,,,3,Yamhill Carlton SD 1,,0,,0,http://www.ycsd.k12.or.us,http://www.ycsd.k12.or.us,,0,success,OR
+,,,2,Knappa SD 4,,0,,0,http://www.knappa.k12.or.us,http://www.knappa.k12.or.us,,0,success,OR
+,,,0,Jefferson ESD,,0,,0,http://www.jcesd.k12.or.us,http://www.jcesd.k12.or.us,,0,success,OR
+,,,1,Arlington SD 3,,0,,0,http://www.honkernet.net,http://www.honkernet.net,,0,success,OR
+,,,2,Adrian SD 61,,0,,0,http://www.adriansd.org,http://www.adriansd.org,,0,success,OR
+,,,1,Alsea SD 7J,,0,,0,http://www.alsea.k12.or.us,http://www.alsea.k12.or.us,,0,scrape_failed,OR
+,,,1,Annex SD 29,,0,,0,http://www.annex.k12.or.us,http://www.annex.k12.or.us,,0,success,OR
+,,,0,Columbia Gorge ESD,,0,,0,http://www.cgesd.k12.or.us,http://www.cgesd.k12.or.us,,0,success,OR
+,,,3,Athena-Weston SD 29RJ,,0,,0,http://www.athwest.k12.or.us,http://www.athwest.k12.or.us,,0,success,OR
+,,,2,Douglas ESD,,0,,0,http://www.douglasesd.k12.or.us,http://www.douglasesd.k12.or.us,,0,success,OR
+,,,1,Arock SD 81,,0,,0,http://www.malesd.org/districts/schools-we-serve/arock,http://www.malesd.org/districts/schools-we-serve/arock,,0,success,OR
+,,,3,Amity SD 4J,,0,,0,http://www.amity.k12.or.us,http://www.amity.k12.or.us,,0,success,OR
+,,,6,North Santiam SD 29J,,0,,0,http://www.nssd29j.org/,http://www.nssd29j.org/,,0,success,OR
+,,,35,Bend-LaPine Administrative SD 1,,0,,0,http://www.bend.k12.or.us,http://www.bend.k12.or.us,,0,scrape_failed,OR
+,,,1,Burnt River SD 30J,,0,,0,http://www.burntriver.k12.or.us,http://www.burntriver.k12.or.us,,0,success,OR
+,,,1,Ashwood SD 8,,0,,0,http://www.ashwood.k12.or.us,http://www.ashwood.k12.or.us,,0,success,OR
+,,,3,Bandon SD 54,,0,,0,http://www.bandon.k12.or.us/,http://www.bandon.k12.or.us/,,0,success,OR
+,,,6,Ashland SD 5,,0,,0,http://www.ashland.k12.or.us,http://www.ashland.k12.or.us,,0,success,OR
+,,,3,Banks SD 13,,0,,0,http://www.banks.k12.or.us,http://www.banks.k12.or.us,,0,success,OR
+,,,1,Blachly SD 90,,0,,0,http://www.blachly.k12.or.us,http://www.blachly.k12.or.us,,0,success,OR
+,,,3,Brookings-Harbor SD 17C,,0,,0,http://www.brookings.k12.or.us,http://www.brookings.k12.or.us,,0,success,OR
+,,,1,Camas Valley SD 21J,,0,,0,http://www.camasvalley.k12.or.us,http://www.camasvalley.k12.or.us,,0,success,OR
+,,,20,Greater Albany Public SD 8J,,0,,0,http://albany.k12.or.us/,http://albany.k12.or.us/,,0,success,OR
+,,,1,Willamette ESD,,0,,0,http://www.wesd.org,http://www.wesd.org,,0,success,OR
+,,,4,Harney County SD 3,,0,,0,http://www.hcsd3.org/,http://www.hcsd3.org/,,0,success,OR
+,,,4,Lane ESD,,0,,0,http://www.lesd.k12.or.us,http://www.lesd.k12.or.us,,0,success,OR
+,,,12,Central Point SD 6,,0,,0,http://district6.org,http://district6.org,,0,success,OR
+,,,8,Canby SD 86,,0,,0,http://www.canby.k12.or.us,http://www.canby.k12.or.us,,0,success,OR
+,,,12,Baker SD 5J,,0,,0,http://bakersd.org/,http://bakersd.org/,,0,success,OR
+,,,4,Colton SD 53,,0,,0,http://www.colton.k12.or.us,http://www.colton.k12.or.us,,0,success,OR
+,,,2,Condon SD 25J,,0,,0,http://www.condon.k12.or.us,http://www.condon.k12.or.us,,0,success,OR
+,,,6,Cascade SD 5,,0,,0,http://www.cascade.k12.or.us,http://www.cascade.k12.or.us,,0,success,OR
+,,,2,Clatskanie SD 6J,,0,,0,http://www.csd.k12.or.us,http://www.csd.k12.or.us,,0,success,OR
+,,,1,Butte Falls SD 91,,0,,0,http://www.buttefalls.k12.or.us,http://www.buttefalls.k12.or.us,,0,success,OR
+,,,1,Cove SD 15,,0,,0,http://www.cove.k12.or.us,http://www.cove.k12.or.us,,0,success,OR
+,,,2,Harney County SD 4,,0,,0,http://www.harneyuh.k12.or.us/index.php/rural-feeder-districts/crane-elementary,http://www.harneyuh.k12.or.us/index.php/rural-feeder-districts/crane-elementary,,0,scrape_failed,OR
+https://en.wikipedia.org/wiki/Central_School_District_(Oregon); https://central13j.schoolspring.com; https://www.central.k12.or.us/about-us; https://sites.google.com/central.k12.or.us/chs-dl-directory/; https://www.central.k12.or.us/departments; https://www.central.k12.or.us/departments/school-board; https://www.central.k12.or.us; https://www.central.k12.or.us/blank/school-calendars; https://nces.ed.gov/ccd/districtsearch/district_detail.asp?ID2=4102840,"**Paragraph 1 - Philosophy and Conceptualization:** Central School District 13J conceptualizes **restorative justice** and **restorative practices** within a broader philosophy of equity and access, framing them as essential tools for fostering an inclusive educational environment that eliminates disparities among student groups based on race, color, religion, sex, sexual orientation, national or ethnic origin, age, disability, pregnancy, familial status, and economic background. This approach is articulated through the District Equity Committee's core beliefs, which emphasize creating a culture free of barriers to student success in school, career, college, and community; actively being antiracist; elevating voices of students, staff, and families; providing curricula that reflect students' identities; facilitating vulnerable conversations on race; and equipping staff with tools for diversity, historical accuracy, and inclusive pedagogy. These concepts interrelate as mechanisms to operationalize equity by shifting from punitive measures toward relational repair and empowerment, aligning with external resources like Oregon Department of Education's LGBTQ2SIA+ Student Success Plan and guidance for immigrant and gender-expansive students, though no specific district policies such as a Student Code of Conduct or timelines are detailed. The district's commitment appears aspirational and integrated into its mission of equitable treatment, positioning restorative practices as foundational to antiracism and intersectional support without explicit goals or frameworks beyond the Equity and Access department's declarations.[1]
+
+**Paragraph 2 - Infrastructure and Implementation:** The district's infrastructure for **restorative justice** and **restorative practices** is anchored in the dedicated **Equity and Access** department, which serves as the primary operational hub without mention of specialized centers, academies, or named programs beyond general professional learning, training, and support for board, administration, licensed, and classified staff to become intersectional and antiracist. No specific positions such as coordinators, facilitators, or dedicated restorative staff roles are identified, nor are timelines for implementation, training schedules, or school-specific applications detailed across the five schools (Ash Creek Elementary, Independence Elementary, Monmouth Elementary, Talmadge Middle, and Central High). This suggests a conceptual rather than fully operationalized system, with implementation implied through the Equity Committee's facilitation of conversations and provision of tools, but lacking evidence of tangible structures like dedicated personnel or programs to translate philosophy into routine practice.[1][5]
+
+Source: District website only","[restorative justice @ https://www.central.k12.or.us/departments/equity-and-access (district)]: out building and restoring relationships . * Adapted from Resolve Center for Dispute Resolution and Restorative Justice . Safe Space - A place where people who are part of affinity groups can have conversations and be t | [restorative practices @ https://www.central.k12.or.us/departments/equity-and-access (district)]: policies or procedures of multiple institutions which interact to produce racially biased outcomes Restorative Practices - A practice for building student accountability and responding to wrongdoing while strengthening s | [restorative practices @ https://www.central.k12.or.us/departments/equity-and-access (district)]: over exclusion, and individual accountability with a high level of community support. At the core, restorative practices are about building and restoring relationships . * Adapted from Resolve Center for Dispute Resoluti",5,Central SD 13J,https://www.central.k12.or.us/departments/equity-and-access,1,"restorative justice, restorative practices",3,http://www.central.k12.or.us,http://www.central.k12.or.us,https://www.central.k12.or.us/departments/equity-and-access,1,success,OR
+,,,1,Corbett SD 39,,0,,0,http://www.corbett.k12.or.us,http://www.corbett.k12.or.us,,0,success,OR
+,,,5,Coquille SD 8,,0,,0,http://www.coquille.k12.or.us,http://www.coquille.k12.or.us,,0,success,OR
+,,,10,Crook County SD,,0,,0,http://www.crookcountyschools.org/,http://www.crookcountyschools.org/,,0,success,OR
+,,,2,Crow-Applegate-Lorane SD 66,,0,,0,http://www.cal.k12.or.us,http://www.cal.k12.or.us,,0,success,OR
+,,,3,Culver SD 4,,0,,0,http://www.culver.k12.or.us,http://www.culver.k12.or.us,,0,success,OR
+https://www.blackbutte.k12.or.us; https://www.blackbutte.k12.or.us/category/newsletter/; https://www.blackbutte.k12.or.us/contact/; https://www.blackbutte.k12.or.us/category/blog/; https://www.blackbutte.k12.or.us/calendar/; https://www.ode.state.or.us/data/ReportCard/Reports/Index/2052; https://www.educationbug.org/submitURL.html?state=oregon&rel=school-districts&id=13277&qstring=13277-black-butte-sd-41.html; https://www.blackbutteschool.org/documents; https://www.blackbutte.k12.or.us/services/,"**Paragraph 1 - Philosophy and Conceptualization:** The Black Butte SD 41 website reveals a minimal and incidental conceptualization of **restorative practices**, the sole key term identified across all analyzed content, appearing once in a routine classroom news update without explicit linkage to broader district philosophies such as restorative justice, race equity, or discipline practices. This single reference lacks any detailed definition, policy framework, or integration into mission statements, Student Codes of Conduct, or educational approaches, suggesting it functions more as a passing descriptor in a K-2 science update by Mr. B—truncated mid-sentence as ""Update f""—rather than a cornerstone of district ideology. Absent are references to dedicated documents, timelines, goals, or commitments framing **restorative practices** as a relational, community-building paradigm for conflict resolution or student support; instead, the district's overarching philosophy, gleaned from the homepage, emphasizes experiential, outdoor-based learning in mixed-grade K-8 classrooms within the Metolius Basin bioregion, prioritizing adventures like field trips, ski programs, and 13 hours weekly outdoors over formalized behavioral or equity frameworks.[1] This isolated mention implies a nascent or ad hoc acknowledgment rather than a robust, interconnected conceptualization relating it to discipline, equity, or holistic student development, with no evidence of strategic integration or measurable objectives.
+
+**Paragraph 2 - Infrastructure and Implementation:** Concrete infrastructure for **restorative practices** is entirely absent from the district website, manifesting no dedicated programs, centers, departments, staffing roles, training schedules, or operational systems to operationalize the term beyond its singular, contextless occurrence in weekly classroom news. No specialized positions such as restorative coordinators, facilitators, or child development specialists explicitly tied to restorative approaches are detailed, though a new counselor, Rachel O’Connor (listed as Child Development Specialist), is introduced via one-on-one student conversations and a family survey on counseling support, without any mention of restorative methods in her role or programming.[3] Similarly, staff updates from teachers like Ms. Steele (5th-8th administrators) focus on responsibility and time management lessons through math and literacy assignments, eschewing restorative terminology or structures, while programs like the swim initiative and PTO meetings highlight extracurricular logistics rather than behavioral interventions.[1] The district operates a single K-8 school in Camp Sherman, OR, with no named restorative academies, timelines for rollout, or evidence of personnel training, underscoring that **restorative practices** remains a non-operationalized concept without tangible translation into practice via dedicated infrastructure or systems.
+
+Source: District website only","[restorative practices @ https://www.blackbutte.k12.or.us/24-25-week-27-classroom-news/ (district)]: nd potential. I use a variety of approaches—including motivational interviewing, choice theory, and restorative practices—all of which share a belief in students’ ability to grow, make meaningful choices, and become thoug",1,Black Butte SD 41,https://www.blackbutte.k12.or.us/24-25-week-27-classroom-news/,1,restorative practices,1,http://www.blackbutte.k12.or.us,http://www.blackbutte.k12.or.us,https://www.blackbutte.k12.or.us/24-25-week-27-classroom-news/,1,success,OR
+,,,14,David Douglas SD 40,,0,,0,http://www.ddouglas.k12.or.us,http://www.ddouglas.k12.or.us,,0,scrape_failed,OR
+,,,2,Rainier SD 13,,0,,0,http://www.rainier.k12.or.us,http://www.rainier.k12.or.us,,0,success,OR
+,,,1,Douglas County SD 15,,0,,0,http://www.dayscreekschools.com,http://www.dayscreekschools.com,,0,scrape_failed,OR
+,,,4,Astoria SD 1,,0,,0,http://www.astoria.k12.or.us,http://www.astoria.k12.or.us,,0,success,OR
+,,,1,Double O SD 28,,0,,0,,,,0,no_url,OR
+,,,2,North Douglas SD 22,,0,,0,http://www.northdouglas.k12.or.us,http://www.northdouglas.k12.or.us,,0,success,OR
+,,,1,Drewsey SD 13,,0,,0,http://sites.google.com/harneyesd.k12.or.us/drewseyschool/home?authuser=0,http://sites.google.com/harneyesd.k12.or.us/drewseyschool/home?authuser=0,,0,success,OR
+,,,2,Harney County Union High SD 1J,,0,,0,http://www.craneedu.org,http://www.craneedu.org,,0,success,OR
+,,,1,Dayville SD 16J,,0,,0,http://www.dayvilleschools.com,http://www.dayvilleschools.com,,0,success,OR
+,,,1,Dufur SD 29,,0,,0,http://www.dufur.k12.or.us,http://www.dufur.k12.or.us,,0,success,OR
+,,,2,Elgin SD 23,,0,,0,http://www.elgin.k12.or.us,http://www.elgin.k12.or.us,,0,success,OR
+,,,1,Echo SD 5,,0,,0,http://www.echo.k12.or.us,http://www.echo.k12.or.us,,0,success,OR
+,,,5,Estacada SD 108,,0,,0,http://www.estacada.k12.or.us,http://www.estacada.k12.or.us,,0,scrape_failed,OR
+,,,1,Elkton SD 34,,0,,0,http://www.elkton.k12.or.us,http://www.elkton.k12.or.us,,0,success,OR
+,,,7,Dallas SD 2,,0,,0,http://www.dallas.k12.or.us/,http://www.dallas.k12.or.us/,,0,success,OR
+,,,2,Enterprise SD 21,,0,,0,http://www.enterprise.k12.or.us,http://www.enterprise.k12.or.us,,0,success,OR
+,,,13,Corvallis SD 509J,,0,,0,http://www.csd509j.net,http://www.csd509j.net,,0,success,OR
+,,,3,Dayton SD 8,,0,,0,http://www.daytonk12.org,http://www.daytonk12.org,,0,success,OR
+,,,11,Forest Grove SD 15,,0,,0,http://www.fgsdk12.org/,http://www.fgsdk12.org/,,0,success,OR
+,,,1,Frenchglen SD 16,,0,,0,http://frenchglen.school/,http://frenchglen.school/,,0,success,OR
+,,,1,Fossil SD 21J,,0,,0,http://www.fossilschools.com,http://www.fossilschools.com,,0,success,OR
+,,,2,Central Linn SD 552,,0,,0,http://www.centrallinn.k12.or.us,http://www.centrallinn.k12.or.us,,0,success,OR
+,,,3,Siuslaw SD 97J,,0,,0,http://www.siuslaw.k12.or.us,http://www.siuslaw.k12.or.us,,0,success,OR
+,,,5,Fern Ridge SD 28J,,0,,0,http://www.fernridge.k12.or.us,http://www.fernridge.k12.or.us,,0,success,OR
+,,,1,Glendale SD 77,,0,,0,http://www.glendale.k12.or.us,http://www.glendale.k12.or.us,,0,success,OR
+,,,2,Gaston SD 511J,,0,,0,http://www.gastonk12.org,http://www.gastonk12.org,,0,success,OR
+,,,11,Eagle Point SD 9,,0,,0,http://www.eaglepnt.k12.or.us,http://www.eaglepnt.k12.or.us,,0,success,OR
+,,,1,Harper SD 66,,0,,0,http://www.harpersd.org,http://www.harpersd.org,,0,success,OR
+,,,1,Helix SD 1,,0,,0,http://www.helix.k12.or.us,http://www.helix.k12.or.us,,0,success,OR
+,,,11,Grants Pass SD 7,,0,,0,http://www.grantspass.k12.or.us,http://www.grantspass.k12.or.us,,0,success,OR
+,,,9,Coos Bay SD 9,,0,,0,http://www.cbd9.net,http://www.cbd9.net,,0,success,OR
+,,,1,Huntington SD 16J,,0,,0,http://www.huntington.k12.or.us,http://www.huntington.k12.or.us,,0,success,OR
+,,,1,Imbler SD 11,,0,,0,http://www.imbler.k12.or.us,http://www.imbler.k12.or.us,,0,success,OR
+,,,3,Jefferson SD 14J,,0,,0,http://www.jefferson.k12.or.us/,http://www.jefferson.k12.or.us/,,0,scrape_failed,OR
+,,,3,Glide SD 12,,0,,0,http://www.glide.k12.or.us,http://www.glide.k12.or.us,,0,success,OR
+,,,8,Hood River County SD,,0,,0,http://www.hoodriver.k12.or.us,http://www.hoodriver.k12.or.us,,0,success,OR
+,,,3,John Day SD 3,,0,,0,http://grantsd3.schoolinsites.com,http://grantsd3.schoolinsites.com,,0,scrape_failed,OR
+,,,3,Jordan Valley SD 3,,0,,0,http://www.jordanvalley.k12.or.us,http://www.jordanvalley.k12.or.us,,0,success,OR
+,,,21,Gresham-Barlow SD 10J,,0,,0,http://www.gresham.k12.or.us,http://www.gresham.k12.or.us,,0,success,OR
+,,,17,Three Rivers/Josephine County SD,,0,,0,http://www.threerivers.k12.or.us,http://www.threerivers.k12.or.us,,0,scrape_failed,OR
+,,,1,Jewell SD 8,,0,,0,http://www.jewell.k12.or.us,http://www.jewell.k12.or.us,,0,success,OR
+,,,4,Junction City SD 69,,0,,0,http://www.junctioncity.k12.or.us/,http://www.junctioncity.k12.or.us/,,0,success,OR
+,,,2,Joseph SD 6,,0,,0,http://www.staff.josephcharter.org,http://www.staff.josephcharter.org,,0,success,OR
+,,,1,Juntura SD 12,,0,,0,http://www.malesd.org/districts/schools-we-serve/juntura,http://www.malesd.org/districts/schools-we-serve/juntura,,0,success,OR
+https://gladstone.tedk12.com/hire/index.aspx; https://www.gladstone.k12.or.us/page/about-us; https://www.gladstone.k12.or.us/page/welcome; https://www.gladstone.k12.or.us/page/human-resources; https://www.gladstone.k12.or.us/news; https://www.gladstone.k12.or.us; https://gladstone.schoolspring.com; https://gl.cesdk12.org/glsd/PXP2_Login_Parent.aspx,"I cannot provide the comprehensive analysis you've requested because the search results provided do not contain sufficient information about Gladstone SD 115's district-wide approach to restorative practices.
+
+While the search results include two mentions of ""restorative practices"" from a May 14, 2025 article about Jammie Landis's appointment as John Wetten Elementary principal, these references are limited to describing her previous role as ""assistant principal of restorative practices in the David Douglas School District.""[1] The search results do not contain:
+
+- District philosophy statements or conceptual frameworks regarding restorative practices
+- District policies, codes of conduct, or formal commitments to restorative approaches
+- Dedicated centers, programs, departments, or coordinators for restorative practices within Gladstone SD 115
+- Implementation timelines, training schedules, or operational infrastructure
+- How the district defines or integrates restorative practices into their educational approach
+- Any other concrete evidence of district-wide systems or structures
+
+The available search results primarily provide general information about Gladstone SD 115's schools, leadership structure, and contact information, but do not include the specific policy documents, strategic plans, or detailed program descriptions necessary to analyze the district's approach to restorative practices.
+
+To obtain the analysis you're seeking, you would need access to the district's strategic plans, student discipline policies, professional development documentation, and other internal policy frameworks that are not reflected in these search results.","[restorative practices @ https://www.gladstone.k12.or.us/article/2214807 (district)]: Loughlin and Gaffney Lane elementary schools. More recently, she has been an assistant principal of restorative practices in the David Douglas School District, where her leadership impacted student belonging, family engag | [restorative practices @ https://www.gladstone.k12.or.us/o/jwe/article/2214808 (district)]: Loughlin and Gaffney Lane elementary schools. More recently, she has been an assistant principal of restorative practices in the David Douglas School District, where her leadership impacted student belonging, family engag",4,Gladstone SD 115,"https://www.gladstone.k12.or.us/article/2214807, https://www.gladstone.k12.or.us/o/jwe/article/2214808",2,restorative practices,2,http://gladstone.k12.or.us/,http://gladstone.k12.or.us/,"https://www.gladstone.k12.or.us/article/2214807, https://www.gladstone.k12.or.us/o/jwe/article/2214808",2,success,OR
+,,,56,Beaverton SD 48J,,0,,0,http://beaverton.k12.or.us,http://beaverton.k12.or.us,,0,success,OR
+,,,5,La Grande SD 1,,0,,0,http://www.lagrandesd.org/,http://www.lagrandesd.org/,,0,success,OR
+,,,9,Klamath Falls City Schools,,0,,0,http://www.kfalls.k12.or.us,http://www.kfalls.k12.or.us,,0,success,OR
+,,,18,Lincoln County SD,,0,,0,http://www.lincoln.k12.or.us,http://www.lincoln.k12.or.us,,0,success,OR
+,,,1,Long Creek SD 17,,0,,0,http://www.longcreekschool.com,http://www.longcreekschool.com,,0,success,OR
+,,,9,Jefferson County SD 509J,,0,,0,http://jcsd.k12.or.us/,http://jcsd.k12.or.us/,,0,success,OR
+,,,4,Lake County SD 7,,0,,0,http://www.lakeview.k12.or.us,http://www.lakeview.k12.or.us,,0,success,OR
+,,,4,Lowell SD 71,,0,,0,http://www.lowell.k12.or.us,http://www.lowell.k12.or.us,,0,success,OR
+,,,3,Marcola SD 79J,,0,,0,http://www.marcola.k12.or.us,http://www.marcola.k12.or.us,,0,success,OR
+,,,9,Centennial SD 28J,,0,,0,http://www.csd28j.org,http://www.csd28j.org,,0,success,OR
+,,,37,Hillsboro SD 1J,,0,,0,http://www.hsd.k12.or.us,http://www.hsd.k12.or.us,,0,success,OR
+,,,1,McKenzie SD 68,,0,,0,http://www.mckenziesd.org,http://www.mckenziesd.org,,0,success,OR
+,,,11,Bethel SD 52,,0,,0,http://www.bethel.k12.or.us,http://www.bethel.k12.or.us,,0,success,OR
+,,,9,Lebanon Community SD 9,,0,,0,http://www.lebanon.k12.or.us,http://www.lebanon.k12.or.us,,0,success,OR
+,,,7,Molalla River SD 35,,0,,0,http://www.molallariv.k12.or.us,http://www.molallariv.k12.or.us,,0,success,OR
+,,,4,Mitchell SD 55,,0,,0,http://www.mitchell.k12.or.us,http://www.mitchell.k12.or.us,,0,success,OR
+,,,1,Monument SD 8,,0,,0,http://www.monumentschool.com/,http://www.monumentschool.com/,,0,scrape_failed,OR
+,,,9,Morrow SD 1,,0,,0,http://www.morrow.k12.or.us,http://www.morrow.k12.or.us,,0,success,OR
+,,,12,Lake Oswego SD 7J,,0,,0,http://losdschools.org,http://losdschools.org,,0,success,OR
+,,,9,Hermiston SD 8,,0,,0,http://www.hermiston.k12.or.us,http://www.hermiston.k12.or.us,,0,success,OR
+,,,4,Milton-Freewater Unified SD 7,,0,,0,http://www.miltfree.k12.or.us,http://www.miltfree.k12.or.us,,0,success,OR
+,,,9,McMinnville SD 40,,0,,0,http://www.msd.k12.or.us,http://www.msd.k12.or.us,,0,success,OR
+,,,3,Santiam Canyon SD 129J,,0,,0,http://www.santiam.k12.or.us,http://www.santiam.k12.or.us,,0,success,OR
+,,,10,Newberg SD 29J,,0,,0,http://www.newberg.k12.or.us,http://www.newberg.k12.or.us,,0,success,OR
+https://www.mapleton.k12.or.us/76090_3; https://nces.ed.gov/ccd/districtsearch/district_detail.asp?ID2=4107710&details=1; https://www.mapleton.k12.or.us; https://www.mapleton.k12.or.us/24994_1; https://www.mapleton.k12.oh.us; https://www.mapleton.us; https://www.ode.state.or.us/data/ReportCard/Reports/Index/2085; https://store.mapleton32.org; https://mapletonsd1.smartsiteshost.com; https://www.mapleton.k12.or.us/index.php?pageID=smartSiteFeed&psqFeed=true&articleID=55398711,"**Paragraph 1 - Philosophy and Conceptualization:** Mapleton SD 32 conceptualizes **restorative practices** as an integral component of a trauma-informed, supportive educational framework that prioritizes relational healing, community building, and holistic student development over punitive measures, aligning seamlessly with the district's mission to ""provide a supportive and safe learning environment where all students are encouraged and empowered to reach their educational and personal potential.""[1] This approach is framed within broader values of mutual respect (""We value each other. We value ourselves."") and place-based learning, positioning restorative practices as age-appropriate, schoolwide strategies that connect students and families to essential services for basic needs, thereby fostering social-emotional well-being, attendance, and community engagement alongside academic goals like the ""Mapleton Portrait of a Graduate.""[1] The district demonstrates a firm commitment through explicit goals mandating that ""all staff implement schoolwide and classroom age-appropriate, trauma-informed, restorative practices,"" integrating them with professional development, individualized learning goals, and enrichment programming without specified timelines, suggesting an ongoing, embedded philosophy rather than a transient initiative; this conceptualization relates restorative practices to related concepts like trauma-informed care by emphasizing prevention of harm and empowerment, evident in ties to attendance targets (92% average daily rate) and community vitalization efforts.[1]
+
+**Paragraph 2 - Infrastructure and Implementation:** While Mapleton SD 32 operationalizes **restorative practices** through a mandate for universal staff implementation across all classrooms and schoolwide settings, the available content reveals no dedicated centers, programs, departments, academies, or specialized positions such as coordinators, facilitators, or restorative justice teams, indicating a decentralized, staff-led system rather than a formalized infrastructure with named entities.[1] Implementation is embedded in existing operational structures, including professional development collaborations, multiple enrichment and intervention opportunities, and family-engaged goal-setting processes, with staff responsible for connecting students to services and applying practices in daily contexts like authentic learning projects (e.g., building tiny homes, community farming); no specific training schedules, timelines, or personnel roles are detailed, underscoring a philosophy-driven integration into routine practices across the district's two schools serving preschool through 12th grade, rather than distinct organizational units.[1][2]
+
+Source: District website only","[restorative practices @ https://www.mapleton.k12.or.us/76090_3 (district)]: h them are provided. All staff implement schoolwide and classroom age-appropriate, trauma-informed, restorative practices, including connecting students and families to services to meet basic needs. Enrichment programming",2,Mapleton SD 32,https://www.mapleton.k12.or.us/76090_3,1,restorative practices,1,http://www.mapleton.k12.or.us,http://www.mapleton.k12.or.us,https://www.mapleton.k12.or.us/76090_3,1,success,OR
+,,,1,North Powder SD 8J,,0,,0,http://www.npowder.k12.or.us,http://www.npowder.k12.or.us,,0,success,OR
+,,,4,Nyssa SD 26,,0,,0,http://www.nyssa.k12.or.us/,http://www.nyssa.k12.or.us/,,0,success,OR
+,,,3,Oakland SD 1,,0,,0,http://www.oakland.k12.or.us/,http://www.oakland.k12.or.us/,,0,success,OR
+,,,5,North Bend SD 13,,0,,0,http://www.nbend.k12.or.us,http://www.nbend.k12.or.us,,0,success,OR
+,,,2,Nestucca Valley SD 101J,,0,,0,http://www.nestucca.k12.or.us,http://www.nestucca.k12.or.us,,0,success,OR
+,,,4,Neah-Kah-Nie SD 56,,0,,0,http://www.nknsd.org,http://www.nknsd.org,,0,success,OR
+,,,3,Mt Angel SD 91,,0,,0,http://www.masd91.org,http://www.masd91.org,,0,success,OR
+,,,6,Parkrose SD 3,,0,,0,http://www.parkrose.k12.or.us,http://www.parkrose.k12.or.us,,0,scrape_failed,OR
+,,,14,Oregon City SD 62,,0,,0,http://www.ocsd62.org,http://www.ocsd62.org,,0,success,OR
+,,,1,Perrydale SD 21,,0,,0,http://www.perrydale.k12.or.us,http://www.perrydale.k12.or.us,,0,scrape_failed,OR
+,,,2,Monroe SD 1J,,0,,0,http://www.monroe.k12.or.us,http://www.monroe.k12.or.us,,0,success,OR
+,,,7,Philomath SD 17J,,0,,0,http://www.philomathsd.net,http://www.philomathsd.net,,0,success,OR
+,,,25,Medford SD 549C,,0,,0,http://www.medford.k12.or.us,http://www.medford.k12.or.us,,0,success,OR
+,,,1,Pine Creek SD 5,,0,,0,,,,0,no_url,OR
+,,,2,Pilot Rock SD 2,,0,,0,http://www.pilotrock.k12.or.us,http://www.pilotrock.k12.or.us,,0,success,OR
+,,,1,Pinehurst SD 94,,0,,0,http://www.pinehurst.k12.or.us/,http://www.pinehurst.k12.or.us/,,0,scrape_failed,OR
+,,,1,Paisley SD 11,,0,,0,http://www.paisleyschooldistrict.com,http://www.paisleyschooldistrict.com,,0,success,OR
+,,,1,Pine Eagle SD 61,,0,,0,http://www.pineeaglesd.org,http://www.pineeaglesd.org,,0,success,OR
+,,,1,Plush SD 18,,0,,0,http://www.plushschool.com,http://www.plushschool.com,,0,success,OR
+,,,7,Phoenix-Talent SD 4,,0,,0,http://www.phoenix.k12.or.us,http://www.phoenix.k12.or.us,,0,success,OR
+,,,2,Powers SD 31,,0,,0,http://www.powersschools.com,http://www.powersschools.com,,0,scrape_failed,OR
+,,,3,Prairie City SD 4,,0,,0,http://www.grantesd.k12.or.us/Prairie-City,http://www.grantesd.k12.or.us/Prairie-City,,0,scrape_failed,OR
+,,,2,Port Orford-Langlois SD 2CJ,,0,,0,http://www.2cj.com,http://www.2cj.com,,0,success,OR
+,,,1,Prospect SD 59,,0,,0,http://www.prospect.k12.or.us,http://www.prospect.k12.or.us,,0,success,OR
+,,,3,Oakridge SD 76,,0,,0,http://www.oakridge.k12.or.us,http://www.oakridge.k12.or.us,,0,success,OR
+,,,2,Pleasant Hill SD 1,,0,,0,http://www.pleasanthill.k12.or.us,http://www.pleasanthill.k12.or.us,,0,success,OR
+,,,2,Riddle SD 70,,0,,0,http://www.riddleschooldistrict.com,http://www.riddleschooldistrict.com,,0,success,OR
+,,,2,Riverdale SD 51J,,0,,0,http://www.riverdaleschool.com,http://www.riverdaleschool.com,,0,success,OR
+,,,1,Reedsport SD 105,,0,,0,http://www.reedsport.k12.or.us,http://www.reedsport.k12.or.us,,0,success,OR
+,,,86,Portland SD 1J,,0,,0,http://www.pps.net,http://www.pps.net,,0,success,OR
+,,,31,North Clackamas SD 12,,0,,0,http://www.nclack.k12.or.us,http://www.nclack.k12.or.us,,0,success,OR
+,,,65,Salem-Keizer SD 24J,,0,,0,http://www.salkeiz.k12.or.us,http://www.salkeiz.k12.or.us,,0,success,OR
+,,,8,Scappoose SD 1J,,0,,0,http://www.scappoosek12.org,http://www.scappoosek12.org,,0,success,OR
+,,,4,Rogue River SD 35,,0,,0,http://www.rogueriver.k12.or.us/,http://www.rogueriver.k12.or.us/,,0,success,OR
+https://www.opb.org/article/2025/12/12/oregon-moves-forward-education-accountability-plan/; https://secure.sos.state.or.us/oard/displayDivisionRules.action?selectedDivision=2563; https://resources.finalsite.net/images/v1607120764/beavertonk12orus/zuqzbapup9j3uv8khyvq/ODE-Acronyms.pdf; https://secure.sos.state.or.us/oard/viewSingleRule.action?ruleVrsnRsn=145276; https://www.oregon.gov/ode/educator-resources/assessment/Documents/5_WhereGetHelp_KeyConceptsHandout_ODEAssessmentLiteracy.pdf; https://www.oregon.gov/ode/StudentSuccess/Documents/AppendixQ_KeyTermsGlossary.pdf; https://www.oregonlegislature.gov/lpro/Publications/BB2014EducationStandardsandAssessments.pdf; https://www.oregon.gov/ode/schools-and-districts/grants/Documents/Glossary%20and%20Key%20Terms%20%5BArts%20Toolkit%5D.pdf; https://secure.sos.state.or.us/oard/viewSingleRule.action?ruleVrsnRsn=252828; https://www.oregon.gov/ode/educator-resources/teachingcontent/instructional-materials/pages/instructional-materials-toolkit.aspx,"The Oregon Department of Education (ODE) conceptualizes key terms such as **alternatives to suspension**, **discipline disparities**, **disproportionate discipline**, **equitable discipline**, and **restorative justice** within a philosophy centered on racial equity, trauma-informed practices, and culturally responsive education to address systemic inequities for historically underserved students, including Latino/a/x, Indigenous, African American/Black, and houseless youth. These concepts are framed as interconnected strategies to reduce exclusionary discipline, foster inclusive school environments, and promote student belonging through evidence-based, strengths-focused interventions, as articulated in frameworks like the **Student Success Act (House Bill 3427)** and **House Bill 2016**, which mandate investments in early learning, K-12 equity, and higher education pathways. For instance, **disproportionate discipline** and **discipline disparities** are explicitly linked to historic opportunity gaps in the **African American/Black Student Success Plan** and **Latino/a/x & Indigenous Student Success Plan**, where they signify higher rates of disciplinary incidents for students of color, necessitating **equitable discipline** practices to eliminate such gaps. **Restorative justice** is positioned as a core component of the **School Safety and Prevention System** (enabled by Section 36 of the Student Success Act and Senate Bill 52, Adi’s Act), emphasizing prevention, mental health access, and positive school climate over punitive measures, while **alternatives to suspension** are implied through broader commitments to culturally responsive pedagogy and multi-tiered supports. This philosophy integrates these terms into ODE's **Integrated Model of Mental and Emotional Health**, with high commitment evidenced by biennial $2 billion investments and goals to decrease disciplinary disparities, enhance attendance, and support transitions, reflecting a systemic shift toward equity-centered education without specified timelines but tied to ongoing plan implementation.
+
+ODE operationalizes this philosophy through dedicated infrastructure, including the **Safe & Inclusive Schools (SIS) Team**, which oversees the **School Safety & Prevention System** with specialized roles such as **School Safety & Prevention Specialists (SSPS)** responsible for suicide prevention, behavioral safety assessments, bullying prevention, and **Equity, Safety, & Restorative Justice** initiatives, in collaboration with the Oregon Health Authority and Education Service Districts. Concrete programs include the **Youth Development Division's 2021-2023 Youth Community Investment Grants** (e.g., **Youth Promise**, **Youth Workforce Readiness**, and **Youth Solutions** initiatives), which fund culturally responsive services like mentoring, mental health supports, and barrier removal for youth aged 6-24 at risk of disengagement, explicitly incorporating restorative approaches to prevent school disconnection and justice system involvement. The **McKinney-Vento Act** program designates **district McKinney-Vento Liaisons** to train staff on **equitable discipline** and support houseless students, ensuring compliance with Oregon Revised Statutes (e.g., ORS 339.115). Advisory structures like the **HB2016 Advisory Group** for African American/Black students guide plan development, while student success plans for specific demographics outline metrics for reducing **disproportionate discipline**. These elements demonstrate a robust, personnel-driven system with lists of contacts (e.g., ode.sis@ode.oregon.gov), tip lines like **SafeOregon**, and grant-funded partnerships, translating conceptual equity into statewide, multi-tiered operational supports.
+
+Source: District website only","[restorative justice @ https://www.oregon.gov/youthdevelopmentdivision/CommunityInvestmentss/Pages/2019-2021-YDD-Community-Investment-Grants.aspx (district)]: r exposure, delivery of mental health and or drug/alcohol treatment services, homeless support, and restorative justice practices Youth Violence and Gang Prevention The Youth Violence and Gang Prevention initiative prev | [restorative justice @ https://www.oregon.gov/youthdevelopmentdivision/youthgrants/Pages/default.aspx (district)]: uidance in areas of positive behavior, conflict resolution and healthy communication. This includes restorative justice practices such as accountability, repairing harm, and restoring positive relationships. Youth Work | [equitable discipline @ https://www.oregon.gov/ode/schools-and-districts/grants/ESEA/McKinney-Vento/Pages/McKinney-Vento-Liaisons,-Districts,-&-ESDs.aspx (district)]: tal health prevention and response (Interconnected Systems Framework), trauma-responsive practices, equitable discipline practices, belonging, SEL, literacy, and more!​​ NWPBIS is an approved provider for Educator Clock | [disproportionate discipline @ https://www.oregon.gov/ode/students-and-family/equity/LGBTQ2SIAStudentEducation/Pages/LGBTQ2SIA--Student-Success-Plan.aspx (district)]: nating in a way that impacts access to educational programs and activities. This might manifest as: disproportionate discipline with students of a protected class, disproportionate class enrollment (e.g. career technical educat | [restorative justice @ https://www.oregon.gov/ode/students-and-family/equity/SSP/Pages/default.aspx (district)]: SafeOregon Tip Line Every Student Belongs Connected ODE Programs and Initiatives Equity, Safety, & Restorative Justice Announcements Sign up to receive the School Safety and Prevention Listserv Contacts ode.sis@ode.ore | [alternatives to suspension @ https://www.oregon.gov/ode/students-and-family/equity/NativeAmericanEducation/Pages/Title-VI.aspx (district)]: rch 2025 Slidedeck ​ May 2025 Slidedeck October 2025 Slidedeck ​ October 22 ""Redefining Discipline: Alternatives to Suspension for Substance Abuse"" November 2025 Slidedeck November 19 ""Data as a Lever for Transformational Powe | [disproportionate discipline @ https://www.oregon.gov/ode/students-and-family/equity/Latinx/Pages/Latinoax-&-Indigenous-Student-Success-Plan.aspx (district)]: ly than white students to have one or more discipline incidents in a school year. Efforts to reduce disproportionate discipline affecting students of color can lead to social, emotional, and academic improvements for students o | [restorative justice @ https://www.oregon.gov/ode/students-and-family/equity/AfricanAmericanBlackStudentEducation/Pages/HB2016AdvisoryGroup15-16.aspx (district)]: cipants the following: Leadership programming and ongoing academic support during and after school; Restorative justice services that include behavior coaching, curriculum, and a restorative plan; Leadership Conference | [restorative justice @ https://www.oregon.gov/ode/students-and-family/equity/AfricanAmericanBlackStudentEducation/Pages/HB2016AdvisoryGroup15-16.aspx (district)]: African American/Black students. Invest in asset based, developmentally appropriate discipline and restorative justice practices and implementation. Administer annual school climate surveys to students and key stakehol | [restorative justice @ https://www.oregon.gov/ode/students-and-family/equity/AfricanAmericanBlackStudentEducation/Pages/HB2016AdvisoryGroup15-16.aspx (district)]: African American/Black students. Invest in asset based, developmentally appropriate discipline and restorative justice practices and implementation. Administer annual school climate surveys to students and key stakehol | [restorative justice @ https://www.oregon.gov/ode/students-and-family/equity/AfricanAmericanBlackStudentEducation/Pages/HB2016AdvisoryGroup15-16.aspx (district)]: cation Agency ODE Oregon Department of Education P-20 Preschool to Post-Secondary Grade Programs RJ Restorative Justice SEA State Education Agency SES Socioeconomic Status SIP School Improvement Plan SPED Special Educat | [restorative justice @ https://www.oregon.gov/ode/students-and-family/equity/AfricanAmericanBlackStudentEducation/Pages/HB2016AdvisoryGroup15-16.aspx (district)]: most often linked to a person’s physical appearance such as skin color, eye color, hair color, etc. Restorative Justice Restorative justice repairs the harm caused by crime. When victims, offenders and community members | [restorative justice @ https://www.oregon.gov/ode/students-and-family/equity/AfricanAmericanBlackStudentEducation/Pages/HB2016AdvisoryGroup15-16.aspx (district)]: a person’s physical appearance such as skin color, eye color, hair color, etc. Restorative Justice Restorative justice repairs the harm caused by crime. When victims, offenders and community members meet to decide how | [discipline disparities @ https://www.oregon.gov/ode/students-and-family/equity/AfricanAmericanBlackStudentEducation/Pages/HB2016AdvisoryGroup15-16.aspx (district)]: ocates and services for students and families. Revise district policies and procedures to eliminate discipline disparities that push out African American/Black students. Invest in asset based, developmentally appropriate d | [discipline disparities @ https://www.oregon.gov/ode/students-and-family/equity/AfricanAmericanBlackStudentEducation/Pages/HB2016AdvisoryGroup15-16.aspx (district)]: ic and sustainable practices across school communities. Revise policies and procedures to eliminate discipline disparities that push out African American/Black students. Increase in-school advocacy from culturally specific | [discipline disparities @ https://www.oregon.gov/ode/students-and-family/equity/AfricanAmericanBlackStudentEducation/Pages/HB2016AdvisoryGroup15-16.aspx (district)]: ocates and services for students and families. Revise district policies and procedures to eliminate discipline disparities that push out African American/Black students. Invest in asset based, developmentally appropriate d | [disproportionate discipline @ https://www.oregon.gov/ode/students-and-family/equity/AfricanAmericanBlackStudentEducation/Pages/HB2016AdvisoryGroup15-16.aspx (district)]: ference that is not fair, reasonable, or expected; too large or too small in relation to something. Disproportionate Discipline means disproportionate rates of suspensions and expulsions for African American/Black students comp | [restorative justice @ https://www.oregon.gov/ode/students-and-family/equity/ssp/pages/default.aspx (district)]: SafeOregon Tip Line Every Student Belongs Connected ODE Programs and Initiatives Equity, Safety, & Restorative Justice Announcements Sign up to receive the School Safety and Prevention Listserv Contacts ode.sis@ode.ore | [disproportionate discipline @ https://www.oregon.gov/ode/students-and-family/equity/Latinx/Pages/Latinoax-%26-Indigenous-Student-Success-Plan.aspx (district)]: ly than white students to have one or more discipline incidents in a school year. Efforts to reduce disproportionate discipline affecting students of color can lead to social, emotional, and academic improvements for students o | [restorative justice @ https://www.oregon.gov/youthdevelopmentdivision/youthgrants/Pages/default.aspx (district)]: uidance in areas of positive behavior, conflict resolution and healthy communication. This includes restorative justice practices such as accountability, repairing harm, and restoring positive relationships. Youth Work",5,Oregon Department of Education,"https://www.oregon.gov/youthdevelopmentdivision/CommunityInvestmentss/Pages/2019-2021-YDD-Community-Investment-Grants.aspx, https://www.oregon.gov/youthdevelopmentdivision/youthgrants/Pages/default.aspx, https://www.oregon.gov/ode/schools-and-districts/grants/ESEA/McKinney-Vento/Pages/McKinney-Vento-Liaisons,-Districts,-&-ESDs.aspx, https://www.oregon.gov/ode/students-and-family/equity/LGBTQ2SIAStudentEducation/Pages/LGBTQ2SIA--Student-Success-Plan.aspx, https://www.oregon.gov/ode/students-and-family/equity/SSP/Pages/default.aspx, https://www.oregon.gov/ode/students-and-family/equity/NativeAmericanEducation/Pages/Title-VI.aspx, https://www.oregon.gov/ode/students-and-family/equity/Latinx/Pages/Latinoax-&-Indigenous-Student-Success-Plan.aspx, https://www.oregon.gov/ode/students-and-family/equity/AfricanAmericanBlackStudentEducation/Pages/HB2016AdvisoryGroup15-16.aspx, https://www.oregon.gov/ode/students-and-family/equity/ssp/pages/default.aspx, https://www.oregon.gov/ode/students-and-family/equity/Latinx/Pages/Latinoax-%26-Indigenous-Student-Success-Plan.aspx, https://www.oregon.gov/youthdevelopmentdivision/youthgrants/Pages/default.aspx",11,"alternatives to suspension, discipline disparities, disproportionate discipline, equitable discipline, restorative justice",20,http://www.oregon.gov/ode/,http://www.oregon.gov/ode/,"https://www.oregon.gov/youthdevelopmentdivision/CommunityInvestmentss/Pages/2019-2021-YDD-Community-Investment-Grants.aspx, https://www.oregon.gov/youthdevelopmentdivision/youthgrants/Pages/default.aspx, https://www.oregon.gov/ode/schools-and-districts/grants/ESEA/McKinney-Vento/Pages/McKinney-Vento-Liaisons,-Districts,-&-ESDs.aspx, https://www.oregon.gov/ode/students-and-family/equity/LGBTQ2SIAStudentEducation/Pages/LGBTQ2SIA--Student-Success-Plan.aspx, https://www.oregon.gov/ode/students-and-family/equity/SSP/Pages/default.aspx, https://www.oregon.gov/ode/students-and-family/equity/NativeAmericanEducation/Pages/Title-VI.aspx, https://www.oregon.gov/ode/students-and-family/equity/Latinx/Pages/Latinoax-&-Indigenous-Student-Success-Plan.aspx, https://www.oregon.gov/ode/students-and-family/equity/AfricanAmericanBlackStudentEducation/Pages/HB2016AdvisoryGroup15-16.aspx, https://www.oregon.gov/ode/students-and-family/equity/ssp/pages/default.aspx, https://www.oregon.gov/ode/students-and-family/equity/Latinx/Pages/Latinoax-%26-Indigenous-Student-Success-Plan.aspx, https://www.oregon.gov/youthdevelopmentdivision/youthgrants/Pages/default.aspx",11,success,OR
+,,,3,Sheridan SD 48J,,0,,0,http://www.sheridan.k12.or.us,http://www.sheridan.k12.or.us,,0,success,OR
+,,,10,Oregon Trail SD 46,,0,,0,http://www.oregontrailschools.com,http://www.oregontrailschools.com,,0,success,OR
+,,,3,Creswell SD 40,,0,,0,http://www.creswell.k12.or.us,http://www.creswell.k12.or.us,,0,success,OR
+https://www.dsdk12.net/apps/pages/index.jsp?uREC_ID=1556131&type=d; https://www.douglasesd.k12.or.us; https://www.dcsdk12.org/about; https://www.dsdk12.net; https://www.dcsdk12.org; https://www.dcsd.net; https://nces.ed.gov/ccd/districtsearch/district_detail.asp?ID2=4103960; https://www.dcssga.org,"**Paragraph 1 - Philosophy and Conceptualization:** The Douglas County SD 4, operating as Roseburg Public Schools, conceptualizes **restorative practices** within a broader philosophy of holistic student development, particularly evident in its commitment to comprehensive Health and Physical Education (HPE) programs that integrate social and emotional learning (SEL). Although the term ""restorative practices"" appears explicitly only once on the Teaching & Learning Home page without detailed elaboration, it aligns with the district's emphasis on skill-based learning, cultural centering, and fostering healthy relationships among students, as articulated in the HPE position paper. This framing positions restorative practices as a supportive element of SEL, promoting ownership of health, safety, and flourishing lives in interpersonal contexts, rather than as a standalone disciplinary framework like restorative justice. No specific documents such as a Student Code of Conduct, mission statements, or dedicated policies on race equity or discipline practices are referenced in the available content; instead, these concepts interconnect through an overarching educational approach that prioritizes cognitive, academic, and social/emotional growth, as seen in processes like Early Entrance to Kindergarten evaluations requiring scores above 115 in these domains. The district demonstrates a moderate commitment level through integration into divisions like Assessment, Title 1, and the 5D Instructional Framework, but lacks mentioned timelines, goals, or explicit linkages to discipline, suggesting a conceptual embedding as part of wellness-oriented education rather than a transformative policy priority.[1]
+
+**Paragraph 2 - Infrastructure and Implementation:** Concrete infrastructure for **restorative practices** in Douglas County SD 4 remains underdeveloped based on the district's Teaching & Learning Home page, with no dedicated centers, programs, departments, academies, or specialized staffing roles such as coordinators, facilitators, or restorative specialists explicitly named or described. The term's single occurrence lacks ties to operational systems, training schedules, or implementation timelines, and no program names (e.g., restorative circles or peer mediation initiatives) or school-specific applications are detailed. Staffing is centralized under the Teaching & Learning division, led by Director Dr. Jill Weber and coordinators Mendy Endicott, Tim Weber, and admin assistant Jennifer Fox, who oversee related areas like Health, Math, Science, and Title 1, but none are designated for restorative practices. This absence of tangible elements—such as dedicated positions, professional development protocols, or monitoring mechanisms—indicates that the concept has not been operationalized into a structured system with personnel or frameworks like the referenced 5D Instructional Framework, which supports general instruction but not restorative-specific practices. Consequently, while philosophy nods to SEL integration in HPE, no evidence demonstrates translation into practice through specialized infrastructure.[1]
+
+Source: District website only","[restorative practices @ https://www.roseburg.k12.or.us/teaching-learning-home (district)]: hip skills, we create a deep sense of belonging and ensure that all voices are heard and respected. Restorative Practices and Clear Community Norms Our approach to student behavior prioritizes restorative practices that e | [restorative practices @ https://www.roseburg.k12.or.us/teaching-learning-home (district)]: ected. Restorative Practices and Clear Community Norms Our approach to student behavior prioritizes restorative practices that emphasize repairing relationships, promoting accountability, and restoring a sense of communit | [restorative practices @ https://www.roseburg.k12.or.us/teaching-learning-home (district)]: lusive, and engaging spaces that nurture the whole student. By focusing on connection, empowerment, restorative practices, and viewing behavior through the lens of communication, we ensure that every student has the oppor",13,Douglas County SD 4,https://www.roseburg.k12.or.us/teaching-learning-home,1,restorative practices,3,http://www.roseburg.k12.or.us,http://www.roseburg.k12.or.us,https://www.roseburg.k12.or.us/teaching-learning-home,1,success,OR
+,,,7,Sherwood SD 88J,,0,,0,http://www.sherwood.k12.or.us/home,http://www.sherwood.k12.or.us/home,,0,success,OR
+,,,3,Sisters SD 6,,0,,0,http://ssd6.org,http://ssd6.org,,0,scrape_failed,OR
+,,,1,Sherman County SD,,0,,0,http://www.sherman.k12.or.us/,http://www.sherman.k12.or.us/,,0,success,OR
+,,,1,North Lake SD 14,,0,,0,http://www.nlake.k12.or.us,http://www.nlake.k12.or.us,,0,success,OR
+,,,13,Redmond SD 2J,,0,,0,http://www.redmondschools.org,http://www.redmondschools.org,,0,success,OR
+,,,1,Spray SD 1,,0,,0,http://www.spray.k12.or.us,http://www.spray.k12.or.us,,0,success,OR
+,,,4,Seaside SD 10,,0,,0,http://www.seaside.k12.or.us,http://www.seaside.k12.or.us,,0,success,OR
+,,,5,Scio SD 95,,0,,0,http://www.scio.k12.or.us,http://www.scio.k12.or.us,,0,success,OR
+,,,2,St Paul SD 45,,0,,0,http://www.stpaul.k12.or.us,http://www.stpaul.k12.or.us,,0,success,OR
+,,,1,Suntex SD 10,,0,,0,,,,0,no_url,OR
+,,,21,Klamath County SD,,0,,0,http://www.kcsd.k12.or.us,http://www.kcsd.k12.or.us,,0,success,OR
+,,,7,Sweet Home SD 55,,0,,0,http://www.sweethome.k12.or.us,http://www.sweethome.k12.or.us,,0,scrape_failed,OR
+,,,2,Stanfield SD 61,,0,,0,http://www.stanfield.k12.or.us,http://www.stanfield.k12.or.us,,0,success,OR
+,,,5,Sutherlin SD 130,,0,,0,http://www.sutherlin.k12.or.us,http://www.sutherlin.k12.or.us,,0,success,OR
+,,,1,Troy SD 54,,0,,0,http://www.troy.k12.or.us/,http://www.troy.k12.or.us/,,0,scrape_failed,OR
+,,,5,Tillamook SD 9,,0,,0,http://www.tillamook.k12.or.us,http://www.tillamook.k12.or.us,,0,success,OR
+,,,3,Umatilla SD 6R,,0,,0,http://www.umatilla.k12.or.us,http://www.umatilla.k12.or.us,,0,success,OR
+,,,2,Union SD 5,,0,,0,http://www.union.k12.or.us,http://www.union.k12.or.us,,0,success,OR
+,,,4,Vernonia SD 47J,,0,,0,http://www.vernonia.k12.or.us,http://www.vernonia.k12.or.us,,0,scrape_failed,OR
+,,,3,Wallowa SD 12,,0,,0,http://www.wallowa.k12.or.us,http://www.wallowa.k12.or.us,,0,scrape_failed,OR
+,,,4,Warrenton-Hammond SD 30,,0,,0,http://www.warrentonschools.com,http://www.warrentonschools.com,,0,success,OR
+,,,1,Ukiah SD 80R,,0,,0,http://www.ukiah.k12.or.us,http://www.ukiah.k12.or.us,,0,success,OR
+,,,9,South Lane SD 45J3,,0,,0,http://www.slane.k12.or.us,http://www.slane.k12.or.us,,0,success,OR
+,,,6,Winston-Dillard SD 116,,0,,0,http://www.wdsd.org,http://www.wdsd.org,,0,success,OR
+,,,13,Silver Falls SD 4J,,0,,0,http://silverfallsschools.org/,http://silverfallsschools.org/,,0,success,OR
+,,,2,Central Curry SD 1,,0,,0,http://www.ccsd.k12.or.us,http://www.ccsd.k12.or.us,,0,success,OR
+,,,0,High Desert ESD,,0,,0,http://www.hdesd.org,http://www.hdesd.org,,0,success,OR
+,,,2,Yoncalla SD 32,,0,,0,http://www.yoncalla.k12.or.us,http://www.yoncalla.k12.or.us,,0,success,OR
+,,,3,Clackamas ESD,,0,,0,http://www.clackesd.k12.or.us,http://www.clackesd.k12.or.us,,0,scrape_failed,OR
+,,,21,Springfield SD 19,,0,,0,http://www.springfield.k12.or.us,http://www.springfield.k12.or.us,,0,success,OR
+,,,8,St Helens SD 502,,0,,0,http://www.sthelens.k12.or.us,http://www.sthelens.k12.or.us,,0,success,OR
+,,,3,Willamina SD 30J,,0,,0,http://www.willamina.k12.or.us,http://www.willamina.k12.or.us,,0,success,OR
+https://www.nmarion.k12.or.us/district/page/our-district; https://www.nmarion.k12.or.us/district/page/schools; https://www.nmarion.k12.or.us/district/page/employment-opportunities-job-postings; https://www.youtube.com/channel/UCRMPQiPpM4FRTggtXitNesQ; https://www.nmarion.k12.or.us/home; https://www.nmarion.k12.or.us/news; https://northmarion.schoolspring.com; https://www.osaa.org/schools/57,"I cannot provide the comprehensive analysis you've requested because the search results provided do not contain sufficient content from the specific webpage mentioned in your query.
+
+The search results include only general district information pages (district overview, schools listing, employment opportunities, and navigation elements) but do not include the actual content from the page titled ""North Marion Team Shares Views on Equity After Conference"" where the term ""restorative justice"" appears. While you've indicated that this page exists and contains the key term, the substantive content of that article—including any discussion of the district's philosophy, conceptualization, infrastructure, programs, staffing, or implementation details related to restorative justice—was not provided in the search results.
+
+To complete the analysis you've requested, I would need:
+
+- The full text of the ""North Marion Team Shares Views on Equity After Conference"" article
+- Any linked policy documents, strategic plans, or frameworks referenced on that page
+- Additional pages from the district website that detail their equity, discipline, or restorative justice initiatives
+- Information about specific programs, positions, or departments dedicated to these efforts
+
+Without access to this substantive content, I cannot accurately analyze the district's approach to restorative justice or provide the detailed, evidence-based summary with specific program names, staffing roles, and implementation details that your request requires.
+
+**Source: District website only** (though insufficient content was available to complete the requested analysis)","[restorative justice @ https://www.nmarion.k12.or.us/district/page/north-marion-team-shares-views-equity-after-conference (district)]: ntown Salem. Thought leaders and education experts came together to offer insight on topics such as restorative justice, best legal practices for supporting LGBTQ2SIA+ students and staff, equity-focused state legislatio",4,North Marion SD 15,https://www.nmarion.k12.or.us/district/page/north-marion-team-shares-views-equity-after-conference,1,restorative justice,1,http://www.nmarion.k12.or.us,http://www.nmarion.k12.or.us,https://www.nmarion.k12.or.us/district/page/north-marion-team-shares-views-equity-after-conference,1,success,OR
+,,,9,Woodburn SD 103,,0,,0,http://www.woodburnsd.org,http://www.woodburnsd.org,,0,success,OR
+,,,6,South Umpqua SD 19,,0,,0,http://www.susd.k12.or.us,http://www.susd.k12.or.us,,0,success,OR
+,,,8,Multnomah ESD,,0,,0,http://www.multnomahesd.org/,http://www.multnomahesd.org/,,0,success,OR
+,,,17,West Linn-Wilsonville SD 3J,,0,,0,http://www.wlwv.k12.or.us,http://www.wlwv.k12.or.us,,0,success,OR
+,,,19,Tigard-Tualatin SD 23J,,0,,0,http://www.ttsdschools.org,http://www.ttsdschools.org,,0,success,OR
+https://pendleton.k12.or.us/welcome-to-pendleton-school-district/; https://pendleton.k12.or.us/about-our-schools/; https://pendleton.k12.or.us/all-parent-links-resources/; https://pendleton.k12.or.us/announcements-news/; https://pendleton.k12.or.us/online-calendar/; https://pendletonor.schoolspring.com; https://www.osaa.org/schools/123,"**Paragraph 1 - Philosophy and Conceptualization:** Pendleton School District 16 conceptualizes **disproportionate discipline** primarily as an equity issue affecting Native American and Alaska Native (AI/AN) students in Oregon K-12 schools, framing it within a broader philosophy of culturally responsive education that seeks to address overrepresentation in discipline data through community-engaged research and policy reform. This approach, evidenced in the ""Native Voices Across Generations: Reimagining Discipline in a New School Landscape"" (Native Voices or NV) project, positions disproportionate discipline as resulting from disciplinary practices whose contributors and consequences warrant investigation, with an emphasis on integrating Native tribal and community assets to foster schools where Native students thrive culturally, socially, psychologically, and academically. The district relates this to interconnected concepts such as Indian Education Policies, Language Restoration, Native Languages of Oregon, and Equity in School Policy for Native Students, viewing them as essential for shifting discipline outcomes; no formal district documents like a Student Code of Conduct or mission statement are referenced, but the project's one-year scope signals a committed, collaborative philosophy partnering with the University of Oregon's Center for Equity Promotion, Northwest Indian Language Institute, Native Wellness Institute, and the Office of Indian Education/Oregon Department of Education. This framing integrates these ideas as proactive, voice-centered strategies without specified timelines or goals beyond the April 24, 2023, community conversation at Washington Elementary, indicating a nascent but research-informed commitment to reimagining discipline as a culturally sustaining educational pillar rather than punitive enforcement.
+
+**Paragraph 2 - Infrastructure and Implementation:** The district's infrastructure for addressing **disproportionate discipline** centers on the operationalized **Native Voices (NV) project**, a one-year research initiative hosted in partnership with the University of Oregon, featuring concrete community listening sessions at Washington Elementary School on April 24, 2023, from 5:00-7:30 pm, complete with provided dinner, childcare, and $25 participant incentives to ensure broad stakeholder involvement from parents, community members, teachers, administrators, and staff. No dedicated centers, departments, academies, or specialized staffing roles such as coordinators or facilitators are mentioned; instead, implementation relies on event-based structures with contact points like researcher Rita Svanks (rsvanks@uoregon.edu, 541-346-4125) for inquiries and a digital Adult Consent form (tinyurl.com/NV-Adult-Consent), alongside hard copies at the event, demonstrating a lightweight, project-specific system rather than permanent personnel or ongoing programs. This translates philosophy into practice through targeted, time-bound gatherings aimed at informing school-based policies, trainings, resources, and supports, with radio spots promoting participation, though the absence of referenced training schedules, district-wide rollout timelines, or institutional embeds underscores a preliminary, externally funded operational model without evidence of scaled, in-house structures across the district's four elementary schools, middle school, or high school.
+
+Source: District website only","[disproportionate discipline @ https://pendleton.k12.or.us/2023/04/ (district)]: er school staff to look at discipline practices and investigate contributors to and consequences of disproportionate discipline for Native students in Oregon K-12 schools. The findings of this project will inform, design and re | [disproportionate discipline @ https://pendleton.k12.or.us/2023/04/13/native-voices-community-conversations/ (district)]: er school staff to look at discipline practices and investigate contributors to and consequences of disproportionate discipline for Native students in Oregon K-12 schools. The findings of this project will inform, design and re",8,Pendleton SD 16,"https://pendleton.k12.or.us/2023/04/, https://pendleton.k12.or.us/2023/04/13/native-voices-community-conversations/",2,disproportionate discipline,2,http://pendleton.k12.or.us,http://pendleton.k12.or.us,"https://pendleton.k12.or.us/2023/04/, https://pendleton.k12.or.us/2023/04/13/native-voices-community-conversations/",2,success,OR
+https://www.reynolds.k12.or.us/rms; https://www.reynolds.k12.or.us/home; https://www.reynolds.k12.or.us/hr; https://www.reynolds.k12.or.us/page-types/web-page; https://reynoldssd7.tandem.co/index.php?type=view&action=year; https://www.reynolds.k12.or.us/rhs; https://www.reynolds.k12.or.us/district/staff-links; https://reynolds.schoolspring.com; https://www.reynolds.k12.or.us/news; https://clever.com/in/rsd7,"**Paragraph 1 - Philosophy and Conceptualization:** Reynolds School District 7 conceptualizes **restorative practices** as a core component of its student support and discipline framework, emphasizing relationship-building, community repair, and proactive behavioral intervention over punitive measures, though explicit district-wide policy documents like a Student Code of Conduct or comprehensive mission statements are not detailed in the available content. This approach aligns with broader educational philosophies evident in integrated programs, where needs assessments highlight student engagement, academic gaps, and focal group progress (e.g., Black/African American students, Emerging Multilinguals), framing restorative practices as essential for fostering rigorous, culturally responsive learning environments amid stagnant OSAS proficiency rates (24% ELA, 12.7% Math). The term appears in operational contexts across schools like Alder Elementary and H.B. Lee Middle School staff directories, and district bargaining updates from February 2020, suggesting a commitment to embedding these practices within collective bargaining and program planning without specified timelines or measurable goals; integration seems philosophical yet practical, relating to equity-focused interventions in the 2025-2027 Student Investment Account framework, where academic alignment and engagement priorities implicitly support restorative methods to address CTE readiness gaps and behavioral needs, positioning them as foundational to the district's vision of preparing lifelong learners in a diverse, interconnected community.
+
+**Paragraph 2 - Infrastructure and Implementation:** The district operationalizes **restorative practices** through dedicated staffing and specialized roles, demonstrating a tangible infrastructure rather than abstract policy, as seen in Alder Elementary's explicit assignment of Mr. Gordon as **Restorative Practices TOSA** (Teacher on Special Assignment) under Student and Family Support, alongside a partial reference to ""Mr. Gordan Restora"" in student management, indicating school-level coordinators facilitating implementation. This extends to H.B. Lee Middle School's robust support ecosystem, including Campus Safety monitors (e.g., Kendal Smith, Micheal Caples) and Staff/Student Support categories with community partners, which likely integrate restorative processes for in-school suspension (ISS Room Monitor Robert Scott) and engagement liaisons (Kenneth McDonald, Xavier Glenn). District-wide, the Integrated Programs page ties these to needs assessments and grant applications (e.g., 2025-2027 SIA Grant), while the 2020 REA bargaining session at Woodland Elementary references proposals amid discussions of work year extensions and staff development days, hinting at training infrastructure without specific schedules; no centralized centers or academies are named, but the presence across elementary (Alder), middle (H.B. Lee), and district-level pages (11 occurrences) evidences an embedded system with personnel like TOSAs and monitors translating philosophy into daily operations at multiple schools.
+
+Source: District website only","[restorative practices @ https://www.reynolds.k12.or.us/district/integrated-programs (district)]: avioral needs. Family input guides decisions related to curriculum, staff, attendance barriers, and restorative practices. Literacy remains a key priority, driven by early data revealing K–2 reading gaps. Reynolds Arthur | [restorative practices @ https://www.reynolds.k12.or.us/district/integrated-programs (district)]: able experience for students and families. With the investments in increased Assistant Principals, Restorative Practices TOSAs at Reynolds HS, professional learning in restorative practices and social-emotional learning | [restorative practices @ https://www.reynolds.k12.or.us/district/integrated-programs (district)]: ncreased Assistant Principals, Restorative Practices TOSAs at Reynolds HS, professional learning in restorative practices and social-emotional learning for staff, as well as increased number of counselors and social worke | [restorative practices @ https://www.reynolds.k12.or.us/district/integrated-programs (district)]: ntities. Outcome D promotes a safe, healthy, and supportive learning environment. Through increased restorative practices staff (D1), expanded mental and behavioral health services (D2), and strong family engagement struc | [restorative practices @ https://www.reynolds.k12.or.us/district/integrated-programs (district)]: avioral needs. Family input guides decisions related to curriculum, staff, attendance barriers, and restorative practices. Literacy remains a key priority, driven by early data revealing K–2 reading gaps. Reynolds Arthur | [restorative practices @ https://www.reynolds.k12.or.us/district/integrated-programs (district)]: that allows districts to invest in what works locally—including staffing for class size reduction, restorative practices, extended learning time, and mental health services. Sustainable funding models are key to maintain | [restorative practices @ https://www.reynolds.k12.or.us/lee/school-staff (district)]: calvin@rsd7.net Kate Evans, Educational Assistant, kevans@rsd7.net Staff/Student Support Kyle Lacy, Restorative Practices Coach, klacy@rsd7.net Kate Weber, Library Media Specialist, kweber@rsd7.net Community Partners Metr | [restorative practices @ https://www.reynolds.k12.or.us/alder/alder-staff-directory (district)]: Health Assistant Ms. Lewis School Nurse STUDENT AND FAMILY SUPPORT Ms. Otegui Counselor Mr. Gordon Restorative Practices TOSA SPECIAL EDUCATION Ms. Urban Resource Teacher Ms. Buchanan Resource Teacher Ms. Snow Educationa | [restorative practices @ https://www.reynolds.k12.or.us/alder/alder-staff-directory (district)]: er Mr. Garrard Music Teacher Ms. Gassaway Librarian Ms. Whitehill Art STUDENT MANAGEMENT Mr. Gordan Restorative Practices TOSA Mr. Mayes Restorative Practices EA Ms. Bierman Noon Assistant Mr. Paz-Lizama Noon Assistant Ti | [restorative practices @ https://www.reynolds.k12.or.us/alder/alder-staff-directory (district)]: away Librarian Ms. Whitehill Art STUDENT MANAGEMENT Mr. Gordan Restorative Practices TOSA Mr. Mayes Restorative Practices EA Ms. Bierman Noon Assistant Mr. Paz-Lizama Noon Assistant Title 1 READING SUPPORT PROGRAM Ms. Sny | [restorative practices @ https://www.reynolds.k12.or.us/hr/rea-bargaining-session-update-february-20-2020 (district)]: at the committee reports should include. Article 18G – adds Appendix E that details the plan on how Restorative Practices will be implemented that includes pilot schools and training. Article 19 – Appendix F – these are t",20,Reynolds SD 7,"https://www.reynolds.k12.or.us/district/integrated-programs, https://www.reynolds.k12.or.us/lee/school-staff, https://www.reynolds.k12.or.us/alder/alder-staff-directory, https://www.reynolds.k12.or.us/hr/rea-bargaining-session-update-february-20-2020",4,restorative practices,11,http://www.reynolds.k12.or.us,http://www.reynolds.k12.or.us,"https://www.reynolds.k12.or.us/district/integrated-programs, https://www.reynolds.k12.or.us/lee/school-staff, https://www.reynolds.k12.or.us/alder/alder-staff-directory, https://www.reynolds.k12.or.us/hr/rea-bargaining-session-update-february-20-2020",4,success,OR
+https://prospeo.io/c/ontario-school-district-8-c; https://en.wikipedia.org/wiki/Ontario_School_District_8C; https://www.ontariooregon.org/education.html; https://www.ontario.k12.or.us/District/About-Us/District-Leadership/index.html; https://www.ontario.k12.or.us; https://www.ontario.k12.or.us/District/School-Information/index.html; https://nces.ed.gov/ccd/districtsearch/district_detail.asp?ID2=4109270; https://www.ontario.k12.or.us/District/Staff-Resources/index.html,"**Paragraph 1 - Philosophy and Conceptualization:** Ontario School District 8C conceptualizes **restorative practices** as a core component of its district-wide safety and prevention framework, positioning it alongside crisis response protocols as an essential element for fostering a secure educational environment. This approach frames restorative practices within a broader philosophy emphasizing proactive safety measures, community collaboration, and post-incident recovery, as evidenced by its prominent placement under the ""Safety & Prevention"" section of the district website, where it is listed parallel to the Standard Response Protocol (SRP) developed by the ""I Love U Guys"" Foundation—a research-based program informed by school administrators, psychologists, public safety experts, first responders, and families.[2][3][4] The district does not explicitly define restorative practices in the available content but integrates it conceptually as a complement to SRP's structured responses (e.g., Secure, Lockout), suggesting a holistic view that combines immediate threat mitigation with restorative processes to address harm, rebuild relationships, and support student well-being after disruptions. No specific documents like a Student Code of Conduct, mission statements, or timelines are detailed on these pages, indicating a commitment level that is declarative rather than goal-oriented; however, its dedicated webpage and navigation prominence signal district-wide integration as a foundational practice rather than a peripheral initiative, aligning with an educational approach that prioritizes prevention, timely communication, and trust-building with families during crises.[1][5]
+
+**Paragraph 2 - Infrastructure and Implementation:** The district operationalizes **restorative practices** through a dedicated webpage at https://www.ontario.k12.or.us/Safety--Prevention/Restorative-Practices/index.html, serving as a centralized hub titled ""Restorative Practices"" under the Safety & Prevention domain, which links to staff resources like the ""Staff One-Stop-Shop"" and integrates with SRP implementation across multiple pages.[1] This structure demonstrates tangible infrastructure, including a district-wide broadcast message system for announcements and a navigational menu explicitly listing Restorative Practices alongside SRP, with the term appearing eight times across five pages, underscoring its embedded role in operational systems.[2][3][4][5] No specific programs, dedicated centers, staffing roles (e.g., coordinators or facilitators), training schedules, school-specific academies, or implementation timelines are mentioned in the content, suggesting that while philosophically framed as a key safety pillar, the visible infrastructure remains primarily informational—a landing page without detailed protocols, personnel assignments, or rollout plans—rather than a fully elaborated system with named positions or specialized departments. This setup translates philosophy into practice via website accessibility for staff and families, but lacks evidence of concrete personnel or programmatic depth beyond its navigational and referential presence.[1][5]
+
+Source: District website only",[restorative practices @ https://www.ontario.k12.or.us/Safety--Prevention/Restorative-Practices/index.html (district)]: Ontario School District - Restorative Practices skip to main content District Wide Broadcast Message Restorative Practices Restorative practices St | [restorative practices @ https://www.ontario.k12.or.us/Safety--Prevention/Restorative-Practices/index.html (district)]: ntario School District - Restorative Practices skip to main content District Wide Broadcast Message Restorative Practices Restorative practices Staff One-Stop-Shop Safety & Prevention Standard Response Protocol Restorativ | [restorative practices @ https://www.ontario.k12.or.us/Safety--Prevention/Restorative-Practices/index.html (district)]: - Restorative Practices skip to main content District Wide Broadcast Message Restorative Practices Restorative practices Staff One-Stop-Shop Safety & Prevention Standard Response Protocol Restorative Practices | [restorative practices @ https://www.ontario.k12.or.us/Safety--Prevention/Restorative-Practices/index.html (district)]: Practices Restorative practices Staff One-Stop-Shop Safety & Prevention Standard Response Protocol Restorative Practices | [restorative practices @ https://www.ontario.k12.or.us/Safety--Prevention/Standard-Response-Protocol/index.html (district)]: juries or problems using Red Card/Green Card method. Safety & Prevention Standard Response Protocol Restorative Practices Resources: Resources: Standard Response Parent Handout - English - Spanish Standard Response Instru | [restorative practices @ https://www.ontario.k12.or.us/Safety--Prevention/index.html (district)]: s roles and responsibilities in the case of an event Safety & Prevention Standard Response Protocol Restorative Practices District Safety & Prevention Staff District Safety & Prevention Staff OSD Communicable Disease Plan | [restorative practices @ https://www.ontario.k12.or.us/Safety--Prevention/Standard-Response-Protocol/ (district)]: juries or problems using Red Card/Green Card method. Safety & Prevention Standard Response Protocol Restorative Practices Resources: Resources: Standard Response Parent Handout - English - Spanish Standard Response Instru | [restorative practices @ https://www.ontario.k12.or.us/Safety--Prevention/Standard-Response-Protocol/ (district)]: juries or problems using Red Card/Green Card method. Safety & Prevention Standard Response Protocol Restorative Practices Resources: Resources: Standard Response Parent Handout - English - Spanish Standard Response Instru,7,Ontario SD 8C,"https://www.ontario.k12.or.us/Safety--Prevention/Restorative-Practices/index.html, https://www.ontario.k12.or.us/Safety--Prevention/Standard-Response-Protocol/index.html, https://www.ontario.k12.or.us/Safety--Prevention/index.html, https://www.ontario.k12.or.us/Safety--Prevention/Standard-Response-Protocol/, https://www.ontario.k12.or.us/Safety--Prevention/Standard-Response-Protocol/",5,restorative practices,8,http://www.ontario.k12.or.us,http://www.ontario.k12.or.us,"https://www.ontario.k12.or.us/Safety--Prevention/Restorative-Practices/index.html, https://www.ontario.k12.or.us/Safety--Prevention/Standard-Response-Protocol/index.html, https://www.ontario.k12.or.us/Safety--Prevention/index.html, https://www.ontario.k12.or.us/Safety--Prevention/Standard-Response-Protocol/, https://www.ontario.k12.or.us/Safety--Prevention/Standard-Response-Protocol/",5,success,OR
+https://4j.lane.edu; https://4jschoolchoice.schoolmint.com; https://eugeneschooldistrict4j.com; https://www.shs.lane.edu/32751_2; https://asp.schoolmessenger.com/eugenesd4j/,"**Paragraph 1 - Philosophy and Conceptualization:** Eugene School District 4J conceptualizes restorative justice as an integral component of its evolving campus safety and security philosophy, emphasizing relationship-building, conflict resolution, and positive behavioral support over punitive measures. This approach frames restorative justice within a broader commitment to student success, equity, and de-escalation, positioning it as a tool to help students ""problem-solve disagreements or conflicts at school"" and mentor those facing discipline issues or personal challenges, thereby reinforcing the district's overarching goal of guiding students ""on the path to success in school and in life."" Although no explicit district-wide policies, such as a Student Code of Conduct or mission statement, are detailed in the available content, the philosophy integrates restorative justice with equity and support for students with special needs, signaling a holistic educational framework that prioritizes proactive engagement, kindness modeling, and community resource connections over traditional law enforcement presence—evidenced by the 2020 decision to end the School Resource Officers (SRO) contract with the Eugene Police Department. The district demonstrates a foundational commitment through planned training in restorative justice, indicating an intentional, albeit nascent, integration without specified timelines or measurable goals, framing it as part of a transformative safety model focused on trust-building and preventive intervention rather than exclusionary discipline.[1]
+
+**Paragraph 2 - Infrastructure and Implementation:** The district operationalizes its safety philosophy through a dedicated Campus Safety and Security Monitors program, launched with expanded services starting fall 2021, featuring eight full-time monitors—two per high school region—deployed across all 4J schools, including high, middle, and elementary levels, to conduct weekly engagements, facility patrols, incident investigations, and resource referrals. These monitors, who hold unarmed private security certification from the Oregon Department of Public Safety Standards & Training and are trained in first aid, CPR/AED, QPR/ASIST suicide prevention, MANDT de-escalation, and safety assessments, are slated for additional specialized training in restorative justice, equity, and students with special needs, translating conceptual commitments into practical skills for conflict resolution and mentoring. Further infrastructure includes a new daytime lead campus safety and security monitor position and two night monitors for overnight vandalism response, ensuring 24/7 facility security without reliance on SROs, while monitors actively report conduct violations and connect students to programs like Hoots, 15th Night, and Lane County Mental Health—demonstrating a robust, personnel-driven system that bridges philosophy to daily operations across the district's facilities.[1]
+
+Source: District website only","[restorative justice @ https://www.4j.lane.edu/22213_3 (district)]: de-escalation training, and safety assessments. Additional training is planned in issues related to restorative justice, equity and students with special needs. 4J also is hiring a daytime lead campus safety and securit",36,Eugene SD 4J,https://www.4j.lane.edu/22213_3,1,restorative justice,1,http://www.4j.lane.edu,http://www.4j.lane.edu,https://www.4j.lane.edu/22213_3,1,success,OR
