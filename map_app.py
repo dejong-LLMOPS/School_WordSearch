@@ -1,6 +1,7 @@
 """Dashboard for school policy term analysis: State Overview and District Detail."""
 import json
 import logging
+import math
 import re
 import time
 from pathlib import Path
@@ -558,69 +559,142 @@ def _ai_summary_to_html(raw: Optional[str]) -> str:
 
 
 def _build_state_map_figure(state_aggregates: Dict, national_total: float) -> go.Figure:
-    # Include all US states so the map is full; use grey for no data
+    """Build US choropleth heatmap using log-scale hits for better visual differentiation."""
     all_state_codes = list(STATE_NAMES.keys())
-    state_shares = [state_aggregates.get(s, {}).get("stateShare", 0) for s in all_state_codes]
     state_hits = [state_aggregates.get(s, {}).get("totalKeywordHits", 0) for s in all_state_codes]
+    state_shares = [state_aggregates.get(s, {}).get("stateShare", 0) for s in all_state_codes]
     state_names = [STATE_NAMES.get(s, s) for s in all_state_codes]
     total_dists = [state_aggregates.get(s, {}).get("totalDistricts", 0) for s in all_state_codes]
     dists_with_kw = [state_aggregates.get(s, {}).get("districtsWithKeywords", 0) for s in all_state_codes]
-    text = [
-        f"{n}<br>Hits: {h}<br>Share: {sh:.1%}<br>Districts w/ keywords: {dk}/{td}" if h > 0 or total_dists[i] > 0
-        else f"{n}<br>No data"
-        for i, (n, h, sh, dk, td) in enumerate(zip(state_names, state_hits, state_shares, dists_with_kw, total_dists))
+
+    # Log1p transform: spreads out low values so small-hit states are visible
+    z_log = [math.log1p(h) if (h or 0) > 0 else 0 for h in state_hits]
+    max_z = max((v for v in z_log if v > 0), default=1.0)
+
+    # Hover text with formatted numbers
+    text = []
+    for i, (n, h, sh, dk, td) in enumerate(zip(state_names, state_hits, state_shares, dists_with_kw, total_dists)):
+        if h > 0 or td > 0:
+            pct_dists = f"{100 * dk / td:.0f}%" if td else "–"
+            text.append(
+                f"<b>{n}</b><br>"
+                f"Keyword hits: <b>{h:,}</b><br>"
+                f"Share of national hits: {sh:.1%}<br>"
+                f"Districts w/ keywords: {dk}/{td} ({pct_dists})"
+            )
+        else:
+            text.append(f"<b>{n}</b><br>No data yet")
+
+    # Colorscale: grey for 0, then warm multi-hue yellow→orange→red→crimson
+    # Much better visual differentiation than a single-hue blue ramp
+    grey_pos = 0.001 / max_z if max_z > 0 else 0.001
+    colorscale = [
+        [0,           "#e2e8f0"],   # neutral grey — no data
+        [grey_pos,    "#fef9c3"],   # pale yellow — very low
+        [0.12,        "#fde68a"],   # yellow
+        [0.25,        "#fbbf24"],   # amber
+        [0.42,        "#f97316"],   # orange
+        [0.60,        "#ef4444"],   # red
+        [0.78,        "#b91c1c"],   # dark red
+        [0.90,        "#7f1d1d"],   # deep crimson
+        [1.0,         "#450a0a"],   # near-black red — peak states
     ]
-    # Colorscale: 0 = grey (no data), any positive share = blue gradient
-    # zmax is set to the actual max share so the full color range is used
-    max_share = max((s for s in state_shares if s and s > 0), default=1.0)
-    # Threshold position for the grey->color transition, normalized to max_share
-    grey_threshold = min(0.0001 / max_share, 0.001) if max_share > 0 else 0.0001
-    colorscale = [[0, "#b0b0b0"], [grey_threshold, "#deebf7"], [1, "#08519c"]]
-    # Build evenly-spaced colorbar ticks anchored to the actual max
-    n_ticks = 5
-    tick_vals = [round(max_share * i / (n_ticks - 1), 4) for i in range(n_ticks)]
-    tick_text = [f"{v:.1%}" for v in tick_vals]
+
+    # Colorbar ticks: show real hit values (back-transform from log)
+    n_ticks = 6
+    tick_log_vals = [max_z * i / (n_ticks - 1) for i in range(n_ticks)]
+    tick_text = [str(int(round(math.expm1(v)))) for v in tick_log_vals]
+
     fig = go.Figure(data=go.Choropleth(
         locations=all_state_codes,
-        z=state_shares,
+        z=z_log,
         locationmode="USA-states",
         text=text,
         hoverinfo="text",
         colorscale=colorscale,
         zmin=0,
-        zmax=max_share,
+        zmax=max_z,
         showscale=True,
-        colorbar={"title": "Share", "tickvals": tick_vals, "ticktext": tick_text},
+        colorbar={
+            "title": {"text": "KW Hits", "font": {"size": 11, "color": "#64748b"}},
+            "tickvals": tick_log_vals,
+            "ticktext": tick_text,
+            "tickfont": {"size": 10, "color": "#64748b"},
+            "thickness": 12,
+            "len": 0.72,
+            "bgcolor": "rgba(255,255,255,0.92)",
+            "bordercolor": "#e2e8f0",
+            "borderwidth": 1,
+            "outlinewidth": 0,
+        },
+        marker_line_color="#ffffff",
+        marker_line_width=1.2,
     ))
-    fig.update_layout(title_text="US states by share of keyword hits", geo_scope="usa", margin=dict(l=0, r=0, t=40, b=0), height=400)
-    fig.update_geos(visible=False)
+    fig.update_layout(
+        title={
+            "text": "Keyword hits by state  <span style='font-size:10px;color:#94a3b8;font-weight:400'>(log scale — click state to filter)</span>",
+            "font": {"size": 12, "color": "#334155", "family": "Inter, system-ui, sans-serif"},
+            "x": 0.01,
+            "xanchor": "left",
+        },
+        geo_scope="usa",
+        margin=dict(l=0, r=0, t=32, b=0),
+        height=460,
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)",
+    )
+    fig.update_geos(
+        visible=False,
+        bgcolor="rgba(0,0,0,0)",
+        lakecolor="#93c5fd",
+        oceancolor="#dbeafe",
+        landcolor="#f1f5f9",
+        showocean=False,
+        showlakes=True,
+    )
     return fig
 
 
 def _build_state_summary_panel(state_code, state_aggregates, state_districts, keyword_breakdown_list):
     if not state_code:
-        return html.Div("Click a state on the map or choose one from the dropdown to see summary and districts.", className="empty-state empty-state--small")
+        return html.Div(
+            "Click a state on the map or choose one from the dropdown.",
+            className="empty-state empty-state--small"
+        )
     agg = state_aggregates.get(state_code, {})
     total_districts = agg.get("totalDistricts", 0)
     districts_with_success = agg.get("districtsWithSuccess", 0)
     districts_with_keywords = agg.get("districtsWithKeywords", 0)
     total_hits = agg.get("totalKeywordHits", 0)
     state_name = STATE_NAMES.get(state_code, state_code)
-    # Compact metric cards
+    coverage_pct = f"{100 * districts_with_keywords / total_districts:.0f}%" if total_districts else "–"
+
     cards = html.Div([
-        html.Div([html.Div(str(total_districts), className="dashboard-card__value", style={"color": "#333"}), html.Div("Total districts", className="dashboard-card__label")], className="dashboard-card", style={"backgroundColor": "#f0f4f8"}),
-        html.Div([html.Div(str(districts_with_success), className="dashboard-card__value", style={"color": COLOR_TOTAL}), html.Div("Districts with successful scrape", className="dashboard-card__label")], className="dashboard-card", style={"backgroundColor": COLOR_BG_TOTAL}),
-        html.Div([html.Div(str(districts_with_keywords), className="dashboard-card__value", style={"color": COLOR_DISTRICT}), html.Div("Districts with keywords", className="dashboard-card__label")], className="dashboard-card", style={"backgroundColor": COLOR_BG_DISTRICT}),
-        html.Div([html.Div(str(total_hits), className="dashboard-card__value", style={"color": COLOR_NEUTRAL}), html.Div("Total keyword hits", className="dashboard-card__label")], className="dashboard-card", style={"backgroundColor": "#f5f5f5"}),
-    ], className="dashboard-cards")
+        html.Div([
+            html.Div(f"{total_districts:,}", className="dashboard-card__value", style={"color": "#334155"}),
+            html.Div("Total Districts", className="dashboard-card__label"),
+        ], className="dashboard-card"),
+        html.Div([
+            html.Div(f"{districts_with_success:,}", className="dashboard-card__value", style={"color": COLOR_TOTAL}),
+            html.Div("Scrape Successful", className="dashboard-card__label"),
+        ], className="dashboard-card"),
+        html.Div([
+            html.Div(f"{districts_with_keywords:,}", className="dashboard-card__value", style={"color": COLOR_DISTRICT}),
+            html.Div(coverage_pct, className="dashboard-card__sub", style={"color": COLOR_DISTRICT}),
+            html.Div("Districts w/ Keywords", className="dashboard-card__label"),
+        ], className="dashboard-card"),
+        html.Div([
+            html.Div(f"{total_hits:,}", className="dashboard-card__value", style={"color": COLOR_NEUTRAL}),
+            html.Div("Total Keyword Hits", className="dashboard-card__label"),
+        ], className="dashboard-card"),
+    ], className="dashboard-cards dashboard-cards--state")
+
     charts = [cards]
     if keyword_breakdown_list:
-        # Scale breakdown so bar chart total matches "Total keyword hits" (CSV has real totals; keywordCounts are presence-only)
         kw_labels = [x["keyword"] for x in keyword_breakdown_list]
         raw_counts = [x["count"] for x in keyword_breakdown_list]
         raw_total = sum(raw_counts)
         if raw_total > 0 and total_hits > 0:
-            # Distribute total_hits by proportion of raw (presence) counts; round and fix sum to equal total_hits
             scaled = [round(c * total_hits / raw_total) for c in raw_counts]
             diff = total_hits - sum(scaled)
             if diff != 0 and scaled:
@@ -629,21 +703,40 @@ def _build_state_summary_panel(state_code, state_aggregates, state_districts, ke
             kw_values = scaled
         else:
             kw_values = raw_counts
-        fig_bar = go.Figure(data=[go.Bar(x=kw_values, y=kw_labels, orientation="h", marker_color=COLOR_DISTRICT, text=kw_values, textposition="outside")])
+        # Color bars by intensity
+        max_v = max(kw_values) if kw_values else 1
+        bar_colors = [
+            f"rgba(29,78,216,{max(0.3, v/max_v)})" for v in kw_values
+        ]
+        fig_bar = go.Figure(data=[go.Bar(
+            x=kw_values, y=kw_labels, orientation="h",
+            marker_color=bar_colors,
+            text=kw_values, textposition="outside",
+            hovertemplate="%{y}: %{x} hits<extra></extra>",
+        )])
         fig_bar.update_layout(
-            margin=dict(l=140, r=50, t=28, b=28),
-            height=max(220, min(480, 38 * len(kw_labels))),
-            bargap=0.35,
-            xaxis_title="Hits",
-            yaxis=dict(autorange="reversed", tickfont=dict(size=13)),
+            margin=dict(l=160, r=50, t=4, b=4),
+            height=max(160, min(380, 32 * len(kw_labels))),
+            bargap=0.45,
+            xaxis=dict(title="", showgrid=True, gridcolor="#f1f5f9", zeroline=False,
+                       tickfont=dict(size=10, color="#94a3b8")),
+            yaxis=dict(autorange="reversed", tickfont=dict(size=11, color="#334155",
+                       family="Inter, system-ui, sans-serif"), title=""),
             showlegend=False,
             plot_bgcolor="rgba(0,0,0,0)",
             paper_bgcolor="rgba(0,0,0,0)",
         )
-        charts.append(html.Div([html.H4("Keyword hits", style={"marginBottom": "8px"}), dcc.Graph(figure=fig_bar, config={"displayModeBar": False})], style={"minWidth": "280px"}))
+        charts.append(html.Div([
+            html.P("Keyword breakdown", style={
+                "margin": "16px 0 6px", "fontWeight": "700", "fontSize": "10px",
+                "textTransform": "uppercase", "letterSpacing": "0.10em", "color": "#64748b",
+            }),
+            dcc.Graph(figure=fig_bar, config={"displayModeBar": False}),
+        ], style={"width": "100%"}))
+
     return html.Div([
-        html.H3(f"{state_name} summary", className="dashboard-panel-title"),
-        html.Div(charts, style={"display": "flex", "flexWrap": "wrap", "gap": "16px"}),
+        html.Div(f"{state_name}", className="dashboard-panel-title"),
+        html.Div(charts, style={"display": "flex", "flexWrap": "wrap", "gap": "12px"}),
     ], className="dashboard-panel")
 
 
@@ -680,7 +773,8 @@ def _build_district_table(state_districts):
     style_cond.append({"if": {"state": "active", "filter_query": "{Number of Keywords} > 0", "column_id": "View"}, "borderRight": "3px solid " + COLOR_DISTRICT})
     style_cond.append({"if": {"column_id": "View", "filter_query": "{View} ne ''"}, "color": COLOR_DISTRICT, "textDecoration": "underline", "fontWeight": "500"})
     return html.Div([
-        html.P("Click a row or use 'View' to open district details and AI summary.", className="dashboard-table-caption"),
+        html.P("Click any row to see district details and AI summary in the panel.",
+               className="dashboard-table-caption"),
         html.Div([
             dash_table.DataTable(
                 id="district-datatable",
@@ -691,9 +785,31 @@ def _build_district_table(state_districts):
                 row_selectable=False,
                 page_action="none",
                 fixed_rows={"headers": True},
-                style_table={"border": "1px solid #e0e0e0", "borderRadius": "8px", "overflowX": "visible"},
-                style_cell={"textAlign": "left", "padding": "10px 12px", "fontSize": "14px", "border": "1px solid #eee", "minWidth": "80px"},
-                style_header={"backgroundColor": "#f5f5f5", "fontWeight": "600", "padding": "10px 12px", "border": "1px solid #e0e0e0"},
+                style_table={
+                    "border": "1px solid #e2e8f0",
+                    "borderRadius": "12px",
+                    "overflowX": "visible",
+                    "boxShadow": "0 1px 3px rgba(0,0,0,0.06)",
+                },
+                style_cell={
+                    "textAlign": "left",
+                    "padding": "10px 14px",
+                    "fontSize": "13px",
+                    "border": "1px solid #f1f5f9",
+                    "minWidth": "80px",
+                    "fontFamily": "var(--font-family)",
+                    "color": "#334155",
+                },
+                style_header={
+                    "backgroundColor": "#f8fafc",
+                    "fontWeight": "700",
+                    "padding": "10px 14px",
+                    "border": "1px solid #e2e8f0",
+                    "fontSize": "11px",
+                    "textTransform": "uppercase",
+                    "letterSpacing": "0.06em",
+                    "color": "#64748b",
+                },
                 style_data_conditional=style_cond,
             ),
         ], className="dashboard-table-wrap"),
@@ -701,18 +817,34 @@ def _build_district_table(state_districts):
 
 
 def _build_national_summary(state_aggregates, national_total):
-    """National-level metric cards: total districts, with success, with keywords, total hits."""
+    """National-level metric cards with coverage %."""
     total_districts = sum((a.get("totalDistricts") or 0) for a in (state_aggregates or {}).values())
     districts_with_success = sum((a.get("districtsWithSuccess") or 0) for a in (state_aggregates or {}).values())
     districts_with_keywords = sum((a.get("districtsWithKeywords") or 0) for a in (state_aggregates or {}).values())
     total_hits = national_total or 0
+    scrape_pct = f"{100 * districts_with_success / total_districts:.0f}%" if total_districts else "–"
+    kw_pct = f"{100 * districts_with_keywords / total_districts:.0f}%" if total_districts else "–"
     return html.Div([
-        html.H3("National summary", className="dashboard-panel-title"),
+        html.Div("National Overview", className="dashboard-panel-title"),
         html.Div([
-            html.Div([html.Div(str(total_districts), className="dashboard-card__value", style={"color": "#333"}), html.Div("Total districts", className="dashboard-card__label")], className="dashboard-card", style={"backgroundColor": "#f0f4f8"}),
-            html.Div([html.Div(str(districts_with_success), className="dashboard-card__value", style={"color": COLOR_TOTAL}), html.Div("Districts with successful scrape", className="dashboard-card__label")], className="dashboard-card", style={"backgroundColor": COLOR_BG_TOTAL}),
-            html.Div([html.Div(str(districts_with_keywords), className="dashboard-card__value", style={"color": COLOR_DISTRICT}), html.Div("Districts with keywords", className="dashboard-card__label")], className="dashboard-card", style={"backgroundColor": COLOR_BG_DISTRICT}),
-            html.Div([html.Div(str(total_hits), className="dashboard-card__value", style={"color": COLOR_NEUTRAL}), html.Div("Total keyword hits", className="dashboard-card__label")], className="dashboard-card", style={"backgroundColor": "#f5f5f5"}),
+            html.Div([
+                html.Div(f"{total_districts:,}", className="dashboard-card__value", style={"color": "#334155"}),
+                html.Div("Total Districts", className="dashboard-card__label"),
+            ], className="dashboard-card"),
+            html.Div([
+                html.Div(f"{districts_with_success:,}", className="dashboard-card__value", style={"color": COLOR_TOTAL}),
+                html.Div(scrape_pct, className="dashboard-card__sub", style={"color": COLOR_TOTAL}),
+                html.Div("Scrape Successful", className="dashboard-card__label"),
+            ], className="dashboard-card"),
+            html.Div([
+                html.Div(f"{districts_with_keywords:,}", className="dashboard-card__value", style={"color": COLOR_DISTRICT}),
+                html.Div(kw_pct, className="dashboard-card__sub", style={"color": COLOR_DISTRICT}),
+                html.Div("Districts w/ Keywords", className="dashboard-card__label"),
+            ], className="dashboard-card"),
+            html.Div([
+                html.Div(f"{total_hits:,}", className="dashboard-card__value", style={"color": COLOR_NEUTRAL}),
+                html.Div("Total Keyword Hits", className="dashboard-card__label"),
+            ], className="dashboard-card"),
         ], className="dashboard-cards"),
     ], className="dashboard-summary-block")
 
@@ -725,110 +857,179 @@ def _layout_state_overview(state_aggregates, national_total):
         {"label": f"{STATE_NAMES.get(c, c)} ({c})", "value": c} for c in state_codes
     ]
     _table_placeholder = html.Div(
-        "Select a state from the dropdown (or click the map) to see districts. Click a row or 'View' to open details and AI summary.",
+        "Select a state from the dropdown (or click the map) to see districts below.",
         className="empty-state",
     )
     left_column = html.Div([
         html.Div([
             html.H1("School Policy Term Dashboard"),
-            html.Span("State Overview", className="breadcrumb"),
+            html.Span("National Overview", className="breadcrumb"),
         ], className="dashboard-header"),
         national_summary_block,
+        # State selector row
         html.Div([
-            html.Label("State", style={"fontWeight": "600", "marginRight": "8px"}),
+            html.Label("Filter by state", style={"fontWeight": "600", "fontSize": "12px",
+                                                  "textTransform": "uppercase", "letterSpacing": "0.06em",
+                                                  "color": "#334155", "whiteSpace": "nowrap"}),
             dcc.Dropdown(
                 id="state-dropdown",
                 options=state_dropdown_options,
                 value=None,
                 clearable=True,
-                placeholder="Select a state...",
-                style={"minWidth": "220px"},
+                placeholder="Select a state  —  or click the map",
+                style={"flex": "1", "minWidth": "200px", "fontSize": "14px"},
             ),
-        ], style={"marginBottom": "16px", "display": "flex", "alignItems": "center"}),
-        html.P("Map shows each state's share of national keyword hits. Click a state or choose from the dropdown to filter districts below.", style={"fontSize": "13px", "color": "#666", "marginBottom": "12px"}),
+        ], className="state-select-row"),
+        # Map + state summary side by side
         html.Div([
-            html.Div([dcc.Graph(id="state-map", figure=fig, config={"displayModeBar": False})], className="dashboard-map-wrap"),
-            html.Div([html.Div(id="state-summary-panel", children=html.Div("Select a state above or on the map.", className="empty-state empty-state--small"))], style={"flex": "1", "minWidth": "300px"}),
-        ], style={"display": "flex", "flexWrap": "wrap", "gap": "20px", "marginBottom": "24px"}),
+            html.Div([dcc.Graph(id="state-map", figure=fig, config={"displayModeBar": False})],
+                     className="dashboard-map-wrap"),
+            html.Div(
+                id="state-summary-panel",
+                children=html.Div("Select a state to see its summary.", className="empty-state empty-state--small"),
+                style={"flex": "1", "minWidth": "260px"},
+            ),
+        ], className="map-and-summary-row"),
+        # District table section
         html.Div([
-            html.H3(id="districts-heading", children="Districts", className="section-title"),
-            html.P(id="districts-count", style={"fontSize": "13px", "color": "#666", "marginBottom": "8px"}),
+            html.Div([
+                html.H3(id="districts-heading", children="Districts",
+                        style={"margin": "0", "fontSize": "1rem", "fontWeight": "700",
+                               "color": "#0f172a", "letterSpacing": "-0.01em"}),
+                html.Span(id="districts-count",
+                          style={"fontSize": "12px", "color": "#64748b", "marginLeft": "8px"}),
+            ], style={"display": "flex", "alignItems": "baseline", "marginBottom": "8px"}),
             html.Div(
                 id="district-table-container",
                 children=_table_placeholder,
-                style={"minHeight": "320px", "flex": "1", "display": "block"},
+                style={"minHeight": "320px", "flex": "1"},
             ),
-        ], style={"minHeight": "360px", "flex": "1 1 400px", "display": "flex", "flexDirection": "column"}),
+        ], style={"flex": "1 1 400px", "display": "flex", "flexDirection": "column", "minHeight": "360px"}),
         dcc.Store(id="selected-state", data=None),
         dcc.Store(id="selected-district-id", data=None),
     ], style={"flex": "1", "minWidth": "400px", "display": "flex", "flexDirection": "column"})
+
     right_panel = html.Div(
         id="district-detail-panel",
         children=html.Div([
-            html.P(["Click a row or the ", html.Span("View details", style={"color": "#f77f00", "textDecoration": "underline", "fontWeight": "500"}), " link in the table to see district details and AI summary here."], style={"margin": "0", "color": "#666"}),
-        ], className="empty-state empty-state--small"),
+            html.Div("📋", style={"fontSize": "2rem", "marginBottom": "12px"}),
+            html.P(["Select a district from the table to see details, keyword breakdown, and AI summary."],
+                   style={"margin": "0", "color": "#64748b", "lineHeight": "1.6"}),
+        ], className="empty-state empty-state--small", style={"flexDirection": "column"}),
         className="dashboard-side-panel",
     )
     return html.Div([
-        html.Div([left_column, right_panel], style={"display": "flex", "flexWrap": "wrap", "gap": "24px", "alignItems": "flex-start"}),
+        html.Div([left_column, right_panel],
+                 style={"display": "flex", "flexWrap": "wrap", "gap": "24px", "alignItems": "flex-start"}),
     ], className="dashboard-main")
 
 
 def _district_detail_content(record, show_back_link=True):
-    """Shared district detail body: header, cards, terms, AI summary, URLs. Used by full page and side panel."""
+    """Shared district detail body. Used by full page and side panel."""
     name = record.get("districtName") or "Unknown"
     state = record.get("state") or ""
+    state_full = STATE_NAMES.get(state, state)
     total_hits = record.get("totalKeywordHits") or 0
     urls_list = record.get("urls") or []
     urls_with_hits = [u for u in urls_list if (u.get("totalHits") or 0) > 0]
     urls_scanned = len(urls_list)
     keyword_counts = record.get("keywordCounts") or {}
-    terms_with_count = [{"keyword": k, "count": v} for k, v in keyword_counts.items() if v and (int(v) if isinstance(v, (int, float)) else 1) > 0]
+    terms_with_count = [{"keyword": k, "count": v} for k, v in keyword_counts.items()
+                        if v and (int(v) if isinstance(v, (int, float)) else 1) > 0]
     terms_with_count.sort(key=lambda x: -(x.get("count") or 0))
     ai_raw = record.get("aiSummary")
     ai_html = _ai_summary_to_html(ai_raw) if ai_raw else ""
     sections = []
-    # District name header (full-page mode suppresses the back link since header has breadcrumb)
+
+    # Header
     sections.append(html.Div([
-        html.H2(name, style={"margin": "0 0 4px", "fontSize": "1.5rem", "fontWeight": "700"}),
-        html.P([html.Strong("State: "), state], style={"fontSize": "15px", "color": "#666", "margin": "0"}),
-    ], style={"paddingBottom": "16px", "borderBottom": "1px solid var(--surface-border)", "marginBottom": "16px"}))
+        html.H2(name, style={"margin": "0 0 8px", "fontSize": "1.3rem", "fontWeight": "800",
+                              "color": "#0f172a", "letterSpacing": "-0.02em", "lineHeight": "1.2"}),
+        html.Span(state_full, style={
+            "display": "inline-flex", "alignItems": "center", "padding": "3px 10px",
+            "background": "#eff6ff", "borderRadius": "9999px", "fontSize": "12px",
+            "fontWeight": "600", "color": "#1d4ed8",
+        }),
+    ], style={"paddingBottom": "16px", "borderBottom": "2px solid #e2e8f0", "marginBottom": "16px"}))
+
+    # Metric mini-cards
     sections.append(html.Div([
-        html.H3("Term Occurrence Summary", className="section-title"),
+        html.Div("Metrics", className="section-title"),
         html.Div([
-            html.Div([html.H4(str(len(urls_with_hits)), style={"margin": "0", "fontSize": "28px", "color": COLOR_DISTRICT}), html.P("URLs with keywords", style={"margin": "5px 0", "color": "#666"})], style={"flex": "1", "textAlign": "center", "padding": "15px", "backgroundColor": COLOR_BG_DISTRICT, "borderRadius": "5px", "margin": "0 5px"}),
-            html.Div([html.H4(str(urls_scanned), style={"margin": "0", "fontSize": "28px", "color": COLOR_NEUTRAL}), html.P("URLs scanned", style={"margin": "5px 0", "color": "#666"})], style={"flex": "1", "textAlign": "center", "padding": "15px", "backgroundColor": "#f5f5f5", "borderRadius": "5px", "margin": "0 5px"}),
-            html.Div([html.H4(str(total_hits), style={"margin": "0", "fontSize": "28px", "color": COLOR_TOTAL}), html.P("Total occurrences", style={"margin": "5px 0", "color": "#666"})], style={"flex": "1", "textAlign": "center", "padding": "15px", "backgroundColor": COLOR_BG_TOTAL, "borderRadius": "5px", "margin": "0 5px"}),
-        ], style={"display": "flex", "gap": "10px", "marginBottom": "16px"}),
+            html.Div([
+                html.Div(str(len(urls_with_hits)), style={"fontSize": "22px", "fontWeight": "800", "color": COLOR_DISTRICT}),
+                html.Div("URLs w/ keywords", style={"fontSize": "11px", "color": "#64748b", "marginTop": "3px",
+                                                     "textTransform": "uppercase", "letterSpacing": "0.05em"}),
+            ], style={"flex": "1", "textAlign": "center", "padding": "12px 8px",
+                      "background": "#fffbeb", "borderRadius": "10px", "border": "1px solid #fde68a"}),
+            html.Div([
+                html.Div(str(urls_scanned), style={"fontSize": "22px", "fontWeight": "800", "color": "#64748b"}),
+                html.Div("URLs scanned", style={"fontSize": "11px", "color": "#64748b", "marginTop": "3px",
+                                                 "textTransform": "uppercase", "letterSpacing": "0.05em"}),
+            ], style={"flex": "1", "textAlign": "center", "padding": "12px 8px",
+                      "background": "#f8fafc", "borderRadius": "10px", "border": "1px solid #e2e8f0"}),
+            html.Div([
+                html.Div(str(total_hits), style={"fontSize": "22px", "fontWeight": "800", "color": COLOR_TOTAL}),
+                html.Div("Total hits", style={"fontSize": "11px", "color": "#64748b", "marginTop": "3px",
+                                               "textTransform": "uppercase", "letterSpacing": "0.05em"}),
+            ], style={"flex": "1", "textAlign": "center", "padding": "12px 8px",
+                      "background": "#ecfdf5", "borderRadius": "10px", "border": "1px solid #a7f3d0"}),
+        ], style={"display": "flex", "gap": "8px", "marginBottom": "4px"}),
     ]))
+
+    # Keyword chips
     if terms_with_count:
-        sections.append(html.Div([html.H3("Terms Found", className="section-title"), html.Ul([html.Li(f"{t['keyword']}: {t['count']}") for t in terms_with_count], style={"listStyle": "disc", "paddingLeft": "24px"})]))
+        chips = [
+            html.Span([
+                t["keyword"],
+                html.Span(f" ×{t['count']}", className="keyword-chip__count"),
+            ], className="keyword-chip")
+            for t in terms_with_count
+        ]
+        sections.append(html.Div([
+            html.Div("Keywords found", className="section-title"),
+            html.Div(chips, className="keyword-chips"),
+        ]))
+
+    # AI Summary
     if ai_html:
         sections.append(html.Div([
-            html.H3("AI Summary", className="section-title"),
+            html.Div("AI Summary", className="section-title"),
             html.Div(
                 dcc.Markdown(ai_html, dangerously_allow_html=True),
                 className="dashboard-ai-summary-box",
             ),
         ]))
     elif ai_raw:
-        sections.append(html.Div([html.H3("AI Summary", className="section-title"), html.Div(str(ai_raw), className="dashboard-ai-summary-box")]))
+        sections.append(html.Div([
+            html.Div("AI Summary", className="section-title"),
+            html.Div(str(ai_raw), className="dashboard-ai-summary-box"),
+        ]))
     else:
-        sections.append(html.Div([html.H3("AI Summary", className="section-title"), html.Div("No AI summary for this district.", className="empty-state empty-state--small")]))
+        sections.append(html.Div([
+            html.Div("AI Summary", className="section-title"),
+            html.Div("No AI summary available for this district.",
+                     className="empty-state empty-state--small"),
+        ]))
+
+    # Source links
     if urls_with_hits:
         cap = 50
         shown = urls_with_hits[:cap]
-        link_items = [html.Li(html.A(u.get("url", ""), href=u.get("url", "#"), target="_blank", style={"color": COLOR_DISTRICT})) for u in shown]
-        link_children = [html.H3("Links to Pages with Terms", className="section-title")]
+        link_items = [html.Li(html.A(u.get("url", ""), href=u.get("url", "#"),
+                                     target="_blank")) for u in shown]
+        link_children = [html.Div("Pages with keywords", className="section-title")]
         if len(urls_with_hits) > cap:
-            link_children.append(html.P(f"Showing first {cap} of {len(urls_with_hits)} links.", style={"fontSize": "13px", "color": "#666", "marginBottom": "8px"}))
+            link_children.append(html.P(f"Showing first {cap} of {len(urls_with_hits)} links.",
+                                        style={"fontSize": "12px", "color": "#64748b", "marginBottom": "8px"}))
         link_children.append(html.Ul(link_items, className="dashboard-links-list"))
         sections.append(html.Div(link_children))
+
     ai_engine_sources = record.get("aiEngineSources") or []
     if ai_engine_sources:
-        ai_source_items = [html.Li(html.A(url, href=url, target="_blank", style={"color": COLOR_DISTRICT})) for url in ai_engine_sources]
+        ai_source_items = [html.Li(html.A(url, href=url, target="_blank")) for url in ai_engine_sources]
         sections.append(html.Div([
-            html.H3("AI Engine Additional Sources", className="section-title"),
+            html.Div("AI Research Sources", className="section-title"),
             html.Ul(ai_source_items, className="dashboard-links-list"),
         ]))
     return sections
@@ -990,29 +1191,36 @@ def create_app() -> dash.Dash:
         return str(raw_location).strip().upper()[:2]
 
     def _build_district_panel_children(record, selected_state_code, district_id):
-        """Build the right-panel content for a selected district (breadcrumb, close/open, sections)."""
+        """Build the right-panel content for a selected district."""
         state_name = STATE_NAMES.get(selected_state_code or "", selected_state_code or "State")
         district_name = record.get("districtName") or "District"
-        breadcrumb = html.Div([
-            html.Span("State Overview", style={"color": COLOR_NEUTRAL}),
-            html.Span(" › ", style={"color": "#bbb", "margin": "0 4px"}),
-            html.Span(state_name, style={"color": COLOR_NEUTRAL}),
-            html.Span(" › ", style={"color": "#bbb", "margin": "0 4px"}),
-            html.Span(district_name, style={"fontWeight": "600", "color": "#333"}),
-        ], style={"fontSize": "12px", "marginBottom": "12px", "color": "#999",
-                  "background": "#f7f8fa", "padding": "6px 10px", "borderRadius": "6px",
-                  "border": "1px solid #e8e8e8"})
+        close_btn = html.Button(
+            "✕ Close",
+            id="close-district-panel",
+            className="dashboard-btn dashboard-btn--neutral",
+            style={"fontSize": "12px", "padding": "5px 12px"},
+        )
+        open_full_link = dcc.Link(
+            "Open full page ↗",
+            href=f"/dashboard/district/{district_id}",
+            target="_blank",
+            style={"fontSize": "13px", "color": COLOR_DISTRICT, "fontWeight": "600",
+                   "textDecoration": "none", "marginLeft": "auto"},
+        )
+        action_bar = html.Div(
+            [close_btn, open_full_link],
+            className="panel-action-bar",
+        )
         sections = _district_detail_content(record, show_back_link=False)
-        close_btn = html.Button("✕ Close", id="close-district-panel", className="dashboard-btn dashboard-btn--neutral",
-                                style={"marginRight": "8px", "fontSize": "13px", "padding": "6px 14px"})
-        open_full_link = dcc.Link("Open full page ↗", href=f"/dashboard/district/{district_id}", target="_blank",
-                                  style={"fontSize": "13px", "color": COLOR_DISTRICT, "fontWeight": "500"})
-        return html.Div([breadcrumb, html.Div([close_btn, open_full_link],
-                         style={"marginBottom": "16px", "display": "flex", "alignItems": "center"})] + sections)
+        return html.Div([action_bar] + sections)
 
     _placeholder_panel = html.Div([
-        html.P(["Click a row or the ", html.Span("View details", style={"color": "#f77f00", "textDecoration": "underline", "fontWeight": "500"}), " link in the table to see district details and AI summary here."], style={"margin": "0", "color": "#666"}),
-    ], className="empty-state empty-state--small")
+        html.Div("📋", style={"fontSize": "2rem", "marginBottom": "12px"}),
+        html.P(
+            "Select a district from the table to view details, keyword breakdown, and AI summary.",
+            style={"margin": "0", "color": "#64748b", "lineHeight": "1.6"},
+        ),
+    ], className="empty-state empty-state--small", style={"flexDirection": "column"})
 
     @app.callback(
         [Output('selected-district-id', 'data'), Output('district-detail-panel', 'children', allow_duplicate=True)],
