@@ -277,3 +277,7 @@ PROGRESS_FILE = OUTPUT_DIR / "progress.json"
 # State filter (default: North Carolina)
 DEFAULT_STATE = "NC"
 
+# Dashboard authentication (set DASHBOARD_USERNAME and DASHBOARD_PASSWORD env vars)
+DASHBOARD_USERNAME = os.getenv("DASHBOARD_USERNAME", "")
+DASHBOARD_PASSWORD = os.getenv("DASHBOARD_PASSWORD", "")
+

@@ -8,13 +8,14 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 import dash
+import dash_auth
 from dash import dcc, html, Input, Output, State
 from dash.dependencies import ALL, MATCH
 from dash import dash_table
 import pandas as pd
 import plotly.graph_objects as go
 
-from config import OUTPUT_DIR, RESULTS_CSV
+from config import OUTPUT_DIR, RESULTS_CSV, DASHBOARD_USERNAME, DASHBOARD_PASSWORD
 from dashboard_data import (
     STATE_NAMES,
     aggregate_by_state,
@@ -1056,7 +1057,10 @@ def _layout_district_detail(record):
 def create_app() -> dash.Dash:
     """Create and configure the Dash application."""
     app = dash.Dash(__name__, suppress_callback_exceptions=True)
-    
+
+    if DASHBOARD_USERNAME and DASHBOARD_PASSWORD:
+        dash_auth.BasicAuth(app, {DASHBOARD_USERNAME: DASHBOARD_PASSWORD})
+
     app.server = app.server
     
     csv_rows = load_all_states_data()

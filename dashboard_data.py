@@ -218,6 +218,29 @@ def aggregate_by_state(records: List[Dict[str, Any]]) -> Dict[str, Dict[str, Any
     return by_state
 
 
+def states_with_zero_keyword_hits(records: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """States present in ``records`` whose aggregate ``totalKeywordHits`` is zero.
+
+    Use this to find jurisdictions that need another scrape pass or data check.
+    Returns rows sorted by state code, each with ``state``, ``stateName``, ``totalDistricts``,
+    and ``districtsWithSuccess``.
+    """
+    agg = aggregate_by_state(records)
+    out: List[Dict[str, Any]] = []
+    for code, data in sorted(agg.items()):
+        if (data.get("totalKeywordHits") or 0) != 0:
+            continue
+        out.append(
+            {
+                "state": code,
+                "stateName": STATE_NAMES.get(code, code),
+                "totalDistricts": data.get("totalDistricts") or 0,
+                "districtsWithSuccess": data.get("districtsWithSuccess") or 0,
+            }
+        )
+    return out
+
+
 def get_state_districts(state_code: str, records: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     """Filter district records by state (2-letter code)."""
     state_code = (state_code or "").strip().upper()[:2]
